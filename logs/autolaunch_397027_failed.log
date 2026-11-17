@@ -1,0 +1,5 @@
+[2026-11-16 20:44:21] waiting for model download
+[2026-11-16 20:44:21] model download complete
+[2026-11-16 20:44:21] smoke submitted: job 397027 | log /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/logs/opsd_llama_bn_397027.log
+[2026-11-16 21:23:23] smoke job 397027 finished: FAILED
+[2026-11-16 21:23:23] ERROR: smoke test failed; not launching training. See /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/logs/opsd_llama_bn_397027.log

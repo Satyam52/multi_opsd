@@ -1,0 +1,5 @@
+[2026-11-17 02:00:57] waiting for model download
+[2026-11-17 02:00:57] model download complete
+[2026-11-17 02:00:57] smoke submitted: job 398279 | log /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/logs/opsd_llama_bn_398279.log
+[2026-11-17 02:19:57] smoke job 398279 finished: COMPLETED
+[2026-11-17 02:19:57] training submitted: job 398391 | log /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/logs/opsd_llama_bn_398391.log

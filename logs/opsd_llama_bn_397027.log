@@ -1,0 +1,252 @@
+OPSD Llama-3.2 GSM8K->Bengali | model meta-llama/Llama-3.2-3B-Instruct | out /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/smoke_20261116_204421
+gpus 2 | bs 2 accum 2 | max_steps 2 save 2 | completion 256
+flash_attn ok
+[W1116 21:16:11.481937914 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
+W1116 21:18:29.597000 2397327 site-packages/torch/distributed/run.py:803] 
+W1116 21:18:29.597000 2397327 site-packages/torch/distributed/run.py:803] *****************************************
+W1116 21:18:29.597000 2397327 site-packages/torch/distributed/run.py:803] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1116 21:18:29.597000 2397327 site-packages/torch/distributed/run.py:803] *****************************************
+⚙️  Running in WANDB offline mode
+⚙️  Running in WANDB offline mode
+
+================================================================================
+RUN CONFIGURATION
+================================================================================
+WandB Run Name: smoke_20261116_204421_lr5e-6_bs8
+Output Directory: /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/smoke_20261116_204421
+================================================================================
+
+
+================================================================================
+RUN CONFIGURATION
+================================================================================
+WandB Run Name: smoke_20261116_204421_lr5e-6_bs8
+Output Directory: /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/smoke_20261116_204421
+================================================================================
+
+
+================================================================================
+Loading model with dtype: bfloat16
+Using attention implementation: flash_attention_2
+================================================================================
+
+Using the latest cached version of the dataset since openai/gsm8k couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'main' at /home/speech-nlp-cse/24m0756/.cache/huggingface/datasets/openai___gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866 (last modified on Mon Nov 16 20:21:54 2026).
+[DataCollator] Original padding_side: left
+[DataCollator] Set padding_side to: right
+[DataCollator] Reason first mode: False
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.06s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.15s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.28s/it]
+wandb: Tracking run with wandb version 0.25.0
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/wandb/offline-run-20261116_212027-1gjzimwa
+
+================================================================================
+FIXED TEACHER MODE ENABLED
+Teacher will use the initial policy (base model without LoRA adapters)
+Student will update with LoRA adapters
+================================================================================
+
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 128009, 'pad_token_id': 128004}.
+Installed CUDA version 12.9 does not match the version torch was compiled with 12.8 but since the APIs are compatible, accepting this combination
+
+================================================================================
+Loading model with dtype: bfloat16
+Using attention implementation: flash_attention_2
+================================================================================
+
+Using the latest cached version of the dataset since openai/gsm8k couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'main' at /home/speech-nlp-cse/24m0756/.cache/huggingface/datasets/openai___gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866 (last modified on Mon Nov 16 20:21:54 2026).
+[DataCollator] Original padding_side: left
+[DataCollator] Set padding_side to: right
+[DataCollator] Reason first mode: False
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 73.62it/s]
+Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+
+================================================================================
+FIXED TEACHER MODE ENABLED
+Teacher will use the initial policy (base model without LoRA adapters)
+Student will update with LoRA adapters
+================================================================================
+
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 128009, 'pad_token_id': 128004}.
+Installed CUDA version 12.9 does not match the version torch was compiled with 12.8 but since the APIs are compatible, accepting this combination
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/utils/cpp_extension.py", line 2597, in _run_ninja_build
+[rank1]:     subprocess.run(
+[rank1]:   File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/subprocess.py", line 526, in run
+[rank1]:     raise CalledProcessError(retcode, process.args,
+[rank1]: subprocess.CalledProcessError: Command '['ninja', '-v']' returned non-zero exit status 1.
+
+[rank1]: The above exception was the direct cause of the following exception:
+
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/opsd_train.py", line 326, in <module>
+[rank1]:     trainer.train()
+[rank1]:   File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/transformers/trainer.py", line 2325, in train
+[rank1]:     return inner_training_loop(
+[rank1]:   File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/transformers/trainer.py", line 2480, in _inner_training_loop
+[rank1]:     model, self.optimizer = self.accelerator.prepare(self.model, self.optimizer)
+[rank1]:   File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/accelerate/accelerator.py", line 1551, in prepare
+[rank1]:     result = self._prepare_deepspeed(*args)
+[rank1]:   File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/accelerate/accelerator.py", line 2328, in _prepare_deepspeed
+[rank1]:     optimizer = map_pytorch_optim_to_deepspeed(optimizer)
+[rank1]:   File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/accelerate/utils/deepspeed.py", line 97, in map_pytorch_optim_to_deepspeed
+[rank1]:     return optimizer_class(optimizer.param_groups, **defaults)
+[rank1]:   File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/deepspeed/ops/adam/cpu_adam.py", line 94, in __init__
+[rank1]:     self.ds_opt_adam = CPUAdamBuilder().load()
+[rank1]:   File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/deepspeed/ops/op_builder/builder.py", line 542, in load
+[rank1]:     return self.jit_load(verbose)
+[rank1]:   File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/deepspeed/ops/op_builder/builder.py", line 592, in jit_load
+[rank1]:     op_module = load(name=self.name,
+[rank1]:   File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/utils/cpp_extension.py", line 1692, in load
+[rank1]:     return _jit_compile(
+[rank1]:   File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/utils/cpp_extension.py", line 2134, in _jit_compile
+[rank1]:     _write_ninja_file_and_build_library(
+[rank1]:   File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/utils/cpp_extension.py", line 2286, in _write_ninja_file_and_build_library
+[rank1]:     _run_ninja_build(
+[rank1]:   File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/utils/cpp_extension.py", line 2614, in _run_ninja_build
+[rank1]:     raise RuntimeError(message) from e
+[rank1]: RuntimeError: Error building extension 'cpu_adam': [1/3] c++ -MMD -MF cpu_adam_impl.o.d -DTORCH_EXTENSION_NAME=cpu_adam -DTORCH_API_INCLUDE_EXTENSION_H -I/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/deepspeed/ops/csrc/includes -isystem /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include -isystem /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include/torch/csrc/api/include -isystem /home/speech-nlp-cse/24m0756/anaconda3/envs/vllm-env/include -isystem /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/include/python3.10 -fPIC -std=c++17 -O3 -std=c++17 -g -Wno-reorder -L/home/speech-nlp-cse/24m0756/anaconda3/envs/vllm-env/lib -lcudart -lcublas -g -march=native -fopenmp -D__AVX256__ -D__ENABLE_CUDA__ -UC10_USE_GLOG -DBF16_AVAILABLE -c /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/deepspeed/ops/csrc/adam/cpu_adam_impl.cpp -o cpu_adam_impl.o 
+[rank1]: FAILED: [code=1] cpu_adam_impl.o 
+[rank1]: c++ -MMD -MF cpu_adam_impl.o.d -DTORCH_EXTENSION_NAME=cpu_adam -DTORCH_API_INCLUDE_EXTENSION_H -I/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/deepspeed/ops/csrc/includes -isystem /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include -isystem /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include/torch/csrc/api/include -isystem /home/speech-nlp-cse/24m0756/anaconda3/envs/vllm-env/include -isystem /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/include/python3.10 -fPIC -std=c++17 -O3 -std=c++17 -g -Wno-reorder -L/home/speech-nlp-cse/24m0756/anaconda3/envs/vllm-env/lib -lcudart -lcublas -g -march=native -fopenmp -D__AVX256__ -D__ENABLE_CUDA__ -UC10_USE_GLOG -DBF16_AVAILABLE -c /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/deepspeed/ops/csrc/adam/cpu_adam_impl.cpp -o cpu_adam_impl.o 
+[rank1]: In file included from /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include/ATen/core/TensorBase.h:27,
+[rank1]:                  from /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include/ATen/core/TensorBody.h:38,
+[rank1]:                  from /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include/ATen/core/Tensor.h:3,
+[rank1]:                  from /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include/ATen/Tensor.h:3,
+[rank1]:                  from /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include/torch/csrc/autograd/function_hook.h:3,
+[rank1]:                  from /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include/torch/csrc/autograd/cpp_hook.h:2,
+[rank1]:                  from /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include/torch/csrc/autograd/variable.h:6,
+[rank1]:                  from /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include/torch/csrc/autograd/autograd.h:3,
+[rank1]:                  from /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include/torch/csrc/api/include/torch/autograd.h:3,
+[rank1]:                  from /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include/torch/csrc/api/include/torch/all.h:7,
+[rank1]:                  from /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include/torch/extension.h:5,
+[rank1]:                  from /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/deepspeed/ops/csrc/adam/cpu_adam_impl.cpp:6:
+[rank1]: /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include/c10/util/C++17.h:13:2: error: #error "You're trying to build PyTorch with a too old version of GCC. We need GCC 9 or later."
+[rank1]:  #error \
+[rank1]:   ^~~~~
+[rank1]: [2/3] c++ -MMD -MF cpu_adam.o.d -DTORCH_EXTENSION_NAME=cpu_adam -DTORCH_API_INCLUDE_EXTENSION_H -I/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/deepspeed/ops/csrc/includes -isystem /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include -isystem /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include/torch/csrc/api/include -isystem /home/speech-nlp-cse/24m0756/anaconda3/envs/vllm-env/include -isystem /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/include/python3.10 -fPIC -std=c++17 -O3 -std=c++17 -g -Wno-reorder -L/home/speech-nlp-cse/24m0756/anaconda3/envs/vllm-env/lib -lcudart -lcublas -g -march=native -fopenmp -D__AVX256__ -D__ENABLE_CUDA__ -UC10_USE_GLOG -DBF16_AVAILABLE -c /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/deepspeed/ops/csrc/adam/cpu_adam.cpp -o cpu_adam.o 
+[rank1]: FAILED: [code=1] cpu_adam.o 
+[rank1]: c++ -MMD -MF cpu_adam.o.d -DTORCH_EXTENSION_NAME=cpu_adam -DTORCH_API_INCLUDE_EXTENSION_H -I/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/deepspeed/ops/csrc/includes -isystem /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include -isystem /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include/torch/csrc/api/include -isystem /home/speech-nlp-cse/24m0756/anaconda3/envs/vllm-env/include -isystem /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/include/python3.10 -fPIC -std=c++17 -O3 -std=c++17 -g -Wno-reorder -L/home/speech-nlp-cse/24m0756/anaconda3/envs/vllm-env/lib -lcudart -lcublas -g -march=native -fopenmp -D__AVX256__ -D__ENABLE_CUDA__ -UC10_USE_GLOG -DBF16_AVAILABLE -c /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/deepspeed/ops/csrc/adam/cpu_adam.cpp -o cpu_adam.o 
+[rank1]: In file included from /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include/ATen/core/TensorBase.h:27,
+[rank1]:                  from /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include/ATen/core/TensorBody.h:38,
+[rank1]:                  from /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include/ATen/core/Tensor.h:3,
+[rank1]:                  from /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include/ATen/Tensor.h:3,
+[rank1]:                  from /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include/torch/csrc/autograd/function_hook.h:3,
+[rank1]:                  from /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include/torch/csrc/autograd/cpp_hook.h:2,
+[rank1]:                  from /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include/torch/csrc/autograd/variable.h:6,
+[rank1]:                  from /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include/torch/csrc/autograd/autograd.h:3,
+[rank1]:                  from /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include/torch/csrc/api/include/torch/autograd.h:3,
+[rank1]:                  from /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include/torch/csrc/api/include/torch/all.h:7,
+[rank1]:                  from /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include/torch/extension.h:5,
+[rank1]:                  from /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/deepspeed/ops/csrc/includes/cpu_adam.h:12,
+[rank1]:                  from /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/deepspeed/ops/csrc/adam/cpu_adam.cpp:6:
+[rank1]: /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/include/c10/util/C++17.h:13:2: error: #error "You're trying to build PyTorch with a too old version of GCC. We need GCC 9 or later."
+[rank1]:  #error \
+[rank1]:   ^~~~~
+[rank1]: ninja: build stopped: subcommand failed.
+
+Traceback (most recent call last):
+  File "/home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/opsd_train.py", line 326, in <module>
+    trainer.train()
+  File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/transformers/trainer.py", line 2325, in train
+    return inner_training_loop(
+  File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/transformers/trainer.py", line 2480, in _inner_training_loop
+    model, self.optimizer = self.accelerator.prepare(self.model, self.optimizer)
+  File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/accelerate/accelerator.py", line 1551, in prepare
+    result = self._prepare_deepspeed(*args)
+  File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/accelerate/accelerator.py", line 2328, in _prepare_deepspeed
+    optimizer = map_pytorch_optim_to_deepspeed(optimizer)
+  File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/accelerate/utils/deepspeed.py", line 97, in map_pytorch_optim_to_deepspeed
+    return optimizer_class(optimizer.param_groups, **defaults)
+  File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/deepspeed/ops/adam/cpu_adam.py", line 94, in __init__
+    self.ds_opt_adam = CPUAdamBuilder().load()
+  File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/deepspeed/ops/op_builder/builder.py", line 542, in load
+    return self.jit_load(verbose)
+  File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/deepspeed/ops/op_builder/builder.py", line 592, in jit_load
+    op_module = load(name=self.name,
+  File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/utils/cpp_extension.py", line 1692, in load
+    return _jit_compile(
+  File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/utils/cpp_extension.py", line 2160, in _jit_compile
+    return _import_module_from_library(name, build_directory, is_python_module)
+  File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/utils/cpp_extension.py", line 2634, in _import_module_from_library
+    module = importlib.util.module_from_spec(spec)
+  File "<frozen importlib._bootstrap>", line 571, in module_from_spec
+  File "<frozen importlib._bootstrap_external>", line 1176, in create_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+ImportError: /home/speech-nlp-cse/24m0756/.cache/torch_extensions/py310_cu128/cpu_adam/cpu_adam.so: cannot open shared object file: No such file or directory
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/opsd_train.py", line 326, in <module>
+[rank0]:     trainer.train()
+[rank0]:   File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/transformers/trainer.py", line 2325, in train
+[rank0]:     return inner_training_loop(
+[rank0]:   File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/transformers/trainer.py", line 2480, in _inner_training_loop
+[rank0]:     model, self.optimizer = self.accelerator.prepare(self.model, self.optimizer)
+[rank0]:   File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/accelerate/accelerator.py", line 1551, in prepare
+[rank0]:     result = self._prepare_deepspeed(*args)
+[rank0]:   File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/accelerate/accelerator.py", line 2328, in _prepare_deepspeed
+[rank0]:     optimizer = map_pytorch_optim_to_deepspeed(optimizer)
+[rank0]:   File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/accelerate/utils/deepspeed.py", line 97, in map_pytorch_optim_to_deepspeed
+[rank0]:     return optimizer_class(optimizer.param_groups, **defaults)
+[rank0]:   File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/deepspeed/ops/adam/cpu_adam.py", line 94, in __init__
+[rank0]:     self.ds_opt_adam = CPUAdamBuilder().load()
+[rank0]:   File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/deepspeed/ops/op_builder/builder.py", line 542, in load
+[rank0]:     return self.jit_load(verbose)
+[rank0]:   File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/deepspeed/ops/op_builder/builder.py", line 592, in jit_load
+[rank0]:     op_module = load(name=self.name,
+[rank0]:   File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/utils/cpp_extension.py", line 1692, in load
+[rank0]:     return _jit_compile(
+[rank0]:   File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/utils/cpp_extension.py", line 2160, in _jit_compile
+[rank0]:     return _import_module_from_library(name, build_directory, is_python_module)
+[rank0]:   File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/utils/cpp_extension.py", line 2634, in _import_module_from_library
+[rank0]:     module = importlib.util.module_from_spec(spec)
+[rank0]:   File "<frozen importlib._bootstrap>", line 571, in module_from_spec
+[rank0]:   File "<frozen importlib._bootstrap_external>", line 1176, in create_module
+[rank0]:   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+[rank0]: ImportError: /home/speech-nlp-cse/24m0756/.cache/torch_extensions/py310_cu128/cpu_adam/cpu_adam.so: cannot open shared object file: No such file or directory
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/wandb/offline-run-20261116_212027-1gjzimwa[0m
+[1;34mwandb[0m: Find logs at: [1;35mckpts/opsd/wandb/offline-run-20261116_212027-1gjzimwa/logs[0m
+Exception ignored in: <function DeepSpeedCPUAdam.__del__ at 0x7f6cfbe236d0>
+Traceback (most recent call last):
+  File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/deepspeed/ops/adam/cpu_adam.py", line 102, in __del__
+AttributeError: 'DeepSpeedCPUAdam' object has no attribute 'ds_opt_adam'
+[rank0]:[W1116 21:22:09.129671304 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[rank0]:[W1116 21:22:12.606224136 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
+[rank1]:[W1116 21:22:12.606268126 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
+W1116 21:22:23.372000 2397327 site-packages/torch/distributed/elastic/multiprocessing/api.py:908] Sending process 2397412 closing signal SIGTERM
+E1116 21:22:23.436000 2397327 site-packages/torch/distributed/elastic/multiprocessing/api.py:882] failed (exitcode: 1) local_rank: 1 (pid: 2397413) of binary: /home/speech-nlp-cse/24m0756/anaconda3/envs/slm/bin/python
+Traceback (most recent call last):
+  File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/bin/accelerate", line 7, in <module>
+    sys.exit(main())
+  File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/accelerate/commands/accelerate_cli.py", line 50, in main
+    args.func(args)
+  File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/accelerate/commands/launch.py", line 1266, in launch_command
+    deepspeed_launcher(args)
+  File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/accelerate/commands/launch.py", line 952, in deepspeed_launcher
+    distrib_run.run(args)
+  File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/distributed/run.py", line 927, in run
+    elastic_launch(
+  File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 156, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 293, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+opsd_train.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-11-16_21:22:23
+  host      : cn37-a40.prajna.iitb.ac.in
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 2397413)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+[W1116 21:22:25.114826209 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())

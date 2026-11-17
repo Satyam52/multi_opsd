@@ -1,0 +1,1951 @@
+OPSD Llama-3.2 GSM8K->Bengali | model meta-llama/Llama-3.2-3B-Instruct | out /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_fixteacher_temp1_beta0_clip1e-6
+gpus 2 | bs 2 accum 8 | max_steps -1 save 25 | completion 1024
+flash_attn ok
+[W1116 23:19:57.808898596 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
+W1116 23:20:10.255000 2769754 site-packages/torch/distributed/run.py:803] 
+W1116 23:20:10.255000 2769754 site-packages/torch/distributed/run.py:803] *****************************************
+W1116 23:20:10.255000 2769754 site-packages/torch/distributed/run.py:803] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1116 23:20:10.255000 2769754 site-packages/torch/distributed/run.py:803] *****************************************
+⚙️  Running in WANDB offline mode
+⚙️  Running in WANDB offline mode
+
+================================================================================
+RUN CONFIGURATION
+================================================================================
+WandB Run Name: llama32_3b_gsm8k_bn_fixteacher_temp1_beta0_clip1e-6_lr5e-6_bs32
+Output Directory: /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_fixteacher_temp1_beta0_clip1e-6
+================================================================================
+
+
+================================================================================
+Loading model with dtype: bfloat16
+Using attention implementation: flash_attention_2
+================================================================================
+
+
+================================================================================
+RUN CONFIGURATION
+================================================================================
+WandB Run Name: llama32_3b_gsm8k_bn_fixteacher_temp1_beta0_clip1e-6_lr5e-6_bs32
+Output Directory: /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_fixteacher_temp1_beta0_clip1e-6
+================================================================================
+
+Using the latest cached version of the dataset since openai/gsm8k couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'main' at /home/speech-nlp-cse/24m0756/.cache/huggingface/datasets/openai___gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866 (last modified on Mon Nov 16 20:21:54 2026).
+[DataCollator] Original padding_side: left
+[DataCollator] Set padding_side to: right
+[DataCollator] Reason first mode: False
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 70.43it/s]
+wandb: Tracking run with wandb version 0.25.0
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/wandb/offline-run-20261116_232021-hfxj4932
+
+================================================================================
+FIXED TEACHER MODE ENABLED
+Teacher will use the initial policy (base model without LoRA adapters)
+Student will update with LoRA adapters
+================================================================================
+
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 128009, 'pad_token_id': 128004}.
+
+================================================================================
+Loading model with dtype: bfloat16
+Using attention implementation: flash_attention_2
+================================================================================
+
+Using the latest cached version of the dataset since openai/gsm8k couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'main' at /home/speech-nlp-cse/24m0756/.cache/huggingface/datasets/openai___gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866 (last modified on Mon Nov 16 20:21:54 2026).
+[DataCollator] Original padding_side: left
+[DataCollator] Set padding_side to: right
+[DataCollator] Reason first mode: False
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 72.12it/s]
+Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+
+================================================================================
+FIXED TEACHER MODE ENABLED
+Teacher will use the initial policy (base model without LoRA adapters)
+Student will update with LoRA adapters
+================================================================================
+
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 128009, 'pad_token_id': 128004}.
+Before initializing optimizer states
+MA 6.35 GB         Max_MA 6.44 GB         CA 6.5 GB         Max_CA 7 GB 
+CPU Virtual Memory:  used = 56.57 GB, percent = 11.2%
+================================================================================
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 130
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+After initializing optimizer states
+MA 6.35 GB         Max_MA 6.53 GB         CA 6.68 GB         Max_CA 7 GB 
+CPU Virtual Memory:  used = 56.57 GB, percent = 11.2%
+After initializing ZeRO optimizer
+MA 6.35 GB         Max_MA 6.35 GB         CA 6.68 GB         Max_CA 7 GB 
+CPU Virtual Memory:  used = 56.86 GB, percent = 11.3%
+  0%|          | 0/234 [00:00<?, ?it/s]
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 146
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 41.29s, prompts: 2, total tokens: 1486, avg length: 743, speed: 36.0 tok/s
+generation done - elapsed time: 56.66s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.1 tok/s
+/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/utils/checkpoint.py:85: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/utils/checkpoint.py:85: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+Could not estimate the number of tokens of the input, floating-point operations will not be computed
+Could not estimate the number of tokens of the input, floating-point operations will not be computed
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+
+================================================================================  Model config use_cache: True
+  Attention implementation: flash_attention_2
+
+  Generation config use_cache: True
+  Batch size: 2
+GENERATION DEBUG INFO:  Prompt length: 122
+  Max new tokens: 1024
+
+================================================================================
+
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 137
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 34.42s, prompts: 2, total tokens: 1252, avg length: 626, speed: 36.4 tok/s
+generation done - elapsed time: 56.24s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.4 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+
+================================================================================  Model dtype: torch.bfloat16
+  Model config use_cache: True
+
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+GENERATION DEBUG INFO:  Batch size: 2
+  Prompt length: 124
+  Max new tokens: 1024
+
+================================================================================
+
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+  Batch size: 2
+  Prompt length: 111
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 55.38s, prompts: 2, total tokens: 2004, avg length: 1002, speed: 36.2 tok/s
+generation done - elapsed time: 56.39s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.3 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 138
+  Max new tokens: 1024
+================================================================================
+
+================================================================================
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 156
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 56.36s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.3 tok/s
+generation done - elapsed time: 56.42s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.3 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 127
+  Max new tokens: 1024
+================================================================================
+
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: TrueA decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 128
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 54.82s, prompts: 2, total tokens: 1992, avg length: 996, speed: 36.3 tok/s
+generation done - elapsed time: 56.98s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 35.9 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+
+================================================================================  Prompt length: 117
+  Max new tokens: 1024
+================================================================================
+
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 159
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 50.22s, prompts: 2, total tokens: 1820, avg length: 910, speed: 36.2 tok/s
+generation done - elapsed time: 56.95s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.0 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 118
+  Max new tokens: 1024
+================================================================================
+
+
+================================================================================
+GENERATION DEBUG INFO:
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 123
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 27.95s, prompts: 2, total tokens: 1014, avg length: 507, speed: 36.3 tok/s
+generation done - elapsed time: 56.39s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.3 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+================================================================================
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16  Attention implementation: flash_attention_2
+  Model config use_cache: True
+
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 110  Generation config use_cache: True
+  Max new tokens: 1024
+================================================================================
+
+
+  Batch size: 2
+  Prompt length: 132
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 56.28s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.4 tok/s
+generation done - elapsed time: 56.44s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.3 tok/s
+  0%|          | 1/234 [07:45<30:06:16, 465.13s/it]                                                   {'loss': -0.0281, 'grad_norm': 0.05838887020945549, 'learning_rate': 5e-06, 'on_policy_loss': -0.0281, 'epoch': 0.0}
+  0%|          | 1/234 [07:45<30:06:16, 465.13s/it]
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 132
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 124
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 56.57s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.2 tok/s
+generation done - elapsed time: 57.04s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 35.9 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+================================================================================
+  Prompt length: 99
+  Max new tokens: 1024
+
+================================================================================
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 99
+  Max new tokens: 1024
+================================================================================
+
+generation done - elapsed time: 46.79s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 43.8 tok/s
+generation done - elapsed time: 50.73s, prompts: 2, total tokens: 1844, avg length: 922, speed: 36.4 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 113
+  Max new tokens: 1024
+================================================================================
+
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 145
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 56.40s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.3 tok/s
+generation done - elapsed time: 56.92s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.0 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+================================================================================
+  Generation config use_cache: True
+  Batch size: 2
+
+  Prompt length: 126
+  Max new tokens: 1024
+================================================================================
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 111
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 39.53s, prompts: 2, total tokens: 1434, avg length: 717, speed: 36.3 tok/s
+generation done - elapsed time: 45.50s, prompts: 2, total tokens: 1636, avg length: 818, speed: 36.0 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+
+================================================================================  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 105
+
+  Max new tokens: 1024
+================================================================================
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 131
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 49.80s, prompts: 2, total tokens: 1808, avg length: 904, speed: 36.3 tok/s
+generation done - elapsed time: 57.00s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 35.9 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+
+================================================================================  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+
+  Batch size: 2
+  Prompt length: 125GENERATION DEBUG INFO:
+  Max new tokens: 1024
+================================================================================
+
+
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: TrueA decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+  Batch size: 2
+  Prompt length: 109
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 51.18s, prompts: 2, total tokens: 1838, avg length: 919, speed: 35.9 tok/s
+generation done - elapsed time: 56.62s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.2 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 121
+  Max new tokens: 1024
+================================================================================
+================================================================================
+
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 109
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 47.25s, prompts: 2, total tokens: 1700, avg length: 850, speed: 36.0 tok/s
+generation done - elapsed time: 56.52s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.2 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+================================================================================
+  Prompt length: 146
+  Max new tokens: 1024
+================================================================================
+
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 194
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 56.51s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.2 tok/s
+generation done - elapsed time: 57.04s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 35.9 tok/s
+  1%|          | 2/234 [15:15<29:23:49, 456.16s/it]                                                   {'loss': -0.0259, 'grad_norm': 0.059114426374435425, 'learning_rate': 4.978632478632479e-06, 'on_policy_loss': -0.0259, 'epoch': 0.01}
+  1%|          | 2/234 [15:15<29:23:49, 456.16s/it]
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 114
+  Max new tokens: 1024
+================================================================================
+
+GENERATION DEBUG INFO:
+================================================================================
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 153
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 56.52s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.2 tok/s
+generation done - elapsed time: 56.98s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 35.9 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+
+================================================================================  Prompt length: 119
+  Max new tokens: 1024
+================================================================================
+
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: TrueA decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 157
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 36.05s, prompts: 2, total tokens: 1308, avg length: 654, speed: 36.3 tok/s
+generation done - elapsed time: 56.87s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.0 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 139
+  Max new tokens: 1024
+================================================================================
+================================================================================
+
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 187
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 56.52s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.2 tok/s
+generation done - elapsed time: 56.88s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.0 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 127
+
+================================================================================  Max new tokens: 1024
+================================================================================
+
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 115
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 43.13s, prompts: 2, total tokens: 1906, avg length: 953, speed: 44.2 tok/s
+generation done - elapsed time: 56.49s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.3 tok/s
+
+================================================================================
+
+================================================================================STUDENT GENERATION SAMPLE (Step 2):
+STUDENT GENERATION SAMPLE (Step 2):
+
+================================================================================
+================================================================================
+Prompt:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+Today Date: 16 Nov 2026
+
+<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Problem: Jesse received $50 as a gift to buy what she wants. She goes to the mall and falls in love with a novel that costs her $7. Then she went to lunch because she was very hungry and spent twice as much as the novel cost her. How much money did Jesse have left after going to the mall?
+
+Solve the problem step by step, writing your entire reasoning in Bengali. Put your final numerical answer within \boxed{}.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+
+Completion:
+এই সমস্যাটি সমাধান করার জন্য, আমাদের প্রথমে জেসি যে অর্থ রাখে তা গণনা করতে হবে।
+
+জেসি যে অর্থ রাখে তার প্রাথমিক পরিমাণ হল $50। তারপর, তিনি একটি গ্রন্থ কেনেন যার দাম $7। সুতরাং, তার কেনাকাটার পরে তার কাছে থাকা অর্থের পরিমাণ হল $50 - $7 = $43৷
+
+তারপর, জেসি খুব ঠিক খাওয়ার পরে দুবার গ্রন্থের দামের চেয়ে বেশি খরচ করে। গ্রন্থের দাম ছিল $7, তাই তিনি একটি চোটা খুঁজে পেয়েছিলেন যার দাম 2 x $7 = $14৷
+
+তাই, তিনি সব মিলিয়ে $7 + $14 = $21 খরচ করেছেন। যেহেতু তার কেনাকাটার পরে তার কাছে $43 আছে, তাই তার কেনাকাটার পরে তার কাছে $43 - $21 = $22 আছে।
+
+চূড়ান্ত উত্তর হল \boxed{22}।<|eot_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|>
+
+================================================================================
+
+
+Prompt:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+Today Date: 16 Nov 2026
+
+<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Problem: Ivy drinks 2.5 liters of water each day. How many bottles of 2-liter water should Ivy buy for her 4 days consumption?
+
+Solve the problem step by step, writing your entire reasoning in Bengali. Put your final numerical answer within \boxed{}.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|>
+
+Completion:
+ inamoy ika taan aamtaan 2.5 liter paani ika har din. inamoy 4 din aabashsha paani ke aatah kya bota 2-liter paani kharidna hoga?
+
+ 1. inamoy aamtaan 4 din aabashsha paani ke aatah pata koro
+ 4 din * 2.5 liter/din = 10 liter
+
+2. inamoy aamtaan paani ke paryapt paani ke liye 2-liter bota kharidna hoga
+ 10 liter ÷ 2 liter/bota = 5 bota
+
+  inaamoy 4 din aabashsha paani ke aatah 5 bota 2-liter paani kharidna hoga.
+
+\boxed{5}<|eot_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|>
+================================================================================
+
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 115
+  Max new tokens: 1024
+================================================================================
+
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 203
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 56.45s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.3 tok/s
+generation done - elapsed time: 56.47s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.3 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+================================================================================
+  Generation config use_cache: True
+  Batch size: 2
+
+  Prompt length: 131
+  Max new tokens: 1024
+================================================================================
+GENERATION DEBUG INFO:
+
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: TrueA decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+  Batch size: 2
+  Prompt length: 103
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 52.52s, prompts: 2, total tokens: 1900, avg length: 950, speed: 36.2 tok/s
+generation done - elapsed time: 56.40s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.3 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+================================================================================
+  Generation config use_cache: True
+  Batch size: 2
+
+  Prompt length: 121
+  Max new tokens: 1024
+================================================================================
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 140
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 56.37s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.3 tok/s
+generation done - elapsed time: 56.61s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.2 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+
+================================================================================  Prompt length: 119
+  Max new tokens: 1024
+================================================================================
+
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 172
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 40.94s, prompts: 2, total tokens: 1476, avg length: 738, speed: 36.0 tok/s
+generation done - elapsed time: 56.66s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.1 tok/s
+  1%|▏         | 3/234 [23:00<29:33:25, 460.63s/it]                                                   {'loss': -0.027, 'grad_norm': 0.058643240481615067, 'learning_rate': 4.957264957264958e-06, 'on_policy_loss': -0.027, 'epoch': 0.01}
+  1%|▏         | 3/234 [23:00<29:33:25, 460.63s/it]
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 120
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 112
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 34.08s, prompts: 2, total tokens: 1222, avg length: 611, speed: 35.9 tok/s
+generation done - elapsed time: 56.67s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.1 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+
+================================================================================  Prompt length: 124
+  Max new tokens: 1024
+================================================================================
+
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 191
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 44.17s, prompts: 2, total tokens: 1598, avg length: 799, speed: 36.2 tok/s
+generation done - elapsed time: 57.05s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 35.9 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 122
+  Max new tokens: 1024
+
+================================================================================================================================================================
+
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 132
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 56.97s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 35.9 tok/s
+generation done - elapsed time: 57.17s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 35.8 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+
+================================================================================  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 167
+
+  Max new tokens: 1024
+================================================================================
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 137
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 51.95s, prompts: 2, total tokens: 1852, avg length: 926, speed: 35.7 tok/s
+generation done - elapsed time: 54.68s, prompts: 2, total tokens: 1958, avg length: 979, speed: 35.8 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+================================================================================
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 138
+GENERATION DEBUG INFO:  Max new tokens: 1024
+================================================================================
+
+
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+  Batch size: 2
+  Prompt length: 150
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 56.85s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.0 tok/s
+generation done - elapsed time: 56.93s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.0 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+
+================================================================================  Prompt length: 185
+  Max new tokens: 1024
+================================================================================
+
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 125
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 39.67s, prompts: 2, total tokens: 1436, avg length: 718, speed: 36.2 tok/s
+generation done - elapsed time: 56.98s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 35.9 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+================================================================================
+  Batch size: 2
+  Prompt length: 129
+
+  Max new tokens: 1024
+================================================================================
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 134
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 32.67s, prompts: 2, total tokens: 1174, avg length: 587, speed: 35.9 tok/s
+generation done - elapsed time: 56.66s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.1 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+
+================================================================================  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+
+  Prompt length: 133
+  Max new tokens: 1024
+================================================================================
+GENERATION DEBUG INFO:
+
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: TrueA decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+  Batch size: 2
+  Prompt length: 140
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 56.79s, prompts: 2, total tokens: 2020, avg length: 1010, speed: 35.6 tok/s
+generation done - elapsed time: 56.90s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.0 tok/s
+  2%|▏         | 4/234 [30:46<29:33:11, 462.57s/it]                                                   {'loss': -0.0267, 'grad_norm': 0.06382445991039276, 'learning_rate': 4.935897435897436e-06, 'on_policy_loss': -0.0267, 'epoch': 0.02}
+  2%|▏         | 4/234 [30:46<29:33:11, 462.57s/it]
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 141
+  Max new tokens: 1024
+================================================================================
+
+
+================================================================================
+GENERATION DEBUG INFO:A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 108
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 53.55s, prompts: 2, total tokens: 1932, avg length: 966, speed: 36.1 tok/s
+generation done - elapsed time: 56.59s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.2 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+================================================================================
+  Batch size: 2
+  Prompt length: 138
+
+  Max new tokens: 1024
+================================================================================
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 134
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 56.33s, prompts: 2, total tokens: 2030, avg length: 1015, speed: 36.0 tok/s
+generation done - elapsed time: 56.52s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.2 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 131
+  Max new tokens: 1024
+================================================================================
+================================================================================
+
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 147
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 56.58s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.2 tok/s
+generation done - elapsed time: 56.59s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.2 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+================================================================================
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+
+  Batch size: 2
+  Prompt length: 127
+GENERATION DEBUG INFO:  Max new tokens: 1024
+================================================================================
+
+
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+  Batch size: 2
+  Prompt length: 115
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 48.17s, prompts: 2, total tokens: 1746, avg length: 873, speed: 36.2 tok/s
+generation done - elapsed time: 56.55s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.2 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+================================================================================
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+
+  Batch size: 2
+  Prompt length: 131
+  Max new tokens: 1024
+GENERATION DEBUG INFO:================================================================================
+
+
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: TrueA decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+  Batch size: 2
+  Prompt length: 146
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 56.42s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.3 tok/s
+generation done - elapsed time: 57.15s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 35.8 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+
+================================================================================  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+
+  Batch size: 2
+  Prompt length: 140GENERATION DEBUG INFO:
+  Max new tokens: 1024
+================================================================================
+
+
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+  Batch size: 2
+  Prompt length: 122
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 47.27s, prompts: 2, total tokens: 1718, avg length: 859, speed: 36.3 tok/s
+generation done - elapsed time: 56.67s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.1 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 122
+  Max new tokens: 1024
+================================================================================
+================================================================================
+
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 131
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 55.30s, prompts: 2, total tokens: 2006, avg length: 1003, speed: 36.3 tok/s
+generation done - elapsed time: 57.15s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 35.8 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+================================================================================
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+
+  Batch size: 2
+  Prompt length: 147
+GENERATION DEBUG INFO:  Max new tokens: 1024
+================================================================================
+
+
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: TrueA decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+  Batch size: 2
+  Prompt length: 99
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 25.50s, prompts: 2, total tokens: 926, avg length: 463, speed: 36.3 tok/s
+generation done - elapsed time: 56.59s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.2 tok/s
+  2%|▏         | 5/234 [38:32<29:30:44, 463.95s/it]                                                   {'loss': -0.0258, 'grad_norm': 0.06955575197935104, 'learning_rate': 4.914529914529915e-06, 'on_policy_loss': -0.0258, 'epoch': 0.02}
+  2%|▏         | 5/234 [38:32<29:30:44, 463.95s/it]
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 129
+  Max new tokens: 1024
+================================================================================
+
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 117
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 36.47s, prompts: 2, total tokens: 1326, avg length: 663, speed: 36.4 tok/s
+generation done - elapsed time: 56.79s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.1 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 102
+  Max new tokens: 1024
+================================================================================
+
+
+================================================================================
+GENERATION DEBUG INFO:
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 127
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 54.84s, prompts: 2, total tokens: 1976, avg length: 988, speed: 36.0 tok/s
+generation done - elapsed time: 56.36s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.3 tok/s
+
+================================================================================
+================================================================================
+GENERATION DEBUG INFO:
+
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+GENERATION DEBUG INFO:  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+
+  Batch size: 2
+  Prompt length: 134
+  Max new tokens: 1024
+================================================================================
+
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+  Batch size: 2
+  Prompt length: 121
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 42.94s, prompts: 2, total tokens: 1536, avg length: 768, speed: 35.8 tok/s
+generation done - elapsed time: 47.69s, prompts: 2, total tokens: 1728, avg length: 864, speed: 36.2 tok/s
+
+================================================================================
+
+================================================================================GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: TrueGENERATION DEBUG INFO:
+  Batch size: 2
+  Prompt length: 107
+  Max new tokens: 1024
+
+================================================================================
+
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 160
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 33.60s, prompts: 2, total tokens: 1210, avg length: 605, speed: 36.0 tok/s
+generation done - elapsed time: 42.51s, prompts: 2, total tokens: 1544, avg length: 772, speed: 36.3 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+================================================================================
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16  Model config use_cache: True
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+
+  Generation config use_cache: True
+  Batch size: 2  Attention implementation: flash_attention_2
+  Prompt length: 111
+  Max new tokens: 1024
+
+================================================================================
+
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 149
+  Max new tokens: 1024
+================================================================================
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 37.69s, prompts: 2, total tokens: 1366, avg length: 683, speed: 36.2 tok/s
+generation done - elapsed time: 56.37s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.3 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+
+================================================================================  Model dtype: torch.bfloat16
+  Model config use_cache: True
+
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+GENERATION DEBUG INFO:  Batch size: 2
+  Prompt length: 165
+
+  Max new tokens: 1024
+================================================================================
+
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+  Batch size: 2
+  Prompt length: 111
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 43.68s, prompts: 2, total tokens: 1586, avg length: 793, speed: 36.3 tok/s
+generation done - elapsed time: 44.12s, prompts: 2, total tokens: 1604, avg length: 802, speed: 36.4 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+================================================================================
+  Generation config use_cache: True
+  Batch size: 2
+
+  Prompt length: 117
+  Max new tokens: 1024
+================================================================================
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 131
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 40.36s, prompts: 2, total tokens: 1466, avg length: 733, speed: 36.3 tok/s
+generation done - elapsed time: 42.34s, prompts: 2, total tokens: 1534, avg length: 767, speed: 36.2 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+
+================================================================================  Batch size: 2
+  Prompt length: 110
+  Max new tokens: 1024
+
+================================================================================
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 108
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 35.23s, prompts: 2, total tokens: 1280, avg length: 640, speed: 36.3 tok/s
+generation done - elapsed time: 41.52s, prompts: 2, total tokens: 1508, avg length: 754, speed: 36.3 tok/s
+
+================================================================================
+Saved 96 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_fixteacher_temp1_beta0_clip1e-6/generations/generations_step_5.json
+================================================================================
+
+  3%|▎         | 6/234 [45:12<27:59:37, 442.01s/it]                                                   {'loss': -0.0275, 'grad_norm': 0.07746275514364243, 'learning_rate': 4.8931623931623934e-06, 'on_policy_loss': -0.0275, 'epoch': 0.03}
+  3%|▎         | 6/234 [45:12<27:59:37, 442.01s/it]
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+
+================================================================================  Attention implementation: flash_attention_2
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+
+  Model config use_cache: True
+  Attention implementation: flash_attention_2  Generation config use_cache: True
+  Generation config use_cache: True
+
+  Batch size: 2
+  Prompt length: 147
+  Max new tokens: 1024
+  Batch size: 2================================================================================
+
+
+  Prompt length: 124
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 56.68s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.1 tok/s
+generation done - elapsed time: 57.07s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 35.9 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+
+================================================================================  Batch size: 2
+  Prompt length: 122
+  Max new tokens: 1024
+
+================================================================================
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: TrueA decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+  Batch size: 2
+  Prompt length: 117
+  Max new tokens: 1024
+================================================================================
+
+generation done - elapsed time: 43.97s, prompts: 2, total tokens: 1918, avg length: 959, speed: 43.6 tok/s
+generation done - elapsed time: 56.64s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.2 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 119
+  Max new tokens: 1024
+================================================================================
+
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 133
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 31.97s, prompts: 2, total tokens: 1410, avg length: 705, speed: 44.1 tok/s
+generation done - elapsed time: 45.04s, prompts: 2, total tokens: 1612, avg length: 806, speed: 35.8 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+================================================================================
+  Batch size: 2
+  Prompt length: 121
+
+  Max new tokens: 1024
+================================================================================
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: TrueA decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+  Batch size: 2
+  Prompt length: 132
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 37.38s, prompts: 2, total tokens: 1340, avg length: 670, speed: 35.8 tok/s
+generation done - elapsed time: 48.03s, prompts: 2, total tokens: 1742, avg length: 871, speed: 36.3 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+
+================================================================================  Prompt length: 124
+  Max new tokens: 1024
+================================================================================
+
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 115
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 56.20s, prompts: 2, total tokens: 2018, avg length: 1009, speed: 35.9 tok/s
+generation done - elapsed time: 56.52s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.2 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 114
+
+================================================================================  Max new tokens: 1024
+================================================================================
+
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 139
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 28.14s, prompts: 2, total tokens: 1022, avg length: 511, speed: 36.3 tok/s
+generation done - elapsed time: 57.10s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 35.9 tok/s
+
+================================================================================
+================================================================================
+GENERATION DEBUG INFO:
+
+  Model dtype: torch.bfloat16
+  Model config use_cache: TrueGENERATION DEBUG INFO:
+  Attention implementation: flash_attention_2
+
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 133
+  Max new tokens: 1024  Model dtype: torch.bfloat16
+================================================================================
+
+
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+  Prompt length: 130
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 56.25s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.4 tok/s
+generation done - elapsed time: 57.00s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 35.9 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+
+================================================================================  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 117
+
+  Max new tokens: 1024
+================================================================================
+
+GENERATION DEBUG INFO:
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 126
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 39.22s, prompts: 2, total tokens: 1382, avg length: 691, speed: 35.2 tok/s
+generation done - elapsed time: 57.13s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 35.8 tok/s
+  3%|▎         | 7/234 [52:39<27:58:19, 443.61s/it]                                                   {'loss': -0.0266, 'grad_norm': 0.07942304015159607, 'learning_rate': 4.871794871794872e-06, 'on_policy_loss': -0.0266, 'epoch': 0.03}
+  3%|▎         | 7/234 [52:39<27:58:19, 443.61s/it]
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 99
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 112
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 47.48s, prompts: 2, total tokens: 1696, avg length: 848, speed: 35.7 tok/s
+generation done - elapsed time: 51.47s, prompts: 2, total tokens: 1864, avg length: 932, speed: 36.2 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 145
+  Max new tokens: 1024
+================================================================================
+
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 153
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 31.82s, prompts: 2, total tokens: 1156, avg length: 578, speed: 36.3 tok/s
+generation done - elapsed time: 57.09s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 35.9 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+================================================================================
+  Generation config use_cache: True
+  Batch size: 2
+
+  Prompt length: 129
+  Max new tokens: 1024
+================================================================================
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: TrueA decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+  Batch size: 2
+  Prompt length: 141
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 39.27s, prompts: 2, total tokens: 1408, avg length: 704, speed: 35.9 tok/s
+generation done - elapsed time: 56.43s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.3 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 137
+  Max new tokens: 1024
+================================================================================
+
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 167
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 56.58s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 36.2 tok/s
+generation done - elapsed time: 57.14s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 35.8 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 125
+
+================================================================================  Max new tokens: 1024
+================================================================================
+
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 126
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 33.74s, prompts: 2, total tokens: 1224, avg length: 612, speed: 36.3 tok/s
+generation done - elapsed time: 56.98s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 35.9 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+
+================================================================================  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+
+  Batch size: 2
+  Prompt length: 101GENERATION DEBUG INFO:
+  Max new tokens: 1024
+================================================================================
+
+
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: TrueA decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+  Batch size: 2
+  Prompt length: 127
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 35.06s, prompts: 2, total tokens: 1272, avg length: 636, speed: 36.3 tok/s
+generation done - elapsed time: 57.21s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 35.8 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 107
+  Max new tokens: 1024
+================================================================================
+
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: TrueA decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+  Prompt length: 137
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+generation done - elapsed time: 47.73s, prompts: 2, total tokens: 1730, avg length: 865, speed: 36.2 tok/s
+generation done - elapsed time: 57.00s, prompts: 2, total tokens: 2048, avg length: 1024, speed: 35.9 tok/s
+
+================================================================================
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+
+================================================================================  Attention implementation: flash_attention_2
+  Generation config use_cache: True
+  Batch size: 2
+
+  Prompt length: 130
+  Max new tokens: 1024
+================================================================================
+
+GENERATION DEBUG INFO:
+  Model dtype: torch.bfloat16
+  Model config use_cache: True
+  Attention implementation: flash_attention_2
+  Generation config use_cache: TrueA decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+
+  Batch size: 2
+  Prompt length: 140
+  Max new tokens: 1024
+================================================================================
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+slurmstepd: error: *** JOB 397487 ON cn27-a40 CANCELLED AT 2026-11-17T00:20:18 ***

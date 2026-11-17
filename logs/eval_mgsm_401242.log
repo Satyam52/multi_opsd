@@ -1,0 +1,1487 @@
+Auto-setting top_p to 0.8 for non-thinking mode
+Results will be saved to: eval_results/mgsm_bn_llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/base.json
+
+======================================================================
+QWEN3 MATH EVALUATION WITH THINKING MODE
+======================================================================
+Dataset: MGSM
+Base model: meta-llama/Llama-3.2-3B-Instruct
+Checkpoint: None (base model only)
+Thinking Mode: DISABLED
+Max tokens: 4096
+Temperature: 0.0 (Qwen3 non-thinking mode)
+Top-p: 0.8
+Top-k: -1
+Min-p: 0.0
+Presence penalty: 0.0
+Num samples: All
+Val-N (solutions per problem): 1
+Output file: eval_results/mgsm_bn_llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/base.json
+GPU memory utilization: 0.85
+Tensor parallel size: 1
+======================================================================
+
+Loading model with vLLM from: meta-llama/Llama-3.2-3B-Instruct
+INFO 11-17 08:43:35 [arg_utils.py:592] HF_HUB_OFFLINE is True, replace model_id [meta-llama/Llama-3.2-3B-Instruct] to model_path [/home/speech-nlp-cse/24m0756/.cache/huggingface/hub/models--meta-llama--Llama-3.2-3B-Instruct/snapshots/0cb88a4f764b7a12671c53f0838cd831a0843b95]
+INFO 11-17 08:43:35 [arg_utils.py:592] HF_HUB_OFFLINE is True, replace model_id [/home/speech-nlp-cse/24m0756/.cache/huggingface/hub/models--meta-llama--Llama-3.2-3B-Instruct/snapshots/0cb88a4f764b7a12671c53f0838cd831a0843b95] to model_path [/home/speech-nlp-cse/24m0756/.cache/huggingface/hub/models--meta-llama--Llama-3.2-3B-Instruct/snapshots/0cb88a4f764b7a12671c53f0838cd831a0843b95]
+INFO 11-17 08:43:35 [utils.py:253] non-default args: {'trust_remote_code': True, 'max_model_len': 8192, 'distributed_executor_backend': 'mp', 'gpu_memory_utilization': 0.85, 'disable_log_stats': True, 'enforce_eager': True, 'model': '/home/speech-nlp-cse/24m0756/.cache/huggingface/hub/models--meta-llama--Llama-3.2-3B-Instruct/snapshots/0cb88a4f764b7a12671c53f0838cd831a0843b95'}
+The argument `trust_remote_code` is to be used with Auto classes. It has no effect here and is ignored.
+INFO 11-17 08:43:35 [model.py:631] Resolved architecture: LlamaForCausalLM
+INFO 11-17 08:43:35 [model.py:1745] Using max model len 8192
+INFO 11-17 08:43:48 [scheduler.py:216] Chunked prefill is enabled with max_num_batched_tokens=8192.
+INFO 11-17 08:43:48 [vllm.py:500] Cudagraph is disabled under eager mode
+[1;36m(EngineCore_DP0 pid=2401179)[0;0m INFO 11-17 08:43:49 [core.py:93] Initializing a V1 LLM engine (v0.11.2) with config: model='/home/speech-nlp-cse/24m0756/.cache/huggingface/hub/models--meta-llama--Llama-3.2-3B-Instruct/snapshots/0cb88a4f764b7a12671c53f0838cd831a0843b95', speculative_config=None, tokenizer='/home/speech-nlp-cse/24m0756/.cache/huggingface/hub/models--meta-llama--Llama-3.2-3B-Instruct/snapshots/0cb88a4f764b7a12671c53f0838cd831a0843b95', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=True, dtype=torch.bfloat16, max_seq_len=8192, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=True, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None), seed=0, served_model_name=/home/speech-nlp-cse/24m0756/.cache/huggingface/hub/models--meta-llama--Llama-3.2-3B-Instruct/snapshots/0cb88a4f764b7a12671c53f0838cd831a0843b95, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'splitting_ops': None, 'compile_mm_encoder': False, 'use_inductor': None, 'compile_sizes': [], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {}, 'max_cudagraph_capture_size': 0, 'local_cache_dir': None}
+[1;36m(EngineCore_DP0 pid=2401179)[0;0m WARNING 11-17 08:43:49 [multiproc_executor.py:869] Reducing Torch parallelism from 8 threads to 1 to avoid unnecessary CPU contention. Set OMP_NUM_THREADS in the external environment to tune this value as needed.
+[1;36m(EngineCore_DP0 pid=2401179)[0;0m INFO 11-17 08:44:40 [parallel_state.py:1208] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://127.0.0.1:50083 backend=nccl
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[1;36m(EngineCore_DP0 pid=2401179)[0;0m INFO 11-17 08:44:41 [parallel_state.py:1394] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0, EP rank 0
+[1;36m(EngineCore_DP0 pid=2401179)[0;0m [1;36m(Worker pid=2401185)[0;0m INFO 11-17 08:44:43 [gpu_model_runner.py:3259] Starting to load model /home/speech-nlp-cse/24m0756/.cache/huggingface/hub/models--meta-llama--Llama-3.2-3B-Instruct/snapshots/0cb88a4f764b7a12671c53f0838cd831a0843b95...
+[1;36m(EngineCore_DP0 pid=2401179)[0;0m [1;36m(Worker pid=2401185)[0;0m INFO 11-17 08:44:50 [cuda.py:418] Valid backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION']
+[1;36m(EngineCore_DP0 pid=2401179)[0;0m [1;36m(Worker pid=2401185)[0;0m INFO 11-17 08:44:50 [cuda.py:427] Using FLASH_ATTN backend.
+[1;36m(EngineCore_DP0 pid=2401179)[0;0m [1;36m(Worker pid=2401185)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+[1;36m(EngineCore_DP0 pid=2401179)[0;0m [1;36m(Worker pid=2401185)[0;0m Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:03<00:03,  3.28s/it]
+[1;36m(EngineCore_DP0 pid=2401179)[0;0m [1;36m(Worker pid=2401185)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:05<00:00,  2.41s/it]
+[1;36m(EngineCore_DP0 pid=2401179)[0;0m [1;36m(Worker pid=2401185)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:05<00:00,  2.54s/it]
+[1;36m(EngineCore_DP0 pid=2401179)[0;0m [1;36m(Worker pid=2401185)[0;0m 
+[1;36m(EngineCore_DP0 pid=2401179)[0;0m [1;36m(Worker pid=2401185)[0;0m INFO 11-17 08:44:55 [default_loader.py:314] Loading weights took 5.14 seconds
+[1;36m(EngineCore_DP0 pid=2401179)[0;0m [1;36m(Worker pid=2401185)[0;0m INFO 11-17 08:44:57 [gpu_model_runner.py:3338] Model loading took 6.0160 GiB memory and 11.872525 seconds
+[1;36m(EngineCore_DP0 pid=2401179)[0;0m [1;36m(Worker pid=2401185)[0;0m INFO 11-17 08:45:04 [gpu_worker.py:359] Available KV cache memory: 30.50 GiB
+[1;36m(EngineCore_DP0 pid=2401179)[0;0m INFO 11-17 08:45:05 [kv_cache_utils.py:1229] GPU KV cache size: 285,504 tokens
+[1;36m(EngineCore_DP0 pid=2401179)[0;0m INFO 11-17 08:45:05 [kv_cache_utils.py:1234] Maximum concurrency for 8,192 tokens per request: 34.85x
+[1;36m(EngineCore_DP0 pid=2401179)[0;0m INFO 11-17 08:45:05 [core.py:250] init engine (profile, create kv cache, warmup model) took 8.29 seconds
+[1;36m(EngineCore_DP0 pid=2401179)[0;0m INFO 11-17 08:45:06 [vllm.py:500] Cudagraph is disabled under eager mode
+INFO 11-17 08:45:06 [llm.py:352] Supported tasks: ['generate']
+
+======================================================================
+MODEL DTYPE INFORMATION
+======================================================================
+vLLM Model Config dtype: torch.bfloat16
+vLLM Model quantization: None
+KV cache dtype: auto
+======================================================================
+
+vLLM model loaded successfully!
+
+======================================================================
+EVALUATION CONFIGURATION
+======================================================================
+Dataset: MGSM
+Thinking Mode: DISABLED
+Temperature: 0.0 (Qwen3 non-thinking mode)
+Top-P: 0.8
+Top-K: -1
+Min-P: 0.0
+Presence Penalty: 0.0
+Max New Tokens: 4096
+Val-N (solutions per problem): 1
+======================================================================
+
+Loading MGSM dataset...
+Loaded juletxara/mgsm (bn) dataset with 250 problems
+Evaluating on 250 problems with vLLM batch inference...
+
+Running vLLM batch inference on 250 problems...
+Using generate interface with manual chat template...
+
+======================================================================
+GENERATION DTYPE CHECK
+======================================================================
+Model dtype: torch.bfloat16
+Quantization: None
+KV cache dtype: auto
+Using LoRA: False
+======================================================================
+
+Adding requests:   0%|          | 0/250 [00:00<?, ?it/s]Adding requests:  32%|███▏      | 79/250 [00:00<00:00, 789.15it/s]Adding requests: 100%|██████████| 250/250 [00:00<00:00, 1339.65it/s]
+Processed prompts:   0%|          | 0/250 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/250 [00:19<1:21:19, 19.60s/it, est. speed input: 13.68 toks/s, output: 12.91 toks/s]Processed prompts:   1%|          | 2/250 [00:22<41:03,  9.93s/it, est. speed input: 20.51 toks/s, output: 24.56 toks/s]  Processed prompts:   1%|          | 3/250 [00:24<25:20,  6.16s/it, est. speed input: 28.94 toks/s, output: 36.56 toks/s]Processed prompts:   2%|▏         | 4/250 [00:25<16:53,  4.12s/it, est. speed input: 35.04 toks/s, output: 48.77 toks/s]Processed prompts:   2%|▏         | 5/250 [00:27<13:16,  3.25s/it, est. speed input: 41.17 toks/s, output: 59.30 toks/s]Processed prompts:   2%|▏         | 6/250 [00:28<10:03,  2.47s/it, est. speed input: 49.97 toks/s, output: 71.04 toks/s]Processed prompts:   3%|▎         | 7/250 [00:28<07:40,  1.90s/it, est. speed input: 58.04 toks/s, output: 83.13 toks/s]Processed prompts:   4%|▎         | 9/250 [00:29<04:41,  1.17s/it, est. speed input: 71.75 toks/s, output: 108.56 toks/s]Processed prompts:   4%|▍         | 10/250 [00:29<03:44,  1.07it/s, est. speed input: 78.76 toks/s, output: 121.58 toks/s]Processed prompts:   5%|▍         | 12/250 [00:30<02:18,  1.72it/s, est. speed input: 94.96 toks/s, output: 148.61 toks/s]Processed prompts:   5%|▌         | 13/250 [00:30<02:32,  1.55it/s, est. speed input: 99.08 toks/s, output: 158.41 toks/s]Processed prompts:   6%|▌         | 14/250 [00:31<02:09,  1.82it/s, est. speed input: 107.27 toks/s, output: 171.08 toks/s]Processed prompts:   6%|▌         | 15/250 [00:31<01:47,  2.19it/s, est. speed input: 119.75 toks/s, output: 183.86 toks/s]Processed prompts:   6%|▋         | 16/250 [00:31<01:50,  2.11it/s, est. speed input: 124.21 toks/s, output: 194.71 toks/s]Processed prompts:   7%|▋         | 17/250 [00:32<02:06,  1.84it/s, est. speed input: 128.98 toks/s, output: 204.54 toks/s]Processed prompts:   7%|▋         | 18/250 [00:33<02:05,  1.86it/s, est. speed input: 135.98 toks/s, output: 215.39 toks/s]Processed prompts:   8%|▊         | 19/250 [00:33<01:41,  2.27it/s, est. speed input: 143.43 toks/s, output: 228.24 toks/s]Processed prompts:   8%|▊         | 20/250 [00:33<01:20,  2.86it/s, est. speed input: 149.41 toks/s, output: 241.31 toks/s]Processed prompts:   9%|▉         | 22/250 [00:33<00:57,  3.99it/s, est. speed input: 161.03 toks/s, output: 267.42 toks/s]Processed prompts:   9%|▉         | 23/250 [00:33<00:50,  4.52it/s, est. speed input: 170.77 toks/s, output: 280.54 toks/s]Processed prompts:  10%|▉         | 24/250 [00:34<01:11,  3.15it/s, est. speed input: 179.69 toks/s, output: 289.92 toks/s]Processed prompts:  10%|█         | 26/250 [00:34<00:50,  4.45it/s, est. speed input: 199.21 toks/s, output: 316.36 toks/s]Processed prompts:  11%|█         | 27/250 [00:35<01:05,  3.40it/s, est. speed input: 202.63 toks/s, output: 325.78 toks/s]Processed prompts:  11%|█         | 28/250 [00:35<01:14,  2.98it/s, est. speed input: 207.79 toks/s, output: 335.76 toks/s]Processed prompts:  12%|█▏        | 30/250 [00:36<01:16,  2.89it/s, est. speed input: 223.07 toks/s, output: 357.17 toks/s]Processed prompts:  13%|█▎        | 32/250 [00:36<00:57,  3.76it/s, est. speed input: 235.81 toks/s, output: 382.97 toks/s]Processed prompts:  14%|█▎        | 34/250 [00:36<00:42,  5.10it/s, est. speed input: 249.89 toks/s, output: 410.02 toks/s]Processed prompts:  14%|█▍        | 35/250 [00:36<00:39,  5.46it/s, est. speed input: 255.11 toks/s, output: 422.81 toks/s]Processed prompts:  14%|█▍        | 36/250 [00:37<00:49,  4.36it/s, est. speed input: 259.35 toks/s, output: 432.65 toks/s]Processed prompts:  16%|█▌        | 39/250 [00:37<00:31,  6.70it/s, est. speed input: 280.80 toks/s, output: 472.69 toks/s]Processed prompts:  16%|█▋        | 41/250 [00:37<00:36,  5.76it/s, est. speed input: 301.44 toks/s, output: 495.38 toks/s]Processed prompts:  17%|█▋        | 42/250 [00:38<00:34,  6.05it/s, est. speed input: 305.10 toks/s, output: 507.88 toks/s]Processed prompts:  17%|█▋        | 43/250 [00:38<00:35,  5.84it/s, est. speed input: 310.78 toks/s, output: 519.60 toks/s]Processed prompts:  18%|█▊        | 45/250 [00:38<00:39,  5.23it/s, est. speed input: 324.00 toks/s, output: 541.85 toks/s]Processed prompts:  19%|█▉        | 47/250 [00:38<00:36,  5.54it/s, est. speed input: 333.64 toks/s, output: 565.67 toks/s]Processed prompts:  19%|█▉        | 48/250 [00:39<00:36,  5.47it/s, est. speed input: 340.12 toks/s, output: 577.04 toks/s]Processed prompts:  20%|█▉        | 49/250 [00:39<00:37,  5.41it/s, est. speed input: 346.08 toks/s, output: 588.61 toks/s]Processed prompts:  20%|██        | 50/250 [00:39<00:35,  5.70it/s, est. speed input: 351.08 toks/s, output: 600.72 toks/s]Processed prompts:  20%|██        | 51/250 [00:39<00:46,  4.31it/s, est. speed input: 352.12 toks/s, output: 608.97 toks/s]Processed prompts:  21%|██        | 52/250 [00:40<00:39,  5.01it/s, est. speed input: 357.37 toks/s, output: 621.57 toks/s]Processed prompts:  21%|██        | 53/250 [00:40<00:42,  4.66it/s, est. speed input: 359.84 toks/s, output: 632.08 toks/s]Processed prompts:  22%|██▏       | 54/250 [00:40<00:37,  5.28it/s, est. speed input: 363.07 toks/s, output: 644.40 toks/s]Processed prompts:  22%|██▏       | 56/250 [00:40<00:34,  5.64it/s, est. speed input: 375.28 toks/s, output: 667.63 toks/s]Processed prompts:  23%|██▎       | 58/250 [00:40<00:25,  7.49it/s, est. speed input: 391.73 toks/s, output: 694.24 toks/s]Processed prompts:  24%|██▎       | 59/250 [00:41<00:32,  5.84it/s, est. speed input: 396.92 toks/s, output: 703.36 toks/s]Processed prompts:  24%|██▍       | 60/250 [00:41<00:47,  4.04it/s, est. speed input: 397.48 toks/s, output: 709.44 toks/s]Processed prompts:  24%|██▍       | 61/250 [00:41<00:49,  3.80it/s, est. speed input: 400.32 toks/s, output: 718.57 toks/s]Processed prompts:  26%|██▋       | 66/250 [00:42<00:24,  7.52it/s, est. speed input: 432.67 toks/s, output: 784.68 toks/s]Processed prompts:  27%|██▋       | 68/250 [00:42<00:25,  7.04it/s, est. speed input: 442.28 toks/s, output: 807.26 toks/s]Processed prompts:  28%|██▊       | 69/250 [00:42<00:25,  7.20it/s, est. speed input: 447.79 toks/s, output: 819.40 toks/s]Processed prompts:  28%|██▊       | 70/250 [00:42<00:28,  6.31it/s, est. speed input: 451.67 toks/s, output: 829.07 toks/s]Processed prompts:  28%|██▊       | 71/250 [00:43<00:33,  5.29it/s, est. speed input: 453.32 toks/s, output: 837.59 toks/s]Processed prompts:  29%|██▉       | 72/250 [00:43<00:30,  5.77it/s, est. speed input: 459.08 toks/s, output: 849.61 toks/s]Processed prompts:  29%|██▉       | 73/250 [00:43<00:28,  6.23it/s, est. speed input: 474.81 toks/s, output: 861.63 toks/s]Processed prompts:  30%|███       | 75/250 [00:43<00:20,  8.41it/s, est. speed input: 484.75 toks/s, output: 888.10 toks/s]Processed prompts:  31%|███       | 77/250 [00:43<00:16, 10.31it/s, est. speed input: 495.35 toks/s, output: 914.47 toks/s]Processed prompts:  32%|███▏      | 79/250 [00:43<00:14, 11.93it/s, est. speed input: 506.53 toks/s, output: 940.98 toks/s]Processed prompts:  32%|███▏      | 81/250 [00:44<00:26,  6.50it/s, est. speed input: 514.23 toks/s, output: 957.35 toks/s]Processed prompts:  34%|███▎      | 84/250 [00:44<00:24,  6.83it/s, est. speed input: 532.18 toks/s, output: 991.70 toks/s]Processed prompts:  34%|███▍      | 85/250 [00:45<00:29,  5.56it/s, est. speed input: 538.49 toks/s, output: 998.57 toks/s]Processed prompts:  34%|███▍      | 86/250 [00:45<00:31,  5.26it/s, est. speed input: 539.69 toks/s, output: 1007.93 toks/s]Processed prompts:  36%|███▌      | 89/250 [00:45<00:19,  8.20it/s, est. speed input: 558.34 toks/s, output: 1048.93 toks/s]Processed prompts:  36%|███▋      | 91/250 [00:45<00:19,  8.30it/s, est. speed input: 575.83 toks/s, output: 1072.52 toks/s]Processed prompts:  37%|███▋      | 93/250 [00:46<00:37,  4.20it/s, est. speed input: 574.96 toks/s, output: 1077.89 toks/s]Processed prompts:  38%|███▊      | 95/250 [00:47<00:33,  4.58it/s, est. speed input: 585.62 toks/s, output: 1099.31 toks/s]Processed prompts:  39%|███▉      | 97/250 [00:47<00:28,  5.35it/s, est. speed input: 598.44 toks/s, output: 1123.23 toks/s]Processed prompts:  39%|███▉      | 98/250 [00:47<00:26,  5.75it/s, est. speed input: 604.07 toks/s, output: 1135.31 toks/s]Processed prompts:  40%|███▉      | 99/250 [00:48<00:38,  3.96it/s, est. speed input: 608.58 toks/s, output: 1136.74 toks/s]Processed prompts:  40%|████      | 100/250 [00:48<00:37,  4.05it/s, est. speed input: 612.40 toks/s, output: 1146.19 toks/s]Processed prompts:  40%|████      | 101/250 [00:48<00:42,  3.54it/s, est. speed input: 612.76 toks/s, output: 1151.57 toks/s]Processed prompts:  41%|████      | 102/250 [00:49<00:58,  2.51it/s, est. speed input: 608.12 toks/s, output: 1149.27 toks/s]Processed prompts:  42%|████▏     | 104/250 [00:49<00:44,  3.31it/s, est. speed input: 618.41 toks/s, output: 1170.83 toks/s]Processed prompts:  42%|████▏     | 105/250 [00:50<00:56,  2.58it/s, est. speed input: 616.86 toks/s, output: 1170.25 toks/s]Processed prompts:  42%|████▏     | 106/250 [00:50<00:45,  3.14it/s, est. speed input: 620.61 toks/s, output: 1182.55 toks/s]Processed prompts:  43%|████▎     | 107/250 [00:50<00:48,  2.96it/s, est. speed input: 621.24 toks/s, output: 1188.39 toks/s]Processed prompts:  43%|████▎     | 108/250 [00:51<00:43,  3.26it/s, est. speed input: 629.66 toks/s, output: 1198.12 toks/s]Processed prompts:  44%|████▎     | 109/250 [00:51<00:49,  2.87it/s, est. speed input: 629.06 toks/s, output: 1202.43 toks/s]Processed prompts:  45%|████▍     | 112/250 [00:51<00:27,  5.00it/s, est. speed input: 645.68 toks/s, output: 1241.44 toks/s]Processed prompts:  46%|████▌     | 114/250 [00:52<00:29,  4.57it/s, est. speed input: 652.43 toks/s, output: 1258.92 toks/s]Processed prompts:  46%|████▋     | 116/250 [00:52<00:24,  5.43it/s, est. speed input: 659.84 toks/s, output: 1283.04 toks/s]Processed prompts:  47%|████▋     | 118/250 [00:52<00:18,  6.98it/s, est. speed input: 674.11 toks/s, output: 1310.11 toks/s]Processed prompts:  48%|████▊     | 119/250 [00:53<00:23,  5.59it/s, est. speed input: 679.97 toks/s, output: 1316.74 toks/s]Processed prompts:  49%|████▉     | 122/250 [00:53<00:19,  6.73it/s, est. speed input: 691.44 toks/s, output: 1352.96 toks/s]Processed prompts:  49%|████▉     | 123/250 [00:53<00:17,  7.10it/s, est. speed input: 702.31 toks/s, output: 1365.20 toks/s]Processed prompts:  50%|█████     | 125/250 [00:53<00:16,  7.80it/s, est. speed input: 715.70 toks/s, output: 1389.76 toks/s]Processed prompts:  50%|█████     | 126/250 [00:53<00:16,  7.53it/s, est. speed input: 718.93 toks/s, output: 1400.74 toks/s]Processed prompts:  51%|█████     | 127/250 [00:53<00:16,  7.29it/s, est. speed input: 720.81 toks/s, output: 1411.76 toks/s]Processed prompts:  51%|█████     | 128/250 [00:54<00:17,  7.11it/s, est. speed input: 725.47 toks/s, output: 1422.84 toks/s]Processed prompts:  52%|█████▏    | 129/250 [00:54<00:21,  5.50it/s, est. speed input: 727.70 toks/s, output: 1429.93 toks/s]Processed prompts:  52%|█████▏    | 130/250 [00:55<00:33,  3.57it/s, est. speed input: 726.26 toks/s, output: 1430.63 toks/s]Processed prompts:  52%|█████▏    | 131/250 [00:55<00:29,  4.09it/s, est. speed input: 727.30 toks/s, output: 1441.85 toks/s]Processed prompts:  53%|█████▎    | 132/250 [00:55<00:24,  4.90it/s, est. speed input: 731.42 toks/s, output: 1454.23 toks/s]Processed prompts:  53%|█████▎    | 133/250 [00:55<00:22,  5.30it/s, est. speed input: 735.76 toks/s, output: 1465.43 toks/s]Processed prompts:  54%|█████▎    | 134/250 [00:55<00:25,  4.53it/s, est. speed input: 736.37 toks/s, output: 1472.67 toks/s]Processed prompts:  54%|█████▍    | 135/250 [00:56<00:31,  3.67it/s, est. speed input: 736.91 toks/s, output: 1477.32 toks/s]Processed prompts:  54%|█████▍    | 136/250 [00:56<00:30,  3.77it/s, est. speed input: 741.71 toks/s, output: 1486.05 toks/s]Processed prompts:  56%|█████▌    | 139/250 [00:56<00:24,  4.60it/s, est. speed input: 752.37 toks/s, output: 1517.10 toks/s]Processed prompts:  56%|█████▌    | 140/250 [00:57<00:24,  4.48it/s, est. speed input: 757.33 toks/s, output: 1525.81 toks/s]Processed prompts:  57%|█████▋    | 142/250 [00:57<00:17,  6.00it/s, est. speed input: 773.00 toks/s, output: 1552.36 toks/s]Processed prompts:  57%|█████▋    | 143/250 [00:57<00:17,  6.18it/s, est. speed input: 773.90 toks/s, output: 1563.71 toks/s]Processed prompts:  58%|█████▊    | 145/250 [00:57<00:14,  7.30it/s, est. speed input: 778.47 toks/s, output: 1589.06 toks/s]Processed prompts:  59%|█████▉    | 147/250 [00:58<00:22,  4.52it/s, est. speed input: 778.21 toks/s, output: 1598.94 toks/s]Processed prompts:  59%|█████▉    | 148/250 [00:58<00:20,  4.87it/s, est. speed input: 780.81 toks/s, output: 1610.35 toks/s]Processed prompts:  60%|█████▉    | 149/250 [00:58<00:20,  4.96it/s, est. speed input: 782.16 toks/s, output: 1620.57 toks/s]Processed prompts:  60%|██████    | 150/250 [00:59<00:25,  3.92it/s, est. speed input: 781.02 toks/s, output: 1624.46 toks/s]Processed prompts:  61%|██████    | 152/250 [00:59<00:17,  5.54it/s, est. speed input: 791.18 toks/s, output: 1651.32 toks/s]Processed prompts:  61%|██████    | 153/250 [00:59<00:21,  4.47it/s, est. speed input: 792.02 toks/s, output: 1656.50 toks/s]Processed prompts:  62%|██████▏   | 156/250 [00:59<00:14,  6.35it/s, est. speed input: 808.09 toks/s, output: 1695.53 toks/s]Processed prompts:  64%|██████▎   | 159/250 [01:00<00:12,  7.06it/s, est. speed input: 819.02 toks/s, output: 1731.89 toks/s]Processed prompts:  64%|██████▍   | 161/250 [01:00<00:11,  7.90it/s, est. speed input: 829.91 toks/s, output: 1757.90 toks/s]Processed prompts:  65%|██████▌   | 163/250 [01:00<00:10,  8.21it/s, est. speed input: 835.11 toks/s, output: 1782.80 toks/s]Processed prompts:  66%|██████▌   | 165/250 [01:00<00:09,  8.96it/s, est. speed input: 842.40 toks/s, output: 1808.98 toks/s]Processed prompts:  67%|██████▋   | 167/250 [01:00<00:08, 10.09it/s, est. speed input: 852.44 toks/s, output: 1836.20 toks/s]Processed prompts:  68%|██████▊   | 170/250 [01:01<00:06, 12.12it/s, est. speed input: 864.24 toks/s, output: 1878.06 toks/s]Processed prompts:  69%|██████▉   | 172/250 [01:01<00:09,  7.84it/s, est. speed input: 869.07 toks/s, output: 1894.23 toks/s]Processed prompts:  70%|██████▉   | 174/250 [01:02<00:13,  5.61it/s, est. speed input: 867.97 toks/s, output: 1906.91 toks/s]Processed prompts:  70%|███████   | 176/250 [01:02<00:11,  6.62it/s, est. speed input: 877.96 toks/s, output: 1933.47 toks/s]Processed prompts:  71%|███████   | 178/250 [01:02<00:09,  7.43it/s, est. speed input: 888.55 toks/s, output: 1959.32 toks/s]Processed prompts:  72%|███████▏  | 179/250 [01:02<00:11,  6.20it/s, est. speed input: 890.33 toks/s, output: 1966.16 toks/s]Processed prompts:  72%|███████▏  | 180/250 [01:03<00:10,  6.63it/s, est. speed input: 898.83 toks/s, output: 1978.70 toks/s]Processed prompts:  72%|███████▏  | 181/250 [01:03<00:11,  5.94it/s, est. speed input: 900.55 toks/s, output: 1987.38 toks/s]Processed prompts:  73%|███████▎  | 183/250 [01:04<00:16,  3.97it/s, est. speed input: 901.13 toks/s, output: 1995.22 toks/s]Processed prompts:  74%|███████▎  | 184/250 [01:04<00:14,  4.49it/s, est. speed input: 907.82 toks/s, output: 2007.66 toks/s]Processed prompts:  74%|███████▍  | 185/250 [01:04<00:16,  3.85it/s, est. speed input: 905.93 toks/s, output: 2011.98 toks/s]Processed prompts:  74%|███████▍  | 186/250 [01:04<00:16,  3.98it/s, est. speed input: 908.59 toks/s, output: 2021.25 toks/s]Processed prompts:  75%|███████▍  | 187/250 [01:04<00:14,  4.38it/s, est. speed input: 911.50 toks/s, output: 2032.37 toks/s]Processed prompts:  75%|███████▌  | 188/250 [01:05<00:12,  5.01it/s, est. speed input: 917.66 toks/s, output: 2044.67 toks/s]Processed prompts:  76%|███████▌  | 189/250 [01:05<00:11,  5.15it/s, est. speed input: 919.31 toks/s, output: 2055.18 toks/s]Processed prompts:  76%|███████▌  | 190/250 [01:05<00:15,  3.98it/s, est. speed input: 917.70 toks/s, output: 2059.19 toks/s]Processed prompts:  77%|███████▋  | 192/250 [01:05<00:09,  6.16it/s, est. speed input: 924.39 toks/s, output: 2088.59 toks/s]Processed prompts:  77%|███████▋  | 193/250 [01:05<00:09,  6.04it/s, est. speed input: 928.40 toks/s, output: 2099.39 toks/s]Processed prompts:  78%|███████▊  | 194/250 [01:06<00:14,  3.88it/s, est. speed input: 925.66 toks/s, output: 2099.29 toks/s]Processed prompts:  78%|███████▊  | 195/250 [01:06<00:16,  3.31it/s, est. speed input: 924.31 toks/s, output: 2102.58 toks/s]Processed prompts:  78%|███████▊  | 196/250 [01:06<00:13,  4.04it/s, est. speed input: 927.37 toks/s, output: 2115.86 toks/s]Processed prompts:  79%|███████▉  | 198/250 [01:07<00:08,  5.94it/s, est. speed input: 937.10 toks/s, output: 2144.52 toks/s]Processed prompts:  80%|███████▉  | 199/250 [01:07<00:15,  3.26it/s, est. speed input: 933.61 toks/s, output: 2137.70 toks/s]Processed prompts:  80%|████████  | 200/250 [01:07<00:13,  3.68it/s, est. speed input: 936.90 toks/s, output: 2149.20 toks/s]Processed prompts:  80%|████████  | 201/250 [01:08<00:14,  3.37it/s, est. speed input: 939.29 toks/s, output: 2154.49 toks/s]Processed prompts:  81%|████████  | 202/250 [01:08<00:12,  3.97it/s, est. speed input: 946.07 toks/s, output: 2167.03 toks/s]Processed prompts:  81%|████████  | 203/250 [01:08<00:10,  4.60it/s, est. speed input: 949.07 toks/s, output: 2179.79 toks/s]Processed prompts:  82%|████████▏ | 204/250 [01:09<00:18,  2.51it/s, est. speed input: 943.06 toks/s, output: 2170.31 toks/s]Processed prompts:  82%|████████▏ | 205/250 [01:10<00:29,  1.51it/s, est. speed input: 935.70 toks/s, output: 2147.45 toks/s]Processed prompts:  82%|████████▏ | 206/250 [01:11<00:26,  1.64it/s, est. speed input: 936.56 toks/s, output: 2150.16 toks/s]Processed prompts:  83%|████████▎ | 207/250 [01:12<00:31,  1.36it/s, est. speed input: 927.71 toks/s, output: 2137.00 toks/s]Processed prompts:  83%|████████▎ | 208/250 [01:12<00:25,  1.63it/s, est. speed input: 926.44 toks/s, output: 2144.98 toks/s]Processed prompts:  84%|████████▍ | 211/250 [01:13<00:16,  2.43it/s, est. speed input: 933.10 toks/s, output: 2175.50 toks/s]Processed prompts:  85%|████████▍ | 212/250 [01:14<00:25,  1.52it/s, est. speed input: 919.28 toks/s, output: 2147.65 toks/s]Processed prompts:  85%|████████▌ | 213/250 [01:15<00:21,  1.70it/s, est. speed input: 921.93 toks/s, output: 2155.40 toks/s]Processed prompts:  86%|████████▌ | 214/250 [01:16<00:24,  1.45it/s, est. speed input: 915.52 toks/s, output: 2145.78 toks/s]Processed prompts:  86%|████████▌ | 215/250 [01:16<00:18,  1.85it/s, est. speed input: 922.16 toks/s, output: 2160.80 toks/s]Processed prompts:  86%|████████▋ | 216/250 [01:16<00:15,  2.18it/s, est. speed input: 926.34 toks/s, output: 2172.52 toks/s]Processed prompts:  87%|████████▋ | 217/250 [01:16<00:12,  2.63it/s, est. speed input: 929.25 toks/s, output: 2185.91 toks/s]Processed prompts:  87%|████████▋ | 218/250 [01:17<00:10,  3.03it/s, est. speed input: 931.87 toks/s, output: 2198.57 toks/s]Processed prompts:  88%|████████▊ | 219/250 [01:17<00:10,  3.06it/s, est. speed input: 934.88 toks/s, output: 2208.04 toks/s]Processed prompts:  88%|████████▊ | 220/250 [01:17<00:11,  2.55it/s, est. speed input: 933.76 toks/s, output: 2211.13 toks/s]Processed prompts:  88%|████████▊ | 221/250 [01:20<00:29,  1.03s/it, est. speed input: 909.17 toks/s, output: 2159.86 toks/s]Processed prompts:  89%|████████▉ | 222/250 [01:20<00:23,  1.22it/s, est. speed input: 911.53 toks/s, output: 2170.52 toks/s]Processed prompts:  89%|████████▉ | 223/250 [01:22<00:33,  1.23s/it, est. speed input: 892.35 toks/s, output: 2133.15 toks/s]Processed prompts:  90%|████████▉ | 224/250 [01:23<00:30,  1.16s/it, est. speed input: 888.76 toks/s, output: 2127.54 toks/s]Processed prompts:  90%|█████████ | 225/250 [01:26<00:38,  1.53s/it, est. speed input: 867.56 toks/s, output: 2088.72 toks/s]Processed prompts:  90%|█████████ | 226/250 [01:26<00:26,  1.12s/it, est. speed input: 871.01 toks/s, output: 2105.56 toks/s]Processed prompts:  91%|█████████ | 227/250 [01:27<00:23,  1.03s/it, est. speed input: 868.54 toks/s, output: 2106.47 toks/s]Processed prompts:  91%|█████████ | 228/250 [01:31<00:44,  2.00s/it, est. speed input: 833.72 toks/s, output: 2029.32 toks/s]Processed prompts:  92%|█████████▏| 229/250 [01:33<00:41,  1.96s/it, est. speed input: 821.37 toks/s, output: 2010.36 toks/s]Processed prompts:  92%|█████████▏| 230/250 [01:34<00:34,  1.70s/it, est. speed input: 819.65 toks/s, output: 2009.15 toks/s]Processed prompts:  92%|█████████▏| 231/250 [01:35<00:26,  1.42s/it, est. speed input: 815.83 toks/s, output: 2015.30 toks/s]Processed prompts:  93%|█████████▎| 232/250 [01:45<01:12,  4.01s/it, est. speed input: 741.55 toks/s, output: 1846.45 toks/s]Processed prompts:  93%|█████████▎| 233/250 [01:48<01:05,  3.87s/it, est. speed input: 721.73 toks/s, output: 1810.35 toks/s]Processed prompts:  94%|█████████▎| 234/250 [01:50<00:53,  3.32s/it, est. speed input: 711.92 toks/s, output: 1801.36 toks/s]Processed prompts:  94%|█████████▍| 235/250 [02:15<02:26,  9.78s/it, est. speed input: 584.21 toks/s, output: 1498.46 toks/s]Processed prompts:  94%|█████████▍| 236/250 [02:17<01:44,  7.44s/it, est. speed input: 579.44 toks/s, output: 1503.61 toks/s]Processed prompts:  95%|█████████▍| 237/250 [02:21<01:22,  6.37s/it, est. speed input: 566.93 toks/s, output: 1489.35 toks/s]Processed prompts:  95%|█████████▌| 238/250 [02:28<01:18,  6.58s/it, est. speed input: 542.34 toks/s, output: 1446.23 toks/s]Processed prompts:  98%|█████████▊| 244/250 [02:28<00:11,  1.86s/it, est. speed input: 556.72 toks/s, output: 1610.15 toks/s]Processed prompts: 100%|██████████| 250/250 [02:29<00:00,  1.03it/s, est. speed input: 572.02 toks/s, output: 1767.62 toks/s]Processed prompts: 100%|██████████| 250/250 [02:29<00:00,  1.03it/s, est. speed input: 572.02 toks/s, output: 1767.62 toks/s]Processed prompts: 100%|██████████| 250/250 [02:29<00:00,  1.67it/s, est. speed input: 572.02 toks/s, output: 1767.62 toks/s]
+
+Processing results...
+✓ [1/250] Pass@1: 100.0% | Avg@1: 100.0% | Formatted: 100.0%
+✓ [2/250] Pass@1: 100.0% | Avg@1: 100.0% | Formatted: 100.0%
+✗ [3/250] Pass@1: 66.7% | Avg@1: 66.7% | Formatted: 66.7%
+✗ [4/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 75.0%
+✗ [5/250] Pass@1: 40.0% | Avg@1: 40.0% | Formatted: 60.0%
+✗ [6/250] Pass@1: 33.3% | Avg@1: 33.3% | Formatted: 50.0%
+✓ [7/250] Pass@1: 42.9% | Avg@1: 42.9% | Formatted: 42.9%
+✗ [8/250] Pass@1: 37.5% | Avg@1: 37.5% | Formatted: 37.5%
+✗ [9/250] Pass@1: 33.3% | Avg@1: 33.3% | Formatted: 44.4%
+✓ [10/250] Pass@1: 40.0% | Avg@1: 40.0% | Formatted: 40.0%
+
+======================================================================
+Progress: 10/250
+Pass@1: 40.00%
+Average@1: 40.00%
+Format Rate: 40.00%
+Last problem: প্রতি সপ্তাহে প্রথম 40 ঘণ্টা কাজ করার জন্য এলিজা প্রতি ঘণ্টায় $10 দরে কাজ করেন। অতিরিক্ত সময় কাজ করা...
+Solutions correct: 1/1
+Majority vote: ✗
+Ground truth: 460
+======================================================================
+
+✓ [11/250] Pass@1: 45.5% | Avg@1: 45.5% | Formatted: 36.4%
+✗ [12/250] Pass@1: 41.7% | Avg@1: 41.7% | Formatted: 41.7%
+✗ [13/250] Pass@1: 38.5% | Avg@1: 38.5% | Formatted: 38.5%
+✗ [14/250] Pass@1: 35.7% | Avg@1: 35.7% | Formatted: 35.7%
+✗ [15/250] Pass@1: 33.3% | Avg@1: 33.3% | Formatted: 40.0%
+✗ [16/250] Pass@1: 31.2% | Avg@1: 31.2% | Formatted: 43.8%
+✓ [17/250] Pass@1: 35.3% | Avg@1: 35.3% | Formatted: 41.2%
+✓ [18/250] Pass@1: 38.9% | Avg@1: 38.9% | Formatted: 38.9%
+✓ [19/250] Pass@1: 42.1% | Avg@1: 42.1% | Formatted: 36.8%
+✗ [20/250] Pass@1: 40.0% | Avg@1: 40.0% | Formatted: 35.0%
+
+======================================================================
+Progress: 20/250
+Pass@1: 40.00%
+Average@1: 40.00%
+Format Rate: 35.00%
+Last problem: মারিসা 12 মাইল পথ পাড়ি দিচ্ছেন। এরমধ্যে প্রথম 4 মাইল হাঁটতে তিনি 1 ঘণ্টা এবং পরের দুই মাইল হাঁটতে আর...
+Solutions correct: 0/1
+Majority vote: ✗
+Ground truth: 6
+======================================================================
+
+✗ [21/250] Pass@1: 38.1% | Avg@1: 38.1% | Formatted: 33.3%
+✓ [22/250] Pass@1: 40.9% | Avg@1: 40.9% | Formatted: 31.8%
+✓ [23/250] Pass@1: 43.5% | Avg@1: 43.5% | Formatted: 30.4%
+✓ [24/250] Pass@1: 45.8% | Avg@1: 45.8% | Formatted: 29.2%
+✓ [25/250] Pass@1: 48.0% | Avg@1: 48.0% | Formatted: 28.0%
+✓ [26/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 30.8%
+✓ [27/250] Pass@1: 51.9% | Avg@1: 51.9% | Formatted: 33.3%
+✗ [28/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 32.1%
+✗ [29/250] Pass@1: 48.3% | Avg@1: 48.3% | Formatted: 34.5%
+✗ [30/250] Pass@1: 46.7% | Avg@1: 46.7% | Formatted: 36.7%
+
+======================================================================
+Progress: 30/250
+Pass@1: 46.67%
+Average@1: 46.67%
+Format Rate: 36.67%
+Last problem: গ্লোরিয়া জুতো কেনাকাটা করার সময় তাঁর বাজেটের সাথে মানানসই একজোড়া বুট দেখতে পান। কিন্তু, তাঁকে বুট ও ...
+Solutions correct: 0/1
+Majority vote: ✗
+Ground truth: 104
+======================================================================
+
+✓ [31/250] Pass@1: 48.4% | Avg@1: 48.4% | Formatted: 35.5%
+✗ [32/250] Pass@1: 46.9% | Avg@1: 46.9% | Formatted: 34.4%
+✓ [33/250] Pass@1: 48.5% | Avg@1: 48.5% | Formatted: 33.3%
+✓ [34/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 35.3%
+✓ [35/250] Pass@1: 51.4% | Avg@1: 51.4% | Formatted: 34.3%
+✓ [36/250] Pass@1: 52.8% | Avg@1: 52.8% | Formatted: 36.1%
+✗ [37/250] Pass@1: 51.4% | Avg@1: 51.4% | Formatted: 37.8%
+✗ [38/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 36.8%
+✗ [39/250] Pass@1: 48.7% | Avg@1: 48.7% | Formatted: 35.9%
+✗ [40/250] Pass@1: 47.5% | Avg@1: 47.5% | Formatted: 35.0%
+
+======================================================================
+Progress: 40/250
+Pass@1: 47.50%
+Average@1: 47.50%
+Format Rate: 35.00%
+Last problem: ডানা হাঁটার তুলনায় চারগুণ বেশি দ্রুত গতিতে দৌড়াতে পারেন, কিন্তু তিনি তাঁর দৌড়ানোর গতির অর্ধেক গতিতে ...
+Solutions correct: 0/1
+Majority vote: ✗
+Ground truth: 18
+======================================================================
+
+✓ [41/250] Pass@1: 48.8% | Avg@1: 48.8% | Formatted: 36.6%
+✗ [42/250] Pass@1: 47.6% | Avg@1: 47.6% | Formatted: 35.7%
+✓ [43/250] Pass@1: 48.8% | Avg@1: 48.8% | Formatted: 37.2%
+✗ [44/250] Pass@1: 47.7% | Avg@1: 47.7% | Formatted: 38.6%
+✗ [45/250] Pass@1: 46.7% | Avg@1: 46.7% | Formatted: 40.0%
+✗ [46/250] Pass@1: 45.7% | Avg@1: 45.7% | Formatted: 39.1%
+✓ [47/250] Pass@1: 46.8% | Avg@1: 46.8% | Formatted: 38.3%
+✗ [48/250] Pass@1: 45.8% | Avg@1: 45.8% | Formatted: 39.6%
+✓ [49/250] Pass@1: 46.9% | Avg@1: 46.9% | Formatted: 38.8%
+✓ [50/250] Pass@1: 48.0% | Avg@1: 48.0% | Formatted: 38.0%
+
+======================================================================
+Progress: 50/250
+Pass@1: 48.00%
+Average@1: 48.00%
+Format Rate: 38.00%
+Last problem: রিচার্ড 15 ফ্লোরের একটি অ্যাপার্টমেন্ট বিল্ডিং-এ থাকেন। প্রতিটি ফ্লোরে 8টি করে ইউনিট আছে, এবং বিল্ডি...
+Solutions correct: 1/1
+Majority vote: ✗
+Ground truth: 30
+======================================================================
+
+✓ [51/250] Pass@1: 49.0% | Avg@1: 49.0% | Formatted: 37.3%
+✗ [52/250] Pass@1: 48.1% | Avg@1: 48.1% | Formatted: 38.5%
+✗ [53/250] Pass@1: 47.2% | Avg@1: 47.2% | Formatted: 37.7%
+✗ [54/250] Pass@1: 46.3% | Avg@1: 46.3% | Formatted: 37.0%
+✗ [55/250] Pass@1: 45.5% | Avg@1: 45.5% | Formatted: 38.2%
+✓ [56/250] Pass@1: 46.4% | Avg@1: 46.4% | Formatted: 37.5%
+✓ [57/250] Pass@1: 47.4% | Avg@1: 47.4% | Formatted: 38.6%
+✓ [58/250] Pass@1: 48.3% | Avg@1: 48.3% | Formatted: 37.9%
+✗ [59/250] Pass@1: 47.5% | Avg@1: 47.5% | Formatted: 39.0%
+✓ [60/250] Pass@1: 48.3% | Avg@1: 48.3% | Formatted: 40.0%
+
+======================================================================
+Progress: 60/250
+Pass@1: 48.33%
+Average@1: 48.33%
+Format Rate: 40.00%
+Last problem: কোনও একটি রাস্পবেরির ঝাড়ে 6টি থোকার প্রতিটিতে 20টি করে ও 67টি পৃথক ফল ঝাড়ের মধ্যে ইতস্তত ছড়িয়ে রয়েছে...
+Solutions correct: 1/1
+Majority vote: ✓
+Ground truth: 187
+======================================================================
+
+✓ [61/250] Pass@1: 49.2% | Avg@1: 49.2% | Formatted: 41.0%
+✓ [62/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 41.9%
+✓ [63/250] Pass@1: 50.8% | Avg@1: 50.8% | Formatted: 42.9%
+✓ [64/250] Pass@1: 51.6% | Avg@1: 51.6% | Formatted: 42.2%
+✗ [65/250] Pass@1: 50.8% | Avg@1: 50.8% | Formatted: 41.5%
+✗ [66/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 42.4%
+✗ [67/250] Pass@1: 49.3% | Avg@1: 49.3% | Formatted: 41.8%
+✓ [68/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 42.6%
+✓ [69/250] Pass@1: 50.7% | Avg@1: 50.7% | Formatted: 43.5%
+✓ [70/250] Pass@1: 51.4% | Avg@1: 51.4% | Formatted: 44.3%
+
+======================================================================
+Progress: 70/250
+Pass@1: 51.43%
+Average@1: 51.43%
+Format Rate: 44.29%
+Last problem: বেইলি একটি নির্দিষ্ট পরিমাণ অর্থ নিয়ে শুরু করেন। তারপর তিনি 8 সপ্তাহ ধরে $5 করে একটি সাপ্তাহিক ভাতা ...
+Solutions correct: 1/1
+Majority vote: ✓
+Ground truth: 60
+======================================================================
+
+✗ [71/250] Pass@1: 50.7% | Avg@1: 50.7% | Formatted: 45.1%
+✓ [72/250] Pass@1: 51.4% | Avg@1: 51.4% | Formatted: 45.8%
+✓ [73/250] Pass@1: 52.1% | Avg@1: 52.1% | Formatted: 45.2%
+✗ [74/250] Pass@1: 51.4% | Avg@1: 51.4% | Formatted: 45.9%
+✗ [75/250] Pass@1: 50.7% | Avg@1: 50.7% | Formatted: 45.3%
+✗ [76/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 46.1%
+✗ [77/250] Pass@1: 49.4% | Avg@1: 49.4% | Formatted: 45.5%
+✓ [78/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 44.9%
+✗ [79/250] Pass@1: 49.4% | Avg@1: 49.4% | Formatted: 45.6%
+✓ [80/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 46.2%
+
+======================================================================
+Progress: 80/250
+Pass@1: 50.00%
+Average@1: 50.00%
+Format Rate: 46.25%
+Last problem: জন একটি কুকুর দত্তক নিয়েছেন। তিনি কুকুরটিকে নিয়ে গ্রুমারের কাছে গেলেন, যার জন্য তাঁর $100 খরচ হল। নত...
+Solutions correct: 1/1
+Majority vote: ✓
+Ground truth: 70
+======================================================================
+
+✗ [81/250] Pass@1: 49.4% | Avg@1: 49.4% | Formatted: 45.7%
+✓ [82/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 46.3%
+✓ [83/250] Pass@1: 50.6% | Avg@1: 50.6% | Formatted: 47.0%
+✓ [84/250] Pass@1: 51.2% | Avg@1: 51.2% | Formatted: 46.4%
+✓ [85/250] Pass@1: 51.8% | Avg@1: 51.8% | Formatted: 47.1%
+✗ [86/250] Pass@1: 51.2% | Avg@1: 51.2% | Formatted: 46.5%
+✗ [87/250] Pass@1: 50.6% | Avg@1: 50.6% | Formatted: 46.0%
+✗ [88/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 46.6%
+✓ [89/250] Pass@1: 50.6% | Avg@1: 50.6% | Formatted: 47.2%
+✗ [90/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 47.8%
+
+======================================================================
+Progress: 90/250
+Pass@1: 50.00%
+Average@1: 50.00%
+Format Rate: 47.78%
+Last problem: ক্রিস্টিনা একটি জন্মদিনের অনুষ্ঠান করার পরিকল্পনা করছেন এবং নিমন্ত্রিত প্রতিজন অতিথির জন্য .75টি গিফ...
+Solutions correct: 0/1
+Majority vote: ✗
+Ground truth: 24
+======================================================================
+
+✓ [91/250] Pass@1: 50.5% | Avg@1: 50.5% | Formatted: 48.4%
+✓ [92/250] Pass@1: 51.1% | Avg@1: 51.1% | Formatted: 47.8%
+✗ [93/250] Pass@1: 50.5% | Avg@1: 50.5% | Formatted: 48.4%
+✗ [94/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 48.9%
+✗ [95/250] Pass@1: 49.5% | Avg@1: 49.5% | Formatted: 48.4%
+✗ [96/250] Pass@1: 49.0% | Avg@1: 49.0% | Formatted: 47.9%
+✓ [97/250] Pass@1: 49.5% | Avg@1: 49.5% | Formatted: 47.4%
+✗ [98/250] Pass@1: 49.0% | Avg@1: 49.0% | Formatted: 46.9%
+✓ [99/250] Pass@1: 49.5% | Avg@1: 49.5% | Formatted: 46.5%
+✗ [100/250] Pass@1: 49.0% | Avg@1: 49.0% | Formatted: 46.0%
+
+======================================================================
+Progress: 100/250
+Pass@1: 49.00%
+Average@1: 49.00%
+Format Rate: 46.00%
+Last problem: মেরি একজন উৎসুক বাগানী। গতকাল, তিনি তাঁর প্রিয় চারাগাছের নার্সারি থেকে 18টি নতুন চারাগাছের টব পেয়েছে...
+Solutions correct: 0/1
+Majority vote: ✗
+Ground truth: 58
+======================================================================
+
+✗ [101/250] Pass@1: 48.5% | Avg@1: 48.5% | Formatted: 45.5%
+✗ [102/250] Pass@1: 48.0% | Avg@1: 48.0% | Formatted: 45.1%
+✗ [103/250] Pass@1: 47.6% | Avg@1: 47.6% | Formatted: 44.7%
+✓ [104/250] Pass@1: 48.1% | Avg@1: 48.1% | Formatted: 44.2%
+✗ [105/250] Pass@1: 47.6% | Avg@1: 47.6% | Formatted: 44.8%
+✓ [106/250] Pass@1: 48.1% | Avg@1: 48.1% | Formatted: 45.3%
+✗ [107/250] Pass@1: 47.7% | Avg@1: 47.7% | Formatted: 44.9%
+✗ [108/250] Pass@1: 47.2% | Avg@1: 47.2% | Formatted: 45.4%
+✗ [109/250] Pass@1: 46.8% | Avg@1: 46.8% | Formatted: 45.0%
+✗ [110/250] Pass@1: 46.4% | Avg@1: 46.4% | Formatted: 44.5%
+
+======================================================================
+Progress: 110/250
+Pass@1: 46.36%
+Average@1: 46.36%
+Format Rate: 44.55%
+Last problem: এক স্থানীয় গ্যাস স্টেশন এক গ্যালন গ্যাস $3.00 মূল্যে বিক্রয় করে। একটি গ্যাস কোম্পানি, যদি আপনি এই গ্...
+Solutions correct: 0/1
+Majority vote: ✗
+Ground truth: 28
+======================================================================
+
+✓ [111/250] Pass@1: 46.8% | Avg@1: 46.8% | Formatted: 45.0%
+✗ [112/250] Pass@1: 46.4% | Avg@1: 46.4% | Formatted: 44.6%
+✓ [113/250] Pass@1: 46.9% | Avg@1: 46.9% | Formatted: 44.2%
+✗ [114/250] Pass@1: 46.5% | Avg@1: 46.5% | Formatted: 44.7%
+✓ [115/250] Pass@1: 47.0% | Avg@1: 47.0% | Formatted: 44.3%
+✗ [116/250] Pass@1: 46.6% | Avg@1: 46.6% | Formatted: 44.0%
+✓ [117/250] Pass@1: 47.0% | Avg@1: 47.0% | Formatted: 43.6%
+✓ [118/250] Pass@1: 47.5% | Avg@1: 47.5% | Formatted: 44.1%
+✗ [119/250] Pass@1: 47.1% | Avg@1: 47.1% | Formatted: 43.7%
+✗ [120/250] Pass@1: 46.7% | Avg@1: 46.7% | Formatted: 43.3%
+
+======================================================================
+Progress: 120/250
+Pass@1: 46.67%
+Average@1: 46.67%
+Format Rate: 43.33%
+Last problem: অ্যাড্রিয়নের মোট বেতন লায়লার থেকে 30 শতাংশ বেশি ছিল। চার বছর পরে, তাঁর বেতন বৃদ্ধি পেয়েছিল, এবং চার ...
+Solutions correct: 0/1
+Majority vote: ✗
+Ground truth: 95200
+======================================================================
+
+✗ [121/250] Pass@1: 46.3% | Avg@1: 46.3% | Formatted: 43.0%
+✓ [122/250] Pass@1: 46.7% | Avg@1: 46.7% | Formatted: 42.6%
+✗ [123/250] Pass@1: 46.3% | Avg@1: 46.3% | Formatted: 42.3%
+✗ [124/250] Pass@1: 46.0% | Avg@1: 46.0% | Formatted: 42.7%
+✗ [125/250] Pass@1: 45.6% | Avg@1: 45.6% | Formatted: 43.2%
+✗ [126/250] Pass@1: 45.2% | Avg@1: 45.2% | Formatted: 43.7%
+✓ [127/250] Pass@1: 45.7% | Avg@1: 45.7% | Formatted: 43.3%
+✓ [128/250] Pass@1: 46.1% | Avg@1: 46.1% | Formatted: 43.0%
+✓ [129/250] Pass@1: 46.5% | Avg@1: 46.5% | Formatted: 42.6%
+✗ [130/250] Pass@1: 46.2% | Avg@1: 46.2% | Formatted: 42.3%
+
+======================================================================
+Progress: 130/250
+Pass@1: 46.15%
+Average@1: 46.15%
+Format Rate: 42.31%
+Last problem: একটি হাসপাতাল একদিনে 500 জন রোগী দেখে। প্রত্যেক রোগীকে গড়ে 24 মিনিট করে দেখা হয়। চিকিৎসকরা প্রতি ঘণ্...
+Solutions correct: 0/1
+Majority vote: ✗
+Ground truth: 10000
+======================================================================
+
+✗ [131/250] Pass@1: 45.8% | Avg@1: 45.8% | Formatted: 42.0%
+✓ [132/250] Pass@1: 46.2% | Avg@1: 46.2% | Formatted: 42.4%
+✓ [133/250] Pass@1: 46.6% | Avg@1: 46.6% | Formatted: 42.1%
+✓ [134/250] Pass@1: 47.0% | Avg@1: 47.0% | Formatted: 41.8%
+✗ [135/250] Pass@1: 46.7% | Avg@1: 46.7% | Formatted: 42.2%
+✓ [136/250] Pass@1: 47.1% | Avg@1: 47.1% | Formatted: 41.9%
+✗ [137/250] Pass@1: 46.7% | Avg@1: 46.7% | Formatted: 41.6%
+✗ [138/250] Pass@1: 46.4% | Avg@1: 46.4% | Formatted: 42.0%
+✗ [139/250] Pass@1: 46.0% | Avg@1: 46.0% | Formatted: 41.7%
+✓ [140/250] Pass@1: 46.4% | Avg@1: 46.4% | Formatted: 42.1%
+
+======================================================================
+Progress: 140/250
+Pass@1: 46.43%
+Average@1: 46.43%
+Format Rate: 42.14%
+Last problem: একটি ক্যান্ডি মেশিনে, নীল গামবলের তুলনায় চারগুণের থেকে 22ট বেশি গোলাপি গামবল আছে। যদি সেখানে 12 টি ন...
+Solutions correct: 1/1
+Majority vote: ✓
+Ground truth: 70
+======================================================================
+
+✓ [141/250] Pass@1: 46.8% | Avg@1: 46.8% | Formatted: 42.6%
+✗ [142/250] Pass@1: 46.5% | Avg@1: 46.5% | Formatted: 43.0%
+✗ [143/250] Pass@1: 46.2% | Avg@1: 46.2% | Formatted: 43.4%
+✗ [144/250] Pass@1: 45.8% | Avg@1: 45.8% | Formatted: 43.1%
+✗ [145/250] Pass@1: 45.5% | Avg@1: 45.5% | Formatted: 43.4%
+✓ [146/250] Pass@1: 45.9% | Avg@1: 45.9% | Formatted: 43.8%
+✗ [147/250] Pass@1: 45.6% | Avg@1: 45.6% | Formatted: 43.5%
+✗ [148/250] Pass@1: 45.3% | Avg@1: 45.3% | Formatted: 43.2%
+✗ [149/250] Pass@1: 45.0% | Avg@1: 45.0% | Formatted: 43.0%
+✓ [150/250] Pass@1: 45.3% | Avg@1: 45.3% | Formatted: 43.3%
+
+======================================================================
+Progress: 150/250
+Pass@1: 45.33%
+Average@1: 45.33%
+Format Rate: 43.33%
+Last problem: ডরোথির তুলনায় চার্লির Facebook বন্ধুর সংখ্যা তিনগুণ বেশি। ডরোথির তুলনায় জেমসের Facebook বন্ধুর সংখ্য...
+Solutions correct: 1/1
+Majority vote: ✓
+Ground truth: 16
+======================================================================
+
+✓ [151/250] Pass@1: 45.7% | Avg@1: 45.7% | Formatted: 43.7%
+✗ [152/250] Pass@1: 45.4% | Avg@1: 45.4% | Formatted: 43.4%
+✓ [153/250] Pass@1: 45.8% | Avg@1: 45.8% | Formatted: 43.8%
+✗ [154/250] Pass@1: 45.5% | Avg@1: 45.5% | Formatted: 43.5%
+✗ [155/250] Pass@1: 45.2% | Avg@1: 45.2% | Formatted: 43.9%
+✓ [156/250] Pass@1: 45.5% | Avg@1: 45.5% | Formatted: 44.2%
+✓ [157/250] Pass@1: 45.9% | Avg@1: 45.9% | Formatted: 44.6%
+✗ [158/250] Pass@1: 45.6% | Avg@1: 45.6% | Formatted: 44.3%
+✓ [159/250] Pass@1: 45.9% | Avg@1: 45.9% | Formatted: 44.7%
+✗ [160/250] Pass@1: 45.6% | Avg@1: 45.6% | Formatted: 45.0%
+
+======================================================================
+Progress: 160/250
+Pass@1: 45.62%
+Average@1: 45.62%
+Format Rate: 45.00%
+Last problem: ফিন পুকুরে 11টি ব্যাঙাচিকে সাঁতার কাটতে দেখেন। হঠাৎ তিনি তাদের মধ্যে 6টিকে একটি লিলি পাতার আড়াল থেকে...
+Solutions correct: 0/1
+Majority vote: ✗
+Ground truth: 15
+======================================================================
+
+✗ [161/250] Pass@1: 45.3% | Avg@1: 45.3% | Formatted: 44.7%
+✓ [162/250] Pass@1: 45.7% | Avg@1: 45.7% | Formatted: 45.1%
+✗ [163/250] Pass@1: 45.4% | Avg@1: 45.4% | Formatted: 45.4%
+✓ [164/250] Pass@1: 45.7% | Avg@1: 45.7% | Formatted: 45.1%
+✗ [165/250] Pass@1: 45.5% | Avg@1: 45.5% | Formatted: 44.8%
+✗ [166/250] Pass@1: 45.2% | Avg@1: 45.2% | Formatted: 44.6%
+✓ [167/250] Pass@1: 45.5% | Avg@1: 45.5% | Formatted: 44.3%
+✗ [168/250] Pass@1: 45.2% | Avg@1: 45.2% | Formatted: 44.0%
+✓ [169/250] Pass@1: 45.6% | Avg@1: 45.6% | Formatted: 44.4%
+✗ [170/250] Pass@1: 45.3% | Avg@1: 45.3% | Formatted: 44.1%
+
+======================================================================
+Progress: 170/250
+Pass@1: 45.29%
+Average@1: 45.29%
+Format Rate: 44.12%
+Last problem: পাঞ্চো একদিনে 20 মাইল হাঁটেন। সপ্তাহান্তে ব্যতিরেকে তিনি 10 মাইল হাঁটেন। এক সপ্তাহে তিনি কত মাইল হাঁ...
+Solutions correct: 0/1
+Majority vote: ✗
+Ground truth: 120
+======================================================================
+
+✗ [171/250] Pass@1: 45.0% | Avg@1: 45.0% | Formatted: 43.9%
+✓ [172/250] Pass@1: 45.3% | Avg@1: 45.3% | Formatted: 44.2%
+✗ [173/250] Pass@1: 45.1% | Avg@1: 45.1% | Formatted: 43.9%
+✓ [174/250] Pass@1: 45.4% | Avg@1: 45.4% | Formatted: 43.7%
+✗ [175/250] Pass@1: 45.1% | Avg@1: 45.1% | Formatted: 43.4%
+✓ [176/250] Pass@1: 45.5% | Avg@1: 45.5% | Formatted: 43.2%
+✓ [177/250] Pass@1: 45.8% | Avg@1: 45.8% | Formatted: 42.9%
+✗ [178/250] Pass@1: 45.5% | Avg@1: 45.5% | Formatted: 43.3%
+✓ [179/250] Pass@1: 45.8% | Avg@1: 45.8% | Formatted: 43.6%
+✓ [180/250] Pass@1: 46.1% | Avg@1: 46.1% | Formatted: 43.3%
+
+======================================================================
+Progress: 180/250
+Pass@1: 46.11%
+Average@1: 46.11%
+Format Rate: 43.33%
+Last problem: অঙ্ক শিখিয়ে লয়েড এক ঘণ্টায় $10 উপার্জন করেন। তিনি প্রথম সপ্তাহে 5 ঘণ্টা এবং দ্বিতীয় সপ্তাহে 8 ঘণ্টা ...
+Solutions correct: 1/1
+Majority vote: ✗
+Ground truth: 130
+======================================================================
+
+✓ [181/250] Pass@1: 46.4% | Avg@1: 46.4% | Formatted: 43.1%
+✗ [182/250] Pass@1: 46.2% | Avg@1: 46.2% | Formatted: 42.9%
+✗ [183/250] Pass@1: 45.9% | Avg@1: 45.9% | Formatted: 42.6%
+✗ [184/250] Pass@1: 45.7% | Avg@1: 45.7% | Formatted: 42.4%
+✗ [185/250] Pass@1: 45.4% | Avg@1: 45.4% | Formatted: 42.7%
+✗ [186/250] Pass@1: 45.2% | Avg@1: 45.2% | Formatted: 43.0%
+✗ [187/250] Pass@1: 44.9% | Avg@1: 44.9% | Formatted: 42.8%
+✓ [188/250] Pass@1: 45.2% | Avg@1: 45.2% | Formatted: 42.6%
+✗ [189/250] Pass@1: 45.0% | Avg@1: 45.0% | Formatted: 42.3%
+✗ [190/250] Pass@1: 44.7% | Avg@1: 44.7% | Formatted: 42.6%
+
+======================================================================
+Progress: 190/250
+Pass@1: 44.74%
+Average@1: 44.74%
+Format Rate: 42.63%
+Last problem: মেলায় যাওয়ার জন্য তিন বন্ধু 3টি টিকিটের জন্য $20.25 খরচ করেছিলেন। তাঁরা টিকিটের থেকে খাবারে $4.50 কম...
+Solutions correct: 0/1
+Majority vote: ✗
+Ground truth: 34
+======================================================================
+
+✓ [191/250] Pass@1: 45.0% | Avg@1: 45.0% | Formatted: 42.9%
+✗ [192/250] Pass@1: 44.8% | Avg@1: 44.8% | Formatted: 43.2%
+✗ [193/250] Pass@1: 44.6% | Avg@1: 44.6% | Formatted: 43.0%
+✗ [194/250] Pass@1: 44.3% | Avg@1: 44.3% | Formatted: 43.3%
+✓ [195/250] Pass@1: 44.6% | Avg@1: 44.6% | Formatted: 43.1%
+✓ [196/250] Pass@1: 44.9% | Avg@1: 44.9% | Formatted: 42.9%
+✓ [197/250] Pass@1: 45.2% | Avg@1: 45.2% | Formatted: 42.6%
+✓ [198/250] Pass@1: 45.5% | Avg@1: 45.5% | Formatted: 42.4%
+✗ [199/250] Pass@1: 45.2% | Avg@1: 45.2% | Formatted: 42.2%
+✗ [200/250] Pass@1: 45.0% | Avg@1: 45.0% | Formatted: 42.5%
+
+======================================================================
+Progress: 200/250
+Pass@1: 45.00%
+Average@1: 45.00%
+Format Rate: 42.50%
+Last problem: মার্ক একজন কপি-এডিটর। প্রতি সপ্তাহে তিনি দুটি আলাদা প্রকাশকের জন্য সমান সংখ্যক বাক্যের সম্পাদনা করেন...
+Solutions correct: 0/1
+Majority vote: ✗
+Ground truth: 7500
+======================================================================
+
+✓ [201/250] Pass@1: 45.3% | Avg@1: 45.3% | Formatted: 42.8%
+✗ [202/250] Pass@1: 45.0% | Avg@1: 45.0% | Formatted: 43.1%
+✓ [203/250] Pass@1: 45.3% | Avg@1: 45.3% | Formatted: 43.3%
+✗ [204/250] Pass@1: 45.1% | Avg@1: 45.1% | Formatted: 43.1%
+✓ [205/250] Pass@1: 45.4% | Avg@1: 45.4% | Formatted: 43.4%
+✗ [206/250] Pass@1: 45.1% | Avg@1: 45.1% | Formatted: 43.2%
+✗ [207/250] Pass@1: 44.9% | Avg@1: 44.9% | Formatted: 43.5%
+✗ [208/250] Pass@1: 44.7% | Avg@1: 44.7% | Formatted: 43.3%
+✓ [209/250] Pass@1: 45.0% | Avg@1: 45.0% | Formatted: 43.1%
+✗ [210/250] Pass@1: 44.8% | Avg@1: 44.8% | Formatted: 42.9%
+
+======================================================================
+Progress: 210/250
+Pass@1: 44.76%
+Average@1: 44.76%
+Format Rate: 42.86%
+Last problem: প্রতিটি প্লেট $6000 মূল্য দরের আধ ডজন প্লেটের মোট মূল্য থেকে কুড়ি ডজন কাপের মূল্য $1200 কম। প্রতিটি ...
+Solutions correct: 0/1
+Majority vote: ✗
+Ground truth: 145
+======================================================================
+
+✓ [211/250] Pass@1: 45.0% | Avg@1: 45.0% | Formatted: 42.7%
+✗ [212/250] Pass@1: 44.8% | Avg@1: 44.8% | Formatted: 42.9%
+✗ [213/250] Pass@1: 44.6% | Avg@1: 44.6% | Formatted: 43.2%
+✗ [214/250] Pass@1: 44.4% | Avg@1: 44.4% | Formatted: 43.0%
+✗ [215/250] Pass@1: 44.2% | Avg@1: 44.2% | Formatted: 42.8%
+✓ [216/250] Pass@1: 44.4% | Avg@1: 44.4% | Formatted: 43.1%
+✓ [217/250] Pass@1: 44.7% | Avg@1: 44.7% | Formatted: 42.9%
+✓ [218/250] Pass@1: 45.0% | Avg@1: 45.0% | Formatted: 43.1%
+✗ [219/250] Pass@1: 44.7% | Avg@1: 44.7% | Formatted: 42.9%
+✗ [220/250] Pass@1: 44.5% | Avg@1: 44.5% | Formatted: 42.7%
+
+======================================================================
+Progress: 220/250
+Pass@1: 44.55%
+Average@1: 44.55%
+Format Rate: 42.73%
+Last problem: একটি বোর্ড খেলায় চারজন শিক্ষার্থী মোট 251পয়েন্ট পেয়েছিল। নাওমি 68 পয়েন্ট পেয়েছিল। ইউরি নাওমির অর্জিত...
+Solutions correct: 0/1
+Majority vote: ✗
+Ground truth: 54
+======================================================================
+
+✓ [221/250] Pass@1: 44.8% | Avg@1: 44.8% | Formatted: 42.5%
+✓ [222/250] Pass@1: 45.0% | Avg@1: 45.0% | Formatted: 42.3%
+✓ [223/250] Pass@1: 45.3% | Avg@1: 45.3% | Formatted: 42.6%
+✓ [224/250] Pass@1: 45.5% | Avg@1: 45.5% | Formatted: 42.4%
+✓ [225/250] Pass@1: 45.8% | Avg@1: 45.8% | Formatted: 42.2%
+✗ [226/250] Pass@1: 45.6% | Avg@1: 45.6% | Formatted: 42.5%
+✗ [227/250] Pass@1: 45.4% | Avg@1: 45.4% | Formatted: 42.7%
+✓ [228/250] Pass@1: 45.6% | Avg@1: 45.6% | Formatted: 42.5%
+✓ [229/250] Pass@1: 45.9% | Avg@1: 45.9% | Formatted: 42.4%
+✗ [230/250] Pass@1: 45.7% | Avg@1: 45.7% | Formatted: 42.2%
+
+======================================================================
+Progress: 230/250
+Pass@1: 45.65%
+Average@1: 45.65%
+Format Rate: 42.17%
+Last problem: একটি তরমুজের খামার 120 টি ছোট তরমুজ উৎপাদন করেছিল। অ্যাশলিন দুই মাস পরে খামারটিতে গিয়েছিল এবং দেখেছি...
+Solutions correct: 0/1
+Majority vote: ✗
+Ground truth: 21
+======================================================================
+
+✗ [231/250] Pass@1: 45.5% | Avg@1: 45.5% | Formatted: 42.0%
+✗ [232/250] Pass@1: 45.3% | Avg@1: 45.3% | Formatted: 41.8%
+✓ [233/250] Pass@1: 45.5% | Avg@1: 45.5% | Formatted: 42.1%
+✗ [234/250] Pass@1: 45.3% | Avg@1: 45.3% | Formatted: 42.3%
+✓ [235/250] Pass@1: 45.5% | Avg@1: 45.5% | Formatted: 42.1%
+✓ [236/250] Pass@1: 45.8% | Avg@1: 45.8% | Formatted: 42.4%
+✗ [237/250] Pass@1: 45.6% | Avg@1: 45.6% | Formatted: 42.6%
+✓ [238/250] Pass@1: 45.8% | Avg@1: 45.8% | Formatted: 42.9%
+✗ [239/250] Pass@1: 45.6% | Avg@1: 45.6% | Formatted: 43.1%
+✓ [240/250] Pass@1: 45.8% | Avg@1: 45.8% | Formatted: 42.9%
+
+======================================================================
+Progress: 240/250
+Pass@1: 45.83%
+Average@1: 45.83%
+Format Rate: 42.92%
+Last problem: বিদ্যালয়ের একটি হলঘরে 1000 জন শিক্ষার্থী আছে। হলঘরটিতে 3 টি প্রবেশ দ্বার আছে যথা A, B ও C, যেগুলি প্...
+Solutions correct: 1/1
+Majority vote: ✗
+Ground truth: 280
+======================================================================
+
+✗ [241/250] Pass@1: 45.6% | Avg@1: 45.6% | Formatted: 42.7%
+✗ [242/250] Pass@1: 45.5% | Avg@1: 45.5% | Formatted: 43.0%
+✓ [243/250] Pass@1: 45.7% | Avg@1: 45.7% | Formatted: 43.2%
+✓ [244/250] Pass@1: 45.9% | Avg@1: 45.9% | Formatted: 43.0%
+✗ [245/250] Pass@1: 45.7% | Avg@1: 45.7% | Formatted: 42.9%
+✗ [246/250] Pass@1: 45.5% | Avg@1: 45.5% | Formatted: 43.1%
+✓ [247/250] Pass@1: 45.7% | Avg@1: 45.7% | Formatted: 42.9%
+✓ [248/250] Pass@1: 46.0% | Avg@1: 46.0% | Formatted: 42.7%
+✓ [249/250] Pass@1: 46.2% | Avg@1: 46.2% | Formatted: 43.0%
+✗ [250/250] Pass@1: 46.0% | Avg@1: 46.0% | Formatted: 42.8%
+
+======================================================================
+Progress: 250/250
+Pass@1: 46.00%
+Average@1: 46.00%
+Format Rate: 42.80%
+Last problem: সোমবার, স্যু তার বোনের তুলনায় 4 গুণ বেশি কুকি খেয়েছিল। মঙ্গলবার, সে তার বোনের তুলনায় দ্বিগুণ বেশি কু...
+Solutions correct: 0/1
+Majority vote: ✗
+Ground truth: 5600
+======================================================================
+
+
+======================================================================
+FINAL RESULTS
+======================================================================
+Dataset: MGSM
+Thinking Mode: DISABLED
+Total problems: 250
+Solutions per problem: 1
+Total solutions: 250
+
+Metrics:
+  Pass@1: 46.00% (115/250)
+  Average@1: 46.00% (115/250)
+  Majority Vote@1: 20.80% (52/250)
+
+Formatting:
+  Formatted (boxed) answers: 107/250
+  Format rate: 42.80%
+
+Language fidelity (bn):
+  Generations mostly in target script: 100.00%
+  Mean target-script letter ratio: 0.982
+======================================================================
+
+Detailed results saved to: eval_results/mgsm_bn_llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/base.json
+
+======================================================================
+EVALUATION COMPLETE!
+======================================================================
+Final Average@1: 46.00%
+Results saved to: eval_results/mgsm_bn_llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/base.json
+======================================================================
+
+Auto-setting top_p to 0.8 for non-thinking mode
+Results will be saved to: eval_results/mgsm_bn_llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/checkpoint-100.json
+
+======================================================================
+QWEN3 MATH EVALUATION WITH THINKING MODE
+======================================================================
+Dataset: MGSM
+Base model: meta-llama/Llama-3.2-3B-Instruct
+Checkpoint: ../ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/checkpoint-100
+Thinking Mode: DISABLED
+Max tokens: 4096
+Temperature: 0.0 (Qwen3 non-thinking mode)
+Top-p: 0.8
+Top-k: -1
+Min-p: 0.0
+Presence penalty: 0.0
+Num samples: All
+Val-N (solutions per problem): 1
+Output file: eval_results/mgsm_bn_llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/checkpoint-100.json
+GPU memory utilization: 0.85
+Tensor parallel size: 1
+======================================================================
+
+Loading model with vLLM from: meta-llama/Llama-3.2-3B-Instruct
+LoRA adapter path provided: ../ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/checkpoint-100
+LoRA weights found. Enabling LoRA support...
+INFO 11-17 08:49:21 [arg_utils.py:592] HF_HUB_OFFLINE is True, replace model_id [meta-llama/Llama-3.2-3B-Instruct] to model_path [/home/speech-nlp-cse/24m0756/.cache/huggingface/hub/models--meta-llama--Llama-3.2-3B-Instruct/snapshots/0cb88a4f764b7a12671c53f0838cd831a0843b95]
+INFO 11-17 08:49:21 [arg_utils.py:592] HF_HUB_OFFLINE is True, replace model_id [/home/speech-nlp-cse/24m0756/.cache/huggingface/hub/models--meta-llama--Llama-3.2-3B-Instruct/snapshots/0cb88a4f764b7a12671c53f0838cd831a0843b95] to model_path [/home/speech-nlp-cse/24m0756/.cache/huggingface/hub/models--meta-llama--Llama-3.2-3B-Instruct/snapshots/0cb88a4f764b7a12671c53f0838cd831a0843b95]
+INFO 11-17 08:49:21 [utils.py:253] non-default args: {'trust_remote_code': True, 'max_model_len': 8192, 'distributed_executor_backend': 'mp', 'gpu_memory_utilization': 0.85, 'disable_log_stats': True, 'enforce_eager': True, 'enable_lora': True, 'max_lora_rank': 64, 'max_cpu_loras': 1, 'model': '/home/speech-nlp-cse/24m0756/.cache/huggingface/hub/models--meta-llama--Llama-3.2-3B-Instruct/snapshots/0cb88a4f764b7a12671c53f0838cd831a0843b95'}
+The argument `trust_remote_code` is to be used with Auto classes. It has no effect here and is ignored.
+INFO 11-17 08:49:21 [model.py:631] Resolved architecture: LlamaForCausalLM
+INFO 11-17 08:49:21 [model.py:1745] Using max model len 8192
+INFO 11-17 08:49:24 [scheduler.py:216] Chunked prefill is enabled with max_num_batched_tokens=8192.
+INFO 11-17 08:49:24 [vllm.py:500] Cudagraph is disabled under eager mode
+[1;36m(EngineCore_DP0 pid=2401319)[0;0m INFO 11-17 08:49:24 [core.py:93] Initializing a V1 LLM engine (v0.11.2) with config: model='/home/speech-nlp-cse/24m0756/.cache/huggingface/hub/models--meta-llama--Llama-3.2-3B-Instruct/snapshots/0cb88a4f764b7a12671c53f0838cd831a0843b95', speculative_config=None, tokenizer='/home/speech-nlp-cse/24m0756/.cache/huggingface/hub/models--meta-llama--Llama-3.2-3B-Instruct/snapshots/0cb88a4f764b7a12671c53f0838cd831a0843b95', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=True, dtype=torch.bfloat16, max_seq_len=8192, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=True, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None), seed=0, served_model_name=/home/speech-nlp-cse/24m0756/.cache/huggingface/hub/models--meta-llama--Llama-3.2-3B-Instruct/snapshots/0cb88a4f764b7a12671c53f0838cd831a0843b95, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'splitting_ops': None, 'compile_mm_encoder': False, 'use_inductor': None, 'compile_sizes': [], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {}, 'max_cudagraph_capture_size': 0, 'local_cache_dir': None}
+[1;36m(EngineCore_DP0 pid=2401319)[0;0m WARNING 11-17 08:49:24 [multiproc_executor.py:869] Reducing Torch parallelism from 8 threads to 1 to avoid unnecessary CPU contention. Set OMP_NUM_THREADS in the external environment to tune this value as needed.
+[1;36m(EngineCore_DP0 pid=2401319)[0;0m INFO 11-17 08:49:55 [parallel_state.py:1208] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://127.0.0.1:51691 backend=nccl
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[1;36m(EngineCore_DP0 pid=2401319)[0;0m INFO 11-17 08:49:57 [parallel_state.py:1394] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0, EP rank 0
+[1;36m(EngineCore_DP0 pid=2401319)[0;0m [1;36m(Worker pid=2401325)[0;0m INFO 11-17 08:49:58 [gpu_model_runner.py:3259] Starting to load model /home/speech-nlp-cse/24m0756/.cache/huggingface/hub/models--meta-llama--Llama-3.2-3B-Instruct/snapshots/0cb88a4f764b7a12671c53f0838cd831a0843b95...
+[1;36m(EngineCore_DP0 pid=2401319)[0;0m [1;36m(Worker pid=2401325)[0;0m INFO 11-17 08:50:00 [cuda.py:418] Valid backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION']
+[1;36m(EngineCore_DP0 pid=2401319)[0;0m [1;36m(Worker pid=2401325)[0;0m INFO 11-17 08:50:00 [cuda.py:427] Using FLASH_ATTN backend.
+[1;36m(EngineCore_DP0 pid=2401319)[0;0m [1;36m(Worker pid=2401325)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+[1;36m(EngineCore_DP0 pid=2401319)[0;0m [1;36m(Worker pid=2401325)[0;0m Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:02<00:02,  2.38s/it]
+[1;36m(EngineCore_DP0 pid=2401319)[0;0m [1;36m(Worker pid=2401325)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:03<00:00,  1.56s/it]
+[1;36m(EngineCore_DP0 pid=2401319)[0;0m [1;36m(Worker pid=2401325)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:03<00:00,  1.68s/it]
+[1;36m(EngineCore_DP0 pid=2401319)[0;0m [1;36m(Worker pid=2401325)[0;0m 
+[1;36m(EngineCore_DP0 pid=2401319)[0;0m [1;36m(Worker pid=2401325)[0;0m INFO 11-17 08:50:04 [default_loader.py:314] Loading weights took 3.48 seconds
+[1;36m(EngineCore_DP0 pid=2401319)[0;0m [1;36m(Worker pid=2401325)[0;0m INFO 11-17 08:50:04 [punica_selector.py:20] Using PunicaWrapperGPU.
+[1;36m(EngineCore_DP0 pid=2401319)[0;0m [1;36m(Worker pid=2401325)[0;0m INFO 11-17 08:50:05 [gpu_model_runner.py:3338] Model loading took 6.2347 GiB memory and 5.496805 seconds
+[1;36m(EngineCore_DP0 pid=2401319)[0;0m [1;36m(Worker pid=2401325)[0;0m INFO 11-17 08:50:08 [gpu_worker.py:359] Available KV cache memory: 30.27 GiB
+[1;36m(EngineCore_DP0 pid=2401319)[0;0m INFO 11-17 08:50:09 [kv_cache_utils.py:1229] GPU KV cache size: 283,440 tokens
+[1;36m(EngineCore_DP0 pid=2401319)[0;0m INFO 11-17 08:50:09 [kv_cache_utils.py:1234] Maximum concurrency for 8,192 tokens per request: 34.60x
+[1;36m(EngineCore_DP0 pid=2401319)[0;0m INFO 11-17 08:50:09 [core.py:250] init engine (profile, create kv cache, warmup model) took 4.33 seconds
+[1;36m(EngineCore_DP0 pid=2401319)[0;0m INFO 11-17 08:50:10 [vllm.py:500] Cudagraph is disabled under eager mode
+INFO 11-17 08:50:10 [llm.py:352] Supported tasks: ['generate']
+
+======================================================================
+MODEL DTYPE INFORMATION
+======================================================================
+vLLM Model Config dtype: torch.bfloat16
+vLLM Model quantization: None
+KV cache dtype: auto
+======================================================================
+
+vLLM model loaded successfully!
+✓ Successfully created LoRA request for: ../ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/checkpoint-100
+
+======================================================================
+EVALUATION CONFIGURATION
+======================================================================
+Dataset: MGSM
+Thinking Mode: DISABLED
+Temperature: 0.0 (Qwen3 non-thinking mode)
+Top-P: 0.8
+Top-K: -1
+Min-P: 0.0
+Presence Penalty: 0.0
+Max New Tokens: 4096
+Val-N (solutions per problem): 1
+======================================================================
+
+Loading MGSM dataset...
+Loaded juletxara/mgsm (bn) dataset with 250 problems
+Evaluating on 250 problems with vLLM batch inference...
+
+Running vLLM batch inference on 250 problems...
+Using generate interface with manual chat template...
+
+======================================================================
+GENERATION DTYPE CHECK
+======================================================================
+Model dtype: torch.bfloat16
+Quantization: None
+KV cache dtype: auto
+Using LoRA: True
+LoRA path: ../ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/checkpoint-100
+======================================================================
+
+Adding requests:   0%|          | 0/250 [00:00<?, ?it/s]WARNING 11-17 08:50:11 [processor.py:246] vLLM has deprecated support for supporting different tokenizers for different LoRAs. By default, vLLM uses base model's tokenizer. If you are using a LoRA with its own tokenizer, consider specifying `--tokenizer [lora_path]` to use the LoRA tokenizer.
+Adding requests:  64%|██████▎   | 159/250 [00:00<00:00, 1587.39it/s]Adding requests: 100%|██████████| 250/250 [00:00<00:00, 1598.20it/s]
+Processed prompts:   0%|          | 0/250 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s][1;36m(EngineCore_DP0 pid=2401319)[0;0m [1;36m(Worker pid=2401325)[0;0m WARNING 11-17 08:50:14 [utils.py:250] Using default LoRA kernel configs
+Processed prompts:   0%|          | 1/250 [00:27<1:54:10, 27.51s/it, est. speed input: 9.81 toks/s, output: 8.54 toks/s]Processed prompts:   1%|          | 2/250 [00:28<49:17, 11.93s/it, est. speed input: 16.55 toks/s, output: 17.14 toks/s]Processed prompts:   1%|          | 3/250 [00:29<28:02,  6.81s/it, est. speed input: 34.36 toks/s, output: 25.74 toks/s]Processed prompts:   2%|▏         | 4/250 [00:29<17:17,  4.22s/it, est. speed input: 48.99 toks/s, output: 34.75 toks/s]Processed prompts:   2%|▏         | 5/250 [00:29<11:43,  2.87s/it, est. speed input: 55.47 toks/s, output: 43.63 toks/s]Processed prompts:   3%|▎         | 7/250 [00:30<06:21,  1.57s/it, est. speed input: 71.92 toks/s, output: 61.49 toks/s]Processed prompts:   3%|▎         | 8/250 [00:30<04:50,  1.20s/it, est. speed input: 77.60 toks/s, output: 70.62 toks/s]Processed prompts:   4%|▎         | 9/250 [00:30<03:37,  1.11it/s, est. speed input: 86.78 toks/s, output: 79.89 toks/s]Processed prompts:   4%|▍         | 11/250 [00:31<02:07,  1.88it/s, est. speed input: 105.14 toks/s, output: 98.56 toks/s]Processed prompts:   5%|▍         | 12/250 [00:31<01:43,  2.30it/s, est. speed input: 111.76 toks/s, output: 107.84 toks/s]Processed prompts:   6%|▌         | 14/250 [00:31<01:12,  3.25it/s, est. speed input: 127.75 toks/s, output: 126.31 toks/s]Processed prompts:   6%|▋         | 16/250 [00:31<01:01,  3.82it/s, est. speed input: 138.91 toks/s, output: 144.17 toks/s]Processed prompts:   7%|▋         | 18/250 [00:31<00:44,  5.19it/s, est. speed input: 158.87 toks/s, output: 163.01 toks/s]Processed prompts:   8%|▊         | 20/250 [00:32<01:06,  3.46it/s, est. speed input: 167.49 toks/s, output: 177.54 toks/s]Processed prompts:   8%|▊         | 21/250 [00:32<00:58,  3.89it/s, est. speed input: 173.08 toks/s, output: 186.70 toks/s]Processed prompts:   9%|▉         | 23/250 [00:33<00:50,  4.54it/s, est. speed input: 187.67 toks/s, output: 205.04 toks/s]Processed prompts:  10%|▉         | 24/250 [00:33<00:53,  4.22it/s, est. speed input: 193.90 toks/s, output: 213.35 toks/s]Processed prompts:  10%|█         | 25/250 [00:33<00:53,  4.19it/s, est. speed input: 201.87 toks/s, output: 221.89 toks/s]Processed prompts:  10%|█         | 26/250 [00:33<00:47,  4.74it/s, est. speed input: 211.45 toks/s, output: 231.34 toks/s]Processed prompts:  11%|█         | 28/250 [00:34<00:33,  6.69it/s, est. speed input: 223.47 toks/s, output: 250.66 toks/s]Processed prompts:  12%|█▏        | 30/250 [00:34<00:42,  5.13it/s, est. speed input: 237.59 toks/s, output: 266.93 toks/s]Processed prompts:  12%|█▏        | 31/250 [00:35<00:53,  4.12it/s, est. speed input: 246.24 toks/s, output: 274.11 toks/s]Processed prompts:  13%|█▎        | 32/250 [00:35<01:02,  3.51it/s, est. speed input: 251.70 toks/s, output: 281.23 toks/s]Processed prompts:  13%|█▎        | 33/250 [00:35<00:59,  3.65it/s, est. speed input: 263.80 toks/s, output: 289.83 toks/s]Processed prompts:  14%|█▎        | 34/250 [00:35<00:54,  3.99it/s, est. speed input: 267.49 toks/s, output: 298.79 toks/s]Processed prompts:  14%|█▍        | 35/250 [00:36<00:46,  4.64it/s, est. speed input: 272.37 toks/s, output: 308.23 toks/s]Processed prompts:  14%|█▍        | 36/250 [00:36<01:05,  3.25it/s, est. speed input: 273.39 toks/s, output: 314.29 toks/s]Processed prompts:  15%|█▍        | 37/250 [00:36<01:01,  3.44it/s, est. speed input: 278.00 toks/s, output: 322.84 toks/s]Processed prompts:  15%|█▌        | 38/250 [00:36<00:51,  4.14it/s, est. speed input: 297.15 toks/s, output: 332.42 toks/s]Processed prompts:  16%|█▌        | 39/250 [00:37<00:43,  4.84it/s, est. speed input: 303.95 toks/s, output: 341.93 toks/s]Processed prompts:  16%|█▋        | 41/250 [00:37<00:29,  7.12it/s, est. speed input: 318.52 toks/s, output: 362.22 toks/s]Processed prompts:  17%|█▋        | 43/250 [00:37<00:32,  6.36it/s, est. speed input: 328.64 toks/s, output: 380.07 toks/s]Processed prompts:  18%|█▊        | 45/250 [00:37<00:27,  7.53it/s, est. speed input: 342.48 toks/s, output: 399.66 toks/s]Processed prompts:  19%|█▉        | 48/250 [00:37<00:20,  9.84it/s, est. speed input: 367.51 toks/s, output: 430.03 toks/s]Processed prompts:  20%|██        | 50/250 [00:38<00:21,  9.39it/s, est. speed input: 379.10 toks/s, output: 448.97 toks/s]Processed prompts:  21%|██        | 53/250 [00:38<00:17, 11.32it/s, est. speed input: 401.41 toks/s, output: 479.05 toks/s]Processed prompts:  22%|██▏       | 55/250 [00:38<00:26,  7.32it/s, est. speed input: 409.64 toks/s, output: 494.32 toks/s]Processed prompts:  22%|██▏       | 56/250 [00:39<00:27,  6.94it/s, est. speed input: 417.35 toks/s, output: 503.12 toks/s]Processed prompts:  23%|██▎       | 57/250 [00:39<00:33,  5.75it/s, est. speed input: 424.68 toks/s, output: 510.27 toks/s]Processed prompts:  23%|██▎       | 58/250 [00:40<00:56,  3.41it/s, est. speed input: 423.71 toks/s, output: 512.00 toks/s]Processed prompts:  24%|██▎       | 59/250 [00:40<00:50,  3.76it/s, est. speed input: 429.45 toks/s, output: 520.84 toks/s]Processed prompts:  24%|██▍       | 61/250 [00:40<00:36,  5.13it/s, est. speed input: 443.56 toks/s, output: 540.84 toks/s]Processed prompts:  25%|██▌       | 63/250 [00:40<00:27,  6.87it/s, est. speed input: 458.23 toks/s, output: 561.67 toks/s]Processed prompts:  26%|██▌       | 65/250 [00:40<00:23,  7.98it/s, est. speed input: 472.01 toks/s, output: 581.76 toks/s]Processed prompts:  27%|██▋       | 67/250 [00:40<00:20,  8.86it/s, est. speed input: 483.91 toks/s, output: 601.74 toks/s]Processed prompts:  28%|██▊       | 69/250 [00:41<00:25,  7.12it/s, est. speed input: 495.10 toks/s, output: 618.21 toks/s]Processed prompts:  28%|██▊       | 70/250 [00:41<00:30,  5.97it/s, est. speed input: 497.52 toks/s, output: 625.29 toks/s]Processed prompts:  28%|██▊       | 71/250 [00:41<00:27,  6.40it/s, est. speed input: 502.75 toks/s, output: 635.02 toks/s]Processed prompts:  29%|██▉       | 72/250 [00:41<00:28,  6.26it/s, est. speed input: 509.96 toks/s, output: 643.88 toks/s]Processed prompts:  30%|██▉       | 74/250 [00:42<00:26,  6.55it/s, est. speed input: 522.50 toks/s, output: 662.39 toks/s]Processed prompts:  30%|███       | 75/250 [00:42<00:25,  6.93it/s, est. speed input: 526.27 toks/s, output: 671.97 toks/s]Processed prompts:  31%|███       | 77/250 [00:42<00:21,  8.21it/s, est. speed input: 539.00 toks/s, output: 692.11 toks/s]Processed prompts:  32%|███▏      | 79/250 [00:42<00:16, 10.12it/s, est. speed input: 552.50 toks/s, output: 713.11 toks/s]Processed prompts:  32%|███▏      | 81/250 [00:42<00:17,  9.70it/s, est. speed input: 563.63 toks/s, output: 732.44 toks/s]Processed prompts:  33%|███▎      | 83/250 [00:42<00:17,  9.44it/s, est. speed input: 571.82 toks/s, output: 751.62 toks/s]Processed prompts:  34%|███▍      | 85/250 [00:43<00:17,  9.31it/s, est. speed input: 583.05 toks/s, output: 770.85 toks/s]Processed prompts:  34%|███▍      | 86/250 [00:43<00:22,  7.22it/s, est. speed input: 584.99 toks/s, output: 777.67 toks/s]Processed prompts:  35%|███▌      | 88/250 [00:43<00:20,  7.77it/s, est. speed input: 594.44 toks/s, output: 796.97 toks/s]Processed prompts:  36%|███▌      | 90/250 [00:43<00:16,  9.55it/s, est. speed input: 611.64 toks/s, output: 818.21 toks/s]Processed prompts:  37%|███▋      | 92/250 [00:44<00:19,  8.08it/s, est. speed input: 621.75 toks/s, output: 835.44 toks/s]Processed prompts:  37%|███▋      | 93/250 [00:44<00:18,  8.27it/s, est. speed input: 626.62 toks/s, output: 845.10 toks/s]Processed prompts:  38%|███▊      | 95/250 [00:44<00:22,  6.91it/s, est. speed input: 634.18 toks/s, output: 861.22 toks/s]Processed prompts:  38%|███▊      | 96/250 [00:44<00:22,  6.74it/s, est. speed input: 638.55 toks/s, output: 869.99 toks/s]Processed prompts:  40%|███▉      | 99/250 [00:44<00:14, 10.35it/s, est. speed input: 656.55 toks/s, output: 903.26 toks/s]Processed prompts:  40%|████      | 101/250 [00:45<00:25,  5.78it/s, est. speed input: 663.88 toks/s, output: 913.28 toks/s]Processed prompts:  41%|████      | 103/250 [00:45<00:21,  6.90it/s, est. speed input: 672.59 toks/s, output: 934.10 toks/s]Processed prompts:  42%|████▏     | 105/250 [00:45<00:19,  7.50it/s, est. speed input: 684.77 toks/s, output: 953.84 toks/s]Processed prompts:  43%|████▎     | 108/250 [00:46<00:15,  9.23it/s, est. speed input: 698.81 toks/s, output: 985.52 toks/s]Processed prompts:  44%|████▍     | 110/250 [00:46<00:23,  5.97it/s, est. speed input: 701.13 toks/s, output: 996.06 toks/s]Processed prompts:  44%|████▍     | 111/250 [00:46<00:23,  6.00it/s, est. speed input: 705.82 toks/s, output: 1004.86 toks/s]Processed prompts:  45%|████▌     | 113/250 [00:47<00:27,  5.02it/s, est. speed input: 709.01 toks/s, output: 1017.59 toks/s]Processed prompts:  46%|████▌     | 114/250 [00:47<00:26,  5.20it/s, est. speed input: 713.73 toks/s, output: 1026.27 toks/s]Processed prompts:  46%|████▋     | 116/250 [00:47<00:21,  6.13it/s, est. speed input: 726.22 toks/s, output: 1046.08 toks/s]Processed prompts:  47%|████▋     | 117/250 [00:48<00:23,  5.76it/s, est. speed input: 727.66 toks/s, output: 1053.66 toks/s]Processed prompts:  48%|████▊     | 120/250 [00:48<00:14,  9.05it/s, est. speed input: 755.24 toks/s, output: 1088.26 toks/s]Processed prompts:  50%|████▉     | 124/250 [00:48<00:14,  8.86it/s, est. speed input: 775.15 toks/s, output: 1126.68 toks/s]Processed prompts:  50%|█████     | 126/250 [00:48<00:13,  9.12it/s, est. speed input: 789.14 toks/s, output: 1146.67 toks/s]Processed prompts:  52%|█████▏    | 129/250 [00:49<00:13,  8.96it/s, est. speed input: 801.85 toks/s, output: 1175.39 toks/s]Processed prompts:  52%|█████▏    | 131/250 [00:49<00:20,  5.95it/s, est. speed input: 802.37 toks/s, output: 1183.95 toks/s]Processed prompts:  53%|█████▎    | 133/250 [00:50<00:16,  7.09it/s, est. speed input: 811.01 toks/s, output: 1205.62 toks/s]Processed prompts:  55%|█████▍    | 137/250 [00:50<00:11,  9.86it/s, est. speed input: 834.81 toks/s, output: 1250.27 toks/s]Processed prompts:  56%|█████▌    | 139/250 [00:51<00:18,  5.87it/s, est. speed input: 838.36 toks/s, output: 1255.45 toks/s]Processed prompts:  56%|█████▋    | 141/250 [00:51<00:20,  5.34it/s, est. speed input: 839.10 toks/s, output: 1268.72 toks/s]Processed prompts:  57%|█████▋    | 143/250 [00:51<00:17,  6.16it/s, est. speed input: 848.83 toks/s, output: 1289.01 toks/s]Processed prompts:  58%|█████▊    | 145/250 [00:51<00:14,  7.29it/s, est. speed input: 862.93 toks/s, output: 1310.55 toks/s]Processed prompts:  59%|█████▉    | 147/250 [00:52<00:14,  6.94it/s, est. speed input: 876.90 toks/s, output: 1327.48 toks/s]Processed prompts:  60%|█████▉    | 149/250 [00:52<00:13,  7.75it/s, est. speed input: 894.31 toks/s, output: 1347.90 toks/s]Processed prompts:  60%|██████    | 150/250 [00:52<00:13,  7.66it/s, est. speed input: 896.38 toks/s, output: 1356.91 toks/s]Processed prompts:  61%|██████    | 152/250 [00:52<00:11,  8.54it/s, est. speed input: 905.13 toks/s, output: 1377.35 toks/s]Processed prompts:  61%|██████    | 153/250 [00:52<00:11,  8.30it/s, est. speed input: 908.93 toks/s, output: 1386.42 toks/s]Processed prompts:  62%|██████▏   | 156/250 [00:53<00:10,  8.86it/s, est. speed input: 923.43 toks/s, output: 1416.36 toks/s]Processed prompts:  63%|██████▎   | 158/250 [00:53<00:10,  8.96it/s, est. speed input: 930.24 toks/s, output: 1436.10 toks/s]Processed prompts:  64%|██████▎   | 159/250 [00:53<00:10,  8.72it/s, est. speed input: 932.54 toks/s, output: 1445.40 toks/s]Processed prompts:  64%|██████▍   | 161/250 [00:53<00:10,  8.30it/s, est. speed input: 940.75 toks/s, output: 1463.83 toks/s]Processed prompts:  65%|██████▌   | 163/250 [00:53<00:08,  9.74it/s, est. speed input: 950.22 toks/s, output: 1485.93 toks/s]Processed prompts:  66%|██████▌   | 165/250 [00:54<00:12,  6.56it/s, est. speed input: 958.38 toks/s, output: 1497.30 toks/s]Processed prompts:  67%|██████▋   | 167/250 [00:54<00:10,  7.95it/s, est. speed input: 964.37 toks/s, output: 1519.66 toks/s]Processed prompts:  68%|██████▊   | 169/250 [00:54<00:11,  7.12it/s, est. speed input: 972.16 toks/s, output: 1536.16 toks/s]Processed prompts:  68%|██████▊   | 170/250 [00:55<00:14,  5.63it/s, est. speed input: 971.75 toks/s, output: 1539.58 toks/s]Processed prompts:  68%|██████▊   | 171/250 [00:55<00:13,  5.95it/s, est. speed input: 975.85 toks/s, output: 1549.06 toks/s]Processed prompts:  70%|██████▉   | 174/250 [00:55<00:08,  9.09it/s, est. speed input: 988.16 toks/s, output: 1584.98 toks/s]Processed prompts:  70%|███████   | 176/250 [00:55<00:08,  9.14it/s, est. speed input: 996.47 toks/s, output: 1605.33 toks/s]Processed prompts:  71%|███████   | 178/250 [00:56<00:12,  5.72it/s, est. speed input: 1000.17 toks/s, output: 1613.42 toks/s]Processed prompts:  72%|███████▏  | 181/250 [00:56<00:08,  7.77it/s, est. speed input: 1015.28 toks/s, output: 1648.42 toks/s]Processed prompts:  74%|███████▎  | 184/250 [00:56<00:06,  9.67it/s, est. speed input: 1031.41 toks/s, output: 1683.48 toks/s]Processed prompts:  74%|███████▍  | 186/250 [00:56<00:06,  9.96it/s, est. speed input: 1037.38 toks/s, output: 1704.88 toks/s]Processed prompts:  75%|███████▌  | 188/250 [00:56<00:05, 10.86it/s, est. speed input: 1048.09 toks/s, output: 1727.53 toks/s]Processed prompts:  76%|███████▌  | 190/250 [00:57<00:09,  6.27it/s, est. speed input: 1045.50 toks/s, output: 1734.41 toks/s]Processed prompts:  76%|███████▋  | 191/250 [00:57<00:09,  6.46it/s, est. speed input: 1050.97 toks/s, output: 1744.08 toks/s]Processed prompts:  77%|███████▋  | 192/250 [00:57<00:08,  6.67it/s, est. speed input: 1054.23 toks/s, output: 1753.79 toks/s]Processed prompts:  77%|███████▋  | 193/250 [00:58<00:11,  4.79it/s, est. speed input: 1057.69 toks/s, output: 1754.67 toks/s]Processed prompts:  78%|███████▊  | 195/250 [00:58<00:08,  6.13it/s, est. speed input: 1069.57 toks/s, output: 1776.72 toks/s]Processed prompts:  79%|███████▉  | 197/250 [00:58<00:08,  6.23it/s, est. speed input: 1073.71 toks/s, output: 1794.77 toks/s]Processed prompts:  79%|███████▉  | 198/250 [00:59<00:16,  3.19it/s, est. speed input: 1064.99 toks/s, output: 1780.88 toks/s]Processed prompts:  80%|███████▉  | 199/250 [00:59<00:14,  3.54it/s, est. speed input: 1069.94 toks/s, output: 1789.69 toks/s]Processed prompts:  80%|████████  | 200/250 [01:00<00:16,  2.96it/s, est. speed input: 1066.24 toks/s, output: 1788.59 toks/s]Processed prompts:  80%|████████  | 201/250 [01:00<00:18,  2.60it/s, est. speed input: 1065.58 toks/s, output: 1787.36 toks/s]Processed prompts:  81%|████████  | 202/250 [01:01<00:15,  3.05it/s, est. speed input: 1071.87 toks/s, output: 1796.37 toks/s]Processed prompts:  81%|████████  | 203/250 [01:01<00:14,  3.24it/s, est. speed input: 1076.93 toks/s, output: 1802.82 toks/s]Processed prompts:  82%|████████▏ | 205/250 [01:01<00:12,  3.63it/s, est. speed input: 1082.10 toks/s, output: 1817.45 toks/s]Processed prompts:  83%|████████▎ | 207/250 [01:01<00:08,  5.16it/s, est. speed input: 1096.26 toks/s, output: 1842.14 toks/s]Processed prompts:  84%|████████▎ | 209/250 [01:02<00:10,  3.74it/s, est. speed input: 1094.86 toks/s, output: 1847.12 toks/s]Processed prompts:  84%|████████▍ | 210/250 [01:02<00:09,  4.04it/s, est. speed input: 1098.51 toks/s, output: 1856.50 toks/s]Processed prompts:  84%|████████▍ | 211/250 [01:03<00:10,  3.88it/s, est. speed input: 1098.89 toks/s, output: 1862.19 toks/s]Processed prompts:  85%|████████▍ | 212/250 [01:03<00:10,  3.62it/s, est. speed input: 1104.30 toks/s, output: 1866.77 toks/s]Processed prompts:  85%|████████▌ | 213/250 [01:03<00:09,  4.02it/s, est. speed input: 1108.65 toks/s, output: 1876.23 toks/s]Processed prompts:  86%|████████▌ | 214/250 [01:04<00:08,  4.02it/s, est. speed input: 1110.92 toks/s, output: 1883.44 toks/s]Processed prompts:  86%|████████▌ | 215/250 [01:04<00:09,  3.67it/s, est. speed input: 1111.44 toks/s, output: 1888.16 toks/s]Processed prompts:  86%|████████▋ | 216/250 [01:04<00:08,  3.92it/s, est. speed input: 1111.35 toks/s, output: 1896.59 toks/s]Processed prompts:  87%|████████▋ | 218/250 [01:04<00:07,  4.35it/s, est. speed input: 1120.10 toks/s, output: 1914.10 toks/s]Processed prompts:  88%|████████▊ | 219/250 [01:05<00:06,  4.83it/s, est. speed input: 1127.25 toks/s, output: 1924.75 toks/s]Processed prompts:  88%|████████▊ | 221/250 [01:05<00:04,  6.28it/s, est. speed input: 1132.48 toks/s, output: 1948.74 toks/s]Processed prompts:  89%|████████▉ | 222/250 [01:05<00:04,  6.10it/s, est. speed input: 1134.89 toks/s, output: 1958.06 toks/s]Processed prompts:  89%|████████▉ | 223/250 [01:05<00:05,  5.32it/s, est. speed input: 1134.36 toks/s, output: 1964.99 toks/s]Processed prompts:  90%|████████▉ | 224/250 [01:05<00:05,  5.08it/s, est. speed input: 1138.60 toks/s, output: 1973.12 toks/s]Processed prompts:  90%|█████████ | 226/250 [01:06<00:03,  6.97it/s, est. speed input: 1152.38 toks/s, output: 1998.32 toks/s]Processed prompts:  91%|█████████ | 228/250 [01:06<00:03,  5.93it/s, est. speed input: 1153.18 toks/s, output: 2015.12 toks/s]Processed prompts:  92%|█████████▏| 229/250 [01:06<00:03,  5.58it/s, est. speed input: 1154.88 toks/s, output: 2023.26 toks/s]Processed prompts:  92%|█████████▏| 230/250 [01:07<00:06,  3.10it/s, est. speed input: 1144.82 toks/s, output: 2014.40 toks/s]Processed prompts:  92%|█████████▏| 231/250 [01:08<00:09,  2.01it/s, est. speed input: 1133.11 toks/s, output: 1999.29 toks/s]Processed prompts:  93%|█████████▎| 232/250 [01:09<00:10,  1.77it/s, est. speed input: 1124.83 toks/s, output: 1992.72 toks/s]Processed prompts:  93%|█████████▎| 233/250 [01:09<00:08,  1.99it/s, est. speed input: 1129.90 toks/s, output: 1998.41 toks/s]Processed prompts:  94%|█████████▎| 234/250 [01:09<00:06,  2.38it/s, est. speed input: 1132.65 toks/s, output: 2007.69 toks/s]Processed prompts:  94%|█████████▍| 235/250 [01:10<00:05,  2.79it/s, est. speed input: 1138.67 toks/s, output: 2017.05 toks/s]Processed prompts:  94%|█████████▍| 236/250 [01:10<00:06,  2.32it/s, est. speed input: 1131.54 toks/s, output: 2014.98 toks/s]Processed prompts:  95%|█████████▍| 237/250 [01:11<00:06,  1.87it/s, est. speed input: 1127.44 toks/s, output: 2008.29 toks/s]Processed prompts:  95%|█████████▌| 238/250 [01:11<00:05,  2.33it/s, est. speed input: 1131.64 toks/s, output: 2018.94 toks/s]Processed prompts:  96%|█████████▌| 239/250 [01:12<00:05,  1.90it/s, est. speed input: 1124.68 toks/s, output: 2013.44 toks/s]Processed prompts:  96%|█████████▌| 240/250 [01:12<00:05,  1.94it/s, est. speed input: 1123.76 toks/s, output: 2015.36 toks/s]Processed prompts:  96%|█████████▋| 241/250 [01:15<00:11,  1.23s/it, est. speed input: 1085.45 toks/s, output: 1953.98 toks/s]Processed prompts:  97%|█████████▋| 242/250 [01:25<00:30,  3.84s/it, est. speed input: 965.02 toks/s, output: 1743.58 toks/s] Processed prompts:  97%|█████████▋| 243/250 [01:36<00:41,  5.99s/it, est. speed input: 858.94 toks/s, output: 1562.60 toks/s]Processed prompts:  98%|█████████▊| 244/250 [01:37<00:25,  4.30s/it, est. speed input: 860.01 toks/s, output: 1575.10 toks/s]Processed prompts:  98%|█████████▊| 245/250 [01:38<00:17,  3.48s/it, est. speed input: 851.51 toks/s, output: 1567.88 toks/s]Processed prompts:  98%|█████████▊| 246/250 [02:09<00:46, 11.55s/it, est. speed input: 654.71 toks/s, output: 1218.19 toks/s]Processed prompts:  99%|█████████▉| 247/250 [03:14<01:23, 27.83s/it, est. speed input: 434.96 toks/s, output: 827.62 toks/s] Processed prompts:  99%|█████████▉| 248/250 [03:15<00:39, 19.57s/it, est. speed input: 436.37 toks/s, output: 847.36 toks/s]Processed prompts: 100%|██████████| 250/250 [03:17<00:00, 11.00s/it, est. speed input: 433.69 toks/s, output: 880.30 toks/s]Processed prompts: 100%|██████████| 250/250 [03:17<00:00, 11.00s/it, est. speed input: 433.69 toks/s, output: 880.30 toks/s]Processed prompts: 100%|██████████| 250/250 [03:17<00:00,  1.27it/s, est. speed input: 433.69 toks/s, output: 880.30 toks/s]
+
+Processing results...
+✓ [1/250] Pass@1: 100.0% | Avg@1: 100.0% | Formatted: 0.0%
+✓ [2/250] Pass@1: 100.0% | Avg@1: 100.0% | Formatted: 0.0%
+✓ [3/250] Pass@1: 100.0% | Avg@1: 100.0% | Formatted: 0.0%
+✓ [4/250] Pass@1: 100.0% | Avg@1: 100.0% | Formatted: 0.0%
+✗ [5/250] Pass@1: 80.0% | Avg@1: 80.0% | Formatted: 0.0%
+✗ [6/250] Pass@1: 66.7% | Avg@1: 66.7% | Formatted: 0.0%
+✓ [7/250] Pass@1: 71.4% | Avg@1: 71.4% | Formatted: 0.0%
+✗ [8/250] Pass@1: 62.5% | Avg@1: 62.5% | Formatted: 0.0%
+✗ [9/250] Pass@1: 55.6% | Avg@1: 55.6% | Formatted: 0.0%
+✓ [10/250] Pass@1: 60.0% | Avg@1: 60.0% | Formatted: 0.0%
+
+======================================================================
+Progress: 10/250
+Pass@1: 60.00%
+Average@1: 60.00%
+Format Rate: 0.00%
+Last problem: প্রতি সপ্তাহে প্রথম 40 ঘণ্টা কাজ করার জন্য এলিজা প্রতি ঘণ্টায় $10 দরে কাজ করেন। অতিরিক্ত সময় কাজ করা...
+Solutions correct: 1/1
+Majority vote: ✗
+Ground truth: 460
+======================================================================
+
+✓ [11/250] Pass@1: 63.6% | Avg@1: 63.6% | Formatted: 0.0%
+✗ [12/250] Pass@1: 58.3% | Avg@1: 58.3% | Formatted: 0.0%
+✗ [13/250] Pass@1: 53.8% | Avg@1: 53.8% | Formatted: 0.0%
+✗ [14/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 0.0%
+✗ [15/250] Pass@1: 46.7% | Avg@1: 46.7% | Formatted: 0.0%
+✓ [16/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 0.0%
+✓ [17/250] Pass@1: 52.9% | Avg@1: 52.9% | Formatted: 0.0%
+✓ [18/250] Pass@1: 55.6% | Avg@1: 55.6% | Formatted: 0.0%
+✓ [19/250] Pass@1: 57.9% | Avg@1: 57.9% | Formatted: 0.0%
+✗ [20/250] Pass@1: 55.0% | Avg@1: 55.0% | Formatted: 0.0%
+
+======================================================================
+Progress: 20/250
+Pass@1: 55.00%
+Average@1: 55.00%
+Format Rate: 0.00%
+Last problem: মারিসা 12 মাইল পথ পাড়ি দিচ্ছেন। এরমধ্যে প্রথম 4 মাইল হাঁটতে তিনি 1 ঘণ্টা এবং পরের দুই মাইল হাঁটতে আর...
+Solutions correct: 0/1
+Majority vote: ✗
+Ground truth: 6
+======================================================================
+
+✗ [21/250] Pass@1: 52.4% | Avg@1: 52.4% | Formatted: 0.0%
+✗ [22/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 0.0%
+✓ [23/250] Pass@1: 52.2% | Avg@1: 52.2% | Formatted: 0.0%
+✓ [24/250] Pass@1: 54.2% | Avg@1: 54.2% | Formatted: 0.0%
+✗ [25/250] Pass@1: 52.0% | Avg@1: 52.0% | Formatted: 0.0%
+✓ [26/250] Pass@1: 53.8% | Avg@1: 53.8% | Formatted: 0.0%
+✓ [27/250] Pass@1: 55.6% | Avg@1: 55.6% | Formatted: 0.0%
+✓ [28/250] Pass@1: 57.1% | Avg@1: 57.1% | Formatted: 0.0%
+✓ [29/250] Pass@1: 58.6% | Avg@1: 58.6% | Formatted: 0.0%
+✗ [30/250] Pass@1: 56.7% | Avg@1: 56.7% | Formatted: 0.0%
+
+======================================================================
+Progress: 30/250
+Pass@1: 56.67%
+Average@1: 56.67%
+Format Rate: 0.00%
+Last problem: গ্লোরিয়া জুতো কেনাকাটা করার সময় তাঁর বাজেটের সাথে মানানসই একজোড়া বুট দেখতে পান। কিন্তু, তাঁকে বুট ও ...
+Solutions correct: 0/1
+Majority vote: ✗
+Ground truth: 104
+======================================================================
+
+✓ [31/250] Pass@1: 58.1% | Avg@1: 58.1% | Formatted: 0.0%
+✓ [32/250] Pass@1: 59.4% | Avg@1: 59.4% | Formatted: 0.0%
+✗ [33/250] Pass@1: 57.6% | Avg@1: 57.6% | Formatted: 0.0%
+✓ [34/250] Pass@1: 58.8% | Avg@1: 58.8% | Formatted: 0.0%
+✓ [35/250] Pass@1: 60.0% | Avg@1: 60.0% | Formatted: 0.0%
+✓ [36/250] Pass@1: 61.1% | Avg@1: 61.1% | Formatted: 0.0%
+✗ [37/250] Pass@1: 59.5% | Avg@1: 59.5% | Formatted: 0.0%
+✓ [38/250] Pass@1: 60.5% | Avg@1: 60.5% | Formatted: 0.0%
+✗ [39/250] Pass@1: 59.0% | Avg@1: 59.0% | Formatted: 0.0%
+✗ [40/250] Pass@1: 57.5% | Avg@1: 57.5% | Formatted: 0.0%
+
+======================================================================
+Progress: 40/250
+Pass@1: 57.50%
+Average@1: 57.50%
+Format Rate: 0.00%
+Last problem: ডানা হাঁটার তুলনায় চারগুণ বেশি দ্রুত গতিতে দৌড়াতে পারেন, কিন্তু তিনি তাঁর দৌড়ানোর গতির অর্ধেক গতিতে ...
+Solutions correct: 0/1
+Majority vote: ✗
+Ground truth: 18
+======================================================================
+
+✓ [41/250] Pass@1: 58.5% | Avg@1: 58.5% | Formatted: 0.0%
+✓ [42/250] Pass@1: 59.5% | Avg@1: 59.5% | Formatted: 0.0%
+✗ [43/250] Pass@1: 58.1% | Avg@1: 58.1% | Formatted: 0.0%
+✗ [44/250] Pass@1: 56.8% | Avg@1: 56.8% | Formatted: 0.0%
+✓ [45/250] Pass@1: 57.8% | Avg@1: 57.8% | Formatted: 0.0%
+✗ [46/250] Pass@1: 56.5% | Avg@1: 56.5% | Formatted: 0.0%
+✗ [47/250] Pass@1: 55.3% | Avg@1: 55.3% | Formatted: 0.0%
+✗ [48/250] Pass@1: 54.2% | Avg@1: 54.2% | Formatted: 0.0%
+✓ [49/250] Pass@1: 55.1% | Avg@1: 55.1% | Formatted: 0.0%
+✓ [50/250] Pass@1: 56.0% | Avg@1: 56.0% | Formatted: 0.0%
+
+======================================================================
+Progress: 50/250
+Pass@1: 56.00%
+Average@1: 56.00%
+Format Rate: 0.00%
+Last problem: রিচার্ড 15 ফ্লোরের একটি অ্যাপার্টমেন্ট বিল্ডিং-এ থাকেন। প্রতিটি ফ্লোরে 8টি করে ইউনিট আছে, এবং বিল্ডি...
+Solutions correct: 1/1
+Majority vote: ✗
+Ground truth: 30
+======================================================================
+
+✓ [51/250] Pass@1: 56.9% | Avg@1: 56.9% | Formatted: 0.0%
+✓ [52/250] Pass@1: 57.7% | Avg@1: 57.7% | Formatted: 0.0%
+✗ [53/250] Pass@1: 56.6% | Avg@1: 56.6% | Formatted: 0.0%
+✓ [54/250] Pass@1: 57.4% | Avg@1: 57.4% | Formatted: 0.0%
+✗ [55/250] Pass@1: 56.4% | Avg@1: 56.4% | Formatted: 0.0%
+✓ [56/250] Pass@1: 57.1% | Avg@1: 57.1% | Formatted: 0.0%
+✓ [57/250] Pass@1: 57.9% | Avg@1: 57.9% | Formatted: 0.0%
+✓ [58/250] Pass@1: 58.6% | Avg@1: 58.6% | Formatted: 0.0%
+✗ [59/250] Pass@1: 57.6% | Avg@1: 57.6% | Formatted: 0.0%
+✓ [60/250] Pass@1: 58.3% | Avg@1: 58.3% | Formatted: 0.0%
+
+======================================================================
+Progress: 60/250
+Pass@1: 58.33%
+Average@1: 58.33%
+Format Rate: 0.00%
+Last problem: কোনও একটি রাস্পবেরির ঝাড়ে 6টি থোকার প্রতিটিতে 20টি করে ও 67টি পৃথক ফল ঝাড়ের মধ্যে ইতস্তত ছড়িয়ে রয়েছে...
+Solutions correct: 1/1
+Majority vote: ✗
+Ground truth: 187
+======================================================================
+
+✓ [61/250] Pass@1: 59.0% | Avg@1: 59.0% | Formatted: 0.0%
+✓ [62/250] Pass@1: 59.7% | Avg@1: 59.7% | Formatted: 0.0%
+✗ [63/250] Pass@1: 58.7% | Avg@1: 58.7% | Formatted: 0.0%
+✗ [64/250] Pass@1: 57.8% | Avg@1: 57.8% | Formatted: 0.0%
+✗ [65/250] Pass@1: 56.9% | Avg@1: 56.9% | Formatted: 0.0%
+✗ [66/250] Pass@1: 56.1% | Avg@1: 56.1% | Formatted: 0.0%
+✗ [67/250] Pass@1: 55.2% | Avg@1: 55.2% | Formatted: 0.0%
+✓ [68/250] Pass@1: 55.9% | Avg@1: 55.9% | Formatted: 0.0%
+✓ [69/250] Pass@1: 56.5% | Avg@1: 56.5% | Formatted: 0.0%
+✓ [70/250] Pass@1: 57.1% | Avg@1: 57.1% | Formatted: 0.0%
+
+======================================================================
+Progress: 70/250
+Pass@1: 57.14%
+Average@1: 57.14%
+Format Rate: 0.00%
+Last problem: বেইলি একটি নির্দিষ্ট পরিমাণ অর্থ নিয়ে শুরু করেন। তারপর তিনি 8 সপ্তাহ ধরে $5 করে একটি সাপ্তাহিক ভাতা ...
+Solutions correct: 1/1
+Majority vote: ✗
+Ground truth: 60
+======================================================================
+
+✓ [71/250] Pass@1: 57.7% | Avg@1: 57.7% | Formatted: 0.0%
+✓ [72/250] Pass@1: 58.3% | Avg@1: 58.3% | Formatted: 0.0%
+✓ [73/250] Pass@1: 58.9% | Avg@1: 58.9% | Formatted: 0.0%
+✓ [74/250] Pass@1: 59.5% | Avg@1: 59.5% | Formatted: 1.4%
+✗ [75/250] Pass@1: 58.7% | Avg@1: 58.7% | Formatted: 1.3%
+✗ [76/250] Pass@1: 57.9% | Avg@1: 57.9% | Formatted: 1.3%
+✗ [77/250] Pass@1: 57.1% | Avg@1: 57.1% | Formatted: 1.3%
+✓ [78/250] Pass@1: 57.7% | Avg@1: 57.7% | Formatted: 1.3%
+✗ [79/250] Pass@1: 57.0% | Avg@1: 57.0% | Formatted: 1.3%
+✓ [80/250] Pass@1: 57.5% | Avg@1: 57.5% | Formatted: 1.2%
+
+======================================================================
+Progress: 80/250
+Pass@1: 57.50%
+Average@1: 57.50%
+Format Rate: 1.25%
+Last problem: জন একটি কুকুর দত্তক নিয়েছেন। তিনি কুকুরটিকে নিয়ে গ্রুমারের কাছে গেলেন, যার জন্য তাঁর $100 খরচ হল। নত...
+Solutions correct: 1/1
+Majority vote: ✗
+Ground truth: 70
+======================================================================
+
+✓ [81/250] Pass@1: 58.0% | Avg@1: 58.0% | Formatted: 1.2%
+✓ [82/250] Pass@1: 58.5% | Avg@1: 58.5% | Formatted: 1.2%
+✓ [83/250] Pass@1: 59.0% | Avg@1: 59.0% | Formatted: 1.2%
+✓ [84/250] Pass@1: 59.5% | Avg@1: 59.5% | Formatted: 1.2%
+✗ [85/250] Pass@1: 58.8% | Avg@1: 58.8% | Formatted: 1.2%
+✗ [86/250] Pass@1: 58.1% | Avg@1: 58.1% | Formatted: 1.2%
+✓ [87/250] Pass@1: 58.6% | Avg@1: 58.6% | Formatted: 1.1%
+✗ [88/250] Pass@1: 58.0% | Avg@1: 58.0% | Formatted: 2.3%
+✓ [89/250] Pass@1: 58.4% | Avg@1: 58.4% | Formatted: 2.2%
+✗ [90/250] Pass@1: 57.8% | Avg@1: 57.8% | Formatted: 2.2%
+
+======================================================================
+Progress: 90/250
+Pass@1: 57.78%
+Average@1: 57.78%
+Format Rate: 2.22%
+Last problem: ক্রিস্টিনা একটি জন্মদিনের অনুষ্ঠান করার পরিকল্পনা করছেন এবং নিমন্ত্রিত প্রতিজন অতিথির জন্য .75টি গিফ...
+Solutions correct: 0/1
+Majority vote: ✗
+Ground truth: 24
+======================================================================
+
+✓ [91/250] Pass@1: 58.2% | Avg@1: 58.2% | Formatted: 2.2%
+✓ [92/250] Pass@1: 58.7% | Avg@1: 58.7% | Formatted: 2.2%
+✗ [93/250] Pass@1: 58.1% | Avg@1: 58.1% | Formatted: 2.2%
+✗ [94/250] Pass@1: 57.4% | Avg@1: 57.4% | Formatted: 2.1%
+✗ [95/250] Pass@1: 56.8% | Avg@1: 56.8% | Formatted: 2.1%
+✗ [96/250] Pass@1: 56.2% | Avg@1: 56.2% | Formatted: 2.1%
+✗ [97/250] Pass@1: 55.7% | Avg@1: 55.7% | Formatted: 2.1%
+✗ [98/250] Pass@1: 55.1% | Avg@1: 55.1% | Formatted: 2.0%
+✗ [99/250] Pass@1: 54.5% | Avg@1: 54.5% | Formatted: 2.0%
+✗ [100/250] Pass@1: 54.0% | Avg@1: 54.0% | Formatted: 2.0%
+
+======================================================================
+Progress: 100/250
+Pass@1: 54.00%
+Average@1: 54.00%
+Format Rate: 2.00%
+Last problem: মেরি একজন উৎসুক বাগানী। গতকাল, তিনি তাঁর প্রিয় চারাগাছের নার্সারি থেকে 18টি নতুন চারাগাছের টব পেয়েছে...
+Solutions correct: 0/1
+Majority vote: ✗
+Ground truth: 58
+======================================================================
+
+✗ [101/250] Pass@1: 53.5% | Avg@1: 53.5% | Formatted: 2.0%
+✗ [102/250] Pass@1: 52.9% | Avg@1: 52.9% | Formatted: 2.0%
+✗ [103/250] Pass@1: 52.4% | Avg@1: 52.4% | Formatted: 1.9%
+✓ [104/250] Pass@1: 52.9% | Avg@1: 52.9% | Formatted: 1.9%
+✗ [105/250] Pass@1: 52.4% | Avg@1: 52.4% | Formatted: 1.9%
+✓ [106/250] Pass@1: 52.8% | Avg@1: 52.8% | Formatted: 1.9%
+✗ [107/250] Pass@1: 52.3% | Avg@1: 52.3% | Formatted: 1.9%
+✗ [108/250] Pass@1: 51.9% | Avg@1: 51.9% | Formatted: 1.9%
+✗ [109/250] Pass@1: 51.4% | Avg@1: 51.4% | Formatted: 1.8%
+✓ [110/250] Pass@1: 51.8% | Avg@1: 51.8% | Formatted: 1.8%
+
+======================================================================
+Progress: 110/250
+Pass@1: 51.82%
+Average@1: 51.82%
+Format Rate: 1.82%
+Last problem: এক স্থানীয় গ্যাস স্টেশন এক গ্যালন গ্যাস $3.00 মূল্যে বিক্রয় করে। একটি গ্যাস কোম্পানি, যদি আপনি এই গ্...
+Solutions correct: 1/1
+Majority vote: ✗
+Ground truth: 28
+======================================================================
+
+✗ [111/250] Pass@1: 51.4% | Avg@1: 51.4% | Formatted: 1.8%
+✗ [112/250] Pass@1: 50.9% | Avg@1: 50.9% | Formatted: 1.8%
+✓ [113/250] Pass@1: 51.3% | Avg@1: 51.3% | Formatted: 1.8%
+✗ [114/250] Pass@1: 50.9% | Avg@1: 50.9% | Formatted: 1.8%
+✗ [115/250] Pass@1: 50.4% | Avg@1: 50.4% | Formatted: 1.7%
+✗ [116/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 1.7%
+✗ [117/250] Pass@1: 49.6% | Avg@1: 49.6% | Formatted: 1.7%
+✓ [118/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 1.7%
+✓ [119/250] Pass@1: 50.4% | Avg@1: 50.4% | Formatted: 1.7%
+✗ [120/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 1.7%
+
+======================================================================
+Progress: 120/250
+Pass@1: 50.00%
+Average@1: 50.00%
+Format Rate: 1.67%
+Last problem: অ্যাড্রিয়নের মোট বেতন লায়লার থেকে 30 শতাংশ বেশি ছিল। চার বছর পরে, তাঁর বেতন বৃদ্ধি পেয়েছিল, এবং চার ...
+Solutions correct: 0/1
+Majority vote: ✗
+Ground truth: 95200
+======================================================================
+
+✗ [121/250] Pass@1: 49.6% | Avg@1: 49.6% | Formatted: 1.7%
+✓ [122/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 1.6%
+✗ [123/250] Pass@1: 49.6% | Avg@1: 49.6% | Formatted: 1.6%
+✓ [124/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 1.6%
+✗ [125/250] Pass@1: 49.6% | Avg@1: 49.6% | Formatted: 1.6%
+✗ [126/250] Pass@1: 49.2% | Avg@1: 49.2% | Formatted: 1.6%
+✓ [127/250] Pass@1: 49.6% | Avg@1: 49.6% | Formatted: 1.6%
+✓ [128/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 1.6%
+✓ [129/250] Pass@1: 50.4% | Avg@1: 50.4% | Formatted: 1.6%
+✗ [130/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 2.3%
+
+======================================================================
+Progress: 130/250
+Pass@1: 50.00%
+Average@1: 50.00%
+Format Rate: 2.31%
+Last problem: একটি হাসপাতাল একদিনে 500 জন রোগী দেখে। প্রত্যেক রোগীকে গড়ে 24 মিনিট করে দেখা হয়। চিকিৎসকরা প্রতি ঘণ্...
+Solutions correct: 0/1
+Majority vote: ✗
+Ground truth: 10000
+======================================================================
+
+✓ [131/250] Pass@1: 50.4% | Avg@1: 50.4% | Formatted: 2.3%
+✓ [132/250] Pass@1: 50.8% | Avg@1: 50.8% | Formatted: 2.3%
+✓ [133/250] Pass@1: 51.1% | Avg@1: 51.1% | Formatted: 2.3%
+✓ [134/250] Pass@1: 51.5% | Avg@1: 51.5% | Formatted: 2.2%
+✓ [135/250] Pass@1: 51.9% | Avg@1: 51.9% | Formatted: 2.2%
+✓ [136/250] Pass@1: 52.2% | Avg@1: 52.2% | Formatted: 2.2%
+✗ [137/250] Pass@1: 51.8% | Avg@1: 51.8% | Formatted: 2.2%
+✗ [138/250] Pass@1: 51.4% | Avg@1: 51.4% | Formatted: 2.2%
+✗ [139/250] Pass@1: 51.1% | Avg@1: 51.1% | Formatted: 2.2%
+✓ [140/250] Pass@1: 51.4% | Avg@1: 51.4% | Formatted: 2.1%
+
+======================================================================
+Progress: 140/250
+Pass@1: 51.43%
+Average@1: 51.43%
+Format Rate: 2.14%
+Last problem: একটি ক্যান্ডি মেশিনে, নীল গামবলের তুলনায় চারগুণের থেকে 22ট বেশি গোলাপি গামবল আছে। যদি সেখানে 12 টি ন...
+Solutions correct: 1/1
+Majority vote: ✗
+Ground truth: 70
+======================================================================
+
+✓ [141/250] Pass@1: 51.8% | Avg@1: 51.8% | Formatted: 2.1%
+✗ [142/250] Pass@1: 51.4% | Avg@1: 51.4% | Formatted: 2.1%
+✓ [143/250] Pass@1: 51.7% | Avg@1: 51.7% | Formatted: 2.1%
+✗ [144/250] Pass@1: 51.4% | Avg@1: 51.4% | Formatted: 2.8%
+✓ [145/250] Pass@1: 51.7% | Avg@1: 51.7% | Formatted: 2.8%
+✓ [146/250] Pass@1: 52.1% | Avg@1: 52.1% | Formatted: 2.7%
+✗ [147/250] Pass@1: 51.7% | Avg@1: 51.7% | Formatted: 2.7%
+✗ [148/250] Pass@1: 51.4% | Avg@1: 51.4% | Formatted: 2.7%
+✗ [149/250] Pass@1: 51.0% | Avg@1: 51.0% | Formatted: 2.7%
+✓ [150/250] Pass@1: 51.3% | Avg@1: 51.3% | Formatted: 2.7%
+
+======================================================================
+Progress: 150/250
+Pass@1: 51.33%
+Average@1: 51.33%
+Format Rate: 2.67%
+Last problem: ডরোথির তুলনায় চার্লির Facebook বন্ধুর সংখ্যা তিনগুণ বেশি। ডরোথির তুলনায় জেমসের Facebook বন্ধুর সংখ্য...
+Solutions correct: 1/1
+Majority vote: ✗
+Ground truth: 16
+======================================================================
+
+✗ [151/250] Pass@1: 51.0% | Avg@1: 51.0% | Formatted: 2.6%
+✓ [152/250] Pass@1: 51.3% | Avg@1: 51.3% | Formatted: 2.6%
+✓ [153/250] Pass@1: 51.6% | Avg@1: 51.6% | Formatted: 2.6%
+✗ [154/250] Pass@1: 51.3% | Avg@1: 51.3% | Formatted: 2.6%
+✗ [155/250] Pass@1: 51.0% | Avg@1: 51.0% | Formatted: 2.6%
+✗ [156/250] Pass@1: 50.6% | Avg@1: 50.6% | Formatted: 2.6%
+✗ [157/250] Pass@1: 50.3% | Avg@1: 50.3% | Formatted: 2.5%
+✗ [158/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 2.5%
+✓ [159/250] Pass@1: 50.3% | Avg@1: 50.3% | Formatted: 2.5%
+✗ [160/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 2.5%
+
+======================================================================
+Progress: 160/250
+Pass@1: 50.00%
+Average@1: 50.00%
+Format Rate: 2.50%
+Last problem: ফিন পুকুরে 11টি ব্যাঙাচিকে সাঁতার কাটতে দেখেন। হঠাৎ তিনি তাদের মধ্যে 6টিকে একটি লিলি পাতার আড়াল থেকে...
+Solutions correct: 0/1
+Majority vote: ✗
+Ground truth: 15
+======================================================================
+
+✗ [161/250] Pass@1: 49.7% | Avg@1: 49.7% | Formatted: 2.5%
+✗ [162/250] Pass@1: 49.4% | Avg@1: 49.4% | Formatted: 2.5%
+✗ [163/250] Pass@1: 49.1% | Avg@1: 49.1% | Formatted: 2.5%
+✓ [164/250] Pass@1: 49.4% | Avg@1: 49.4% | Formatted: 2.4%
+✗ [165/250] Pass@1: 49.1% | Avg@1: 49.1% | Formatted: 2.4%
+✗ [166/250] Pass@1: 48.8% | Avg@1: 48.8% | Formatted: 2.4%
+✓ [167/250] Pass@1: 49.1% | Avg@1: 49.1% | Formatted: 2.4%
+✗ [168/250] Pass@1: 48.8% | Avg@1: 48.8% | Formatted: 2.4%
+✓ [169/250] Pass@1: 49.1% | Avg@1: 49.1% | Formatted: 2.4%
+✓ [170/250] Pass@1: 49.4% | Avg@1: 49.4% | Formatted: 2.4%
+
+======================================================================
+Progress: 170/250
+Pass@1: 49.41%
+Average@1: 49.41%
+Format Rate: 2.35%
+Last problem: পাঞ্চো একদিনে 20 মাইল হাঁটেন। সপ্তাহান্তে ব্যতিরেকে তিনি 10 মাইল হাঁটেন। এক সপ্তাহে তিনি কত মাইল হাঁ...
+Solutions correct: 1/1
+Majority vote: ✗
+Ground truth: 120
+======================================================================
+
+✗ [171/250] Pass@1: 49.1% | Avg@1: 49.1% | Formatted: 2.3%
+✓ [172/250] Pass@1: 49.4% | Avg@1: 49.4% | Formatted: 2.3%
+✗ [173/250] Pass@1: 49.1% | Avg@1: 49.1% | Formatted: 2.3%
+✓ [174/250] Pass@1: 49.4% | Avg@1: 49.4% | Formatted: 2.3%
+✗ [175/250] Pass@1: 49.1% | Avg@1: 49.1% | Formatted: 2.3%
+✗ [176/250] Pass@1: 48.9% | Avg@1: 48.9% | Formatted: 2.3%
+✓ [177/250] Pass@1: 49.2% | Avg@1: 49.2% | Formatted: 2.3%
+✗ [178/250] Pass@1: 48.9% | Avg@1: 48.9% | Formatted: 2.2%
+✓ [179/250] Pass@1: 49.2% | Avg@1: 49.2% | Formatted: 2.2%
+✓ [180/250] Pass@1: 49.4% | Avg@1: 49.4% | Formatted: 2.8%
+
+======================================================================
+Progress: 180/250
+Pass@1: 49.44%
+Average@1: 49.44%
+Format Rate: 2.78%
+Last problem: অঙ্ক শিখিয়ে লয়েড এক ঘণ্টায় $10 উপার্জন করেন। তিনি প্রথম সপ্তাহে 5 ঘণ্টা এবং দ্বিতীয় সপ্তাহে 8 ঘণ্টা ...
+Solutions correct: 1/1
+Majority vote: ✓
+Ground truth: 130
+======================================================================
+
+✓ [181/250] Pass@1: 49.7% | Avg@1: 49.7% | Formatted: 2.8%
+✓ [182/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 2.7%
+✗ [183/250] Pass@1: 49.7% | Avg@1: 49.7% | Formatted: 2.7%
+✗ [184/250] Pass@1: 49.5% | Avg@1: 49.5% | Formatted: 2.7%
+✗ [185/250] Pass@1: 49.2% | Avg@1: 49.2% | Formatted: 2.7%
+✓ [186/250] Pass@1: 49.5% | Avg@1: 49.5% | Formatted: 2.7%
+✗ [187/250] Pass@1: 49.2% | Avg@1: 49.2% | Formatted: 2.7%
+✓ [188/250] Pass@1: 49.5% | Avg@1: 49.5% | Formatted: 2.7%
+✓ [189/250] Pass@1: 49.7% | Avg@1: 49.7% | Formatted: 2.6%
+✗ [190/250] Pass@1: 49.5% | Avg@1: 49.5% | Formatted: 2.6%
+
+======================================================================
+Progress: 190/250
+Pass@1: 49.47%
+Average@1: 49.47%
+Format Rate: 2.63%
+Last problem: মেলায় যাওয়ার জন্য তিন বন্ধু 3টি টিকিটের জন্য $20.25 খরচ করেছিলেন। তাঁরা টিকিটের থেকে খাবারে $4.50 কম...
+Solutions correct: 0/1
+Majority vote: ✗
+Ground truth: 34
+======================================================================
+
+✓ [191/250] Pass@1: 49.7% | Avg@1: 49.7% | Formatted: 2.6%
+✗ [192/250] Pass@1: 49.5% | Avg@1: 49.5% | Formatted: 2.6%
+✗ [193/250] Pass@1: 49.2% | Avg@1: 49.2% | Formatted: 2.6%
+✗ [194/250] Pass@1: 49.0% | Avg@1: 49.0% | Formatted: 2.6%
+✓ [195/250] Pass@1: 49.2% | Avg@1: 49.2% | Formatted: 2.6%
+✓ [196/250] Pass@1: 49.5% | Avg@1: 49.5% | Formatted: 2.6%
+✓ [197/250] Pass@1: 49.7% | Avg@1: 49.7% | Formatted: 2.5%
+✓ [198/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 2.5%
+✓ [199/250] Pass@1: 50.3% | Avg@1: 50.3% | Formatted: 2.5%
+✓ [200/250] Pass@1: 50.5% | Avg@1: 50.5% | Formatted: 2.5%
+
+======================================================================
+Progress: 200/250
+Pass@1: 50.50%
+Average@1: 50.50%
+Format Rate: 2.50%
+Last problem: মার্ক একজন কপি-এডিটর। প্রতি সপ্তাহে তিনি দুটি আলাদা প্রকাশকের জন্য সমান সংখ্যক বাক্যের সম্পাদনা করেন...
+Solutions correct: 1/1
+Majority vote: ✗
+Ground truth: 7500
+======================================================================
+
+✓ [201/250] Pass@1: 50.7% | Avg@1: 50.7% | Formatted: 2.5%
+✗ [202/250] Pass@1: 50.5% | Avg@1: 50.5% | Formatted: 2.5%
+✓ [203/250] Pass@1: 50.7% | Avg@1: 50.7% | Formatted: 2.5%
+✗ [204/250] Pass@1: 50.5% | Avg@1: 50.5% | Formatted: 2.5%
+✓ [205/250] Pass@1: 50.7% | Avg@1: 50.7% | Formatted: 2.4%
+✗ [206/250] Pass@1: 50.5% | Avg@1: 50.5% | Formatted: 2.4%
+✓ [207/250] Pass@1: 50.7% | Avg@1: 50.7% | Formatted: 2.4%
+✗ [208/250] Pass@1: 50.5% | Avg@1: 50.5% | Formatted: 2.4%
+✓ [209/250] Pass@1: 50.7% | Avg@1: 50.7% | Formatted: 2.4%
+✗ [210/250] Pass@1: 50.5% | Avg@1: 50.5% | Formatted: 2.4%
+
+======================================================================
+Progress: 210/250
+Pass@1: 50.48%
+Average@1: 50.48%
+Format Rate: 2.38%
+Last problem: প্রতিটি প্লেট $6000 মূল্য দরের আধ ডজন প্লেটের মোট মূল্য থেকে কুড়ি ডজন কাপের মূল্য $1200 কম। প্রতিটি ...
+Solutions correct: 0/1
+Majority vote: ✗
+Ground truth: 145
+======================================================================
+
+✗ [211/250] Pass@1: 50.2% | Avg@1: 50.2% | Formatted: 2.4%
+✓ [212/250] Pass@1: 50.5% | Avg@1: 50.5% | Formatted: 2.4%
+✗ [213/250] Pass@1: 50.2% | Avg@1: 50.2% | Formatted: 2.3%
+✓ [214/250] Pass@1: 50.5% | Avg@1: 50.5% | Formatted: 2.3%
+✗ [215/250] Pass@1: 50.2% | Avg@1: 50.2% | Formatted: 2.3%
+✓ [216/250] Pass@1: 50.5% | Avg@1: 50.5% | Formatted: 2.3%
+✗ [217/250] Pass@1: 50.2% | Avg@1: 50.2% | Formatted: 2.3%
+✓ [218/250] Pass@1: 50.5% | Avg@1: 50.5% | Formatted: 2.3%
+✗ [219/250] Pass@1: 50.2% | Avg@1: 50.2% | Formatted: 2.3%
+✗ [220/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 2.3%
+
+======================================================================
+Progress: 220/250
+Pass@1: 50.00%
+Average@1: 50.00%
+Format Rate: 2.27%
+Last problem: একটি বোর্ড খেলায় চারজন শিক্ষার্থী মোট 251পয়েন্ট পেয়েছিল। নাওমি 68 পয়েন্ট পেয়েছিল। ইউরি নাওমির অর্জিত...
+Solutions correct: 0/1
+Majority vote: ✗
+Ground truth: 54
+======================================================================
+
+✓ [221/250] Pass@1: 50.2% | Avg@1: 50.2% | Formatted: 2.3%
+✓ [222/250] Pass@1: 50.5% | Avg@1: 50.5% | Formatted: 2.3%
+✓ [223/250] Pass@1: 50.7% | Avg@1: 50.7% | Formatted: 2.2%
+✗ [224/250] Pass@1: 50.4% | Avg@1: 50.4% | Formatted: 2.2%
+✓ [225/250] Pass@1: 50.7% | Avg@1: 50.7% | Formatted: 2.2%
+✗ [226/250] Pass@1: 50.4% | Avg@1: 50.4% | Formatted: 2.2%
+✓ [227/250] Pass@1: 50.7% | Avg@1: 50.7% | Formatted: 2.2%
+✗ [228/250] Pass@1: 50.4% | Avg@1: 50.4% | Formatted: 2.2%
+✓ [229/250] Pass@1: 50.7% | Avg@1: 50.7% | Formatted: 2.2%
+✗ [230/250] Pass@1: 50.4% | Avg@1: 50.4% | Formatted: 2.2%
+
+======================================================================
+Progress: 230/250
+Pass@1: 50.43%
+Average@1: 50.43%
+Format Rate: 2.17%
+Last problem: একটি তরমুজের খামার 120 টি ছোট তরমুজ উৎপাদন করেছিল। অ্যাশলিন দুই মাস পরে খামারটিতে গিয়েছিল এবং দেখেছি...
+Solutions correct: 0/1
+Majority vote: ✗
+Ground truth: 21
+======================================================================
+
+✗ [231/250] Pass@1: 50.2% | Avg@1: 50.2% | Formatted: 2.2%
+✓ [232/250] Pass@1: 50.4% | Avg@1: 50.4% | Formatted: 2.2%
+✗ [233/250] Pass@1: 50.2% | Avg@1: 50.2% | Formatted: 2.1%
+✗ [234/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 2.1%
+✗ [235/250] Pass@1: 49.8% | Avg@1: 49.8% | Formatted: 2.1%
+✓ [236/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 2.1%
+✗ [237/250] Pass@1: 49.8% | Avg@1: 49.8% | Formatted: 2.1%
+✓ [238/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 2.1%
+✓ [239/250] Pass@1: 50.2% | Avg@1: 50.2% | Formatted: 2.1%
+✓ [240/250] Pass@1: 50.4% | Avg@1: 50.4% | Formatted: 2.1%
+
+======================================================================
+Progress: 240/250
+Pass@1: 50.42%
+Average@1: 50.42%
+Format Rate: 2.08%
+Last problem: বিদ্যালয়ের একটি হলঘরে 1000 জন শিক্ষার্থী আছে। হলঘরটিতে 3 টি প্রবেশ দ্বার আছে যথা A, B ও C, যেগুলি প্...
+Solutions correct: 1/1
+Majority vote: ✗
+Ground truth: 280
+======================================================================
+
+✓ [241/250] Pass@1: 50.6% | Avg@1: 50.6% | Formatted: 2.1%
+✗ [242/250] Pass@1: 50.4% | Avg@1: 50.4% | Formatted: 2.1%
+✗ [243/250] Pass@1: 50.2% | Avg@1: 50.2% | Formatted: 2.1%
+✓ [244/250] Pass@1: 50.4% | Avg@1: 50.4% | Formatted: 2.0%
+✗ [245/250] Pass@1: 50.2% | Avg@1: 50.2% | Formatted: 2.0%
+✗ [246/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 2.0%
+✗ [247/250] Pass@1: 49.8% | Avg@1: 49.8% | Formatted: 2.0%
+✓ [248/250] Pass@1: 50.0% | Avg@1: 50.0% | Formatted: 2.0%
+✓ [249/250] Pass@1: 50.2% | Avg@1: 50.2% | Formatted: 2.0%
+✓ [250/250] Pass@1: 50.4% | Avg@1: 50.4% | Formatted: 2.0%
+
+======================================================================
+Progress: 250/250
+Pass@1: 50.40%
+Average@1: 50.40%
+Format Rate: 2.00%
+Last problem: সোমবার, স্যু তার বোনের তুলনায় 4 গুণ বেশি কুকি খেয়েছিল। মঙ্গলবার, সে তার বোনের তুলনায় দ্বিগুণ বেশি কু...
+Solutions correct: 1/1
+Majority vote: ✗
+Ground truth: 5600
+======================================================================
+
+
+======================================================================
+FINAL RESULTS
+======================================================================
+Dataset: MGSM
+Thinking Mode: DISABLED
+Total problems: 250
+Solutions per problem: 1
+Total solutions: 250
+
+Metrics:
+  Pass@1: 50.40% (126/250)
+  Average@1: 50.40% (126/250)
+  Majority Vote@1: 0.80% (2/250)
+
+Formatting:
+  Formatted (boxed) answers: 5/250
+  Format rate: 2.00%
+
+Language fidelity (bn):
+  Generations mostly in target script: 100.00%
+  Mean target-script letter ratio: 0.988
+======================================================================
+
+Detailed results saved to: eval_results/mgsm_bn_llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/checkpoint-100.json
+
+======================================================================
+EVALUATION COMPLETE!
+======================================================================
+Final Average@1: 50.40%
+Results saved to: eval_results/mgsm_bn_llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/checkpoint-100.json
+======================================================================
+
+Auto-setting top_p to 0.8 for non-thinking mode
+Results will be saved to: eval_results/mgsm_bn_llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/checkpoint-125.json
+
+======================================================================
+QWEN3 MATH EVALUATION WITH THINKING MODE
+======================================================================
+Dataset: MGSM
+Base model: meta-llama/Llama-3.2-3B-Instruct
+Checkpoint: ../ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/checkpoint-125
+Thinking Mode: DISABLED
+Max tokens: 4096
+Temperature: 0.0 (Qwen3 non-thinking mode)
+Top-p: 0.8
+Top-k: -1
+Min-p: 0.0
+Presence penalty: 0.0
+Num samples: All
+Val-N (solutions per problem): 1
+Output file: eval_results/mgsm_bn_llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/checkpoint-125.json
+GPU memory utilization: 0.85
+Tensor parallel size: 1
+======================================================================
+
+Loading model with vLLM from: meta-llama/Llama-3.2-3B-Instruct
+LoRA adapter path provided: ../ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/checkpoint-125
+LoRA weights found. Enabling LoRA support...
+INFO 11-17 08:54:51 [arg_utils.py:592] HF_HUB_OFFLINE is True, replace model_id [meta-llama/Llama-3.2-3B-Instruct] to model_path [/home/speech-nlp-cse/24m0756/.cache/huggingface/hub/models--meta-llama--Llama-3.2-3B-Instruct/snapshots/0cb88a4f764b7a12671c53f0838cd831a0843b95]
+INFO 11-17 08:54:51 [arg_utils.py:592] HF_HUB_OFFLINE is True, replace model_id [/home/speech-nlp-cse/24m0756/.cache/huggingface/hub/models--meta-llama--Llama-3.2-3B-Instruct/snapshots/0cb88a4f764b7a12671c53f0838cd831a0843b95] to model_path [/home/speech-nlp-cse/24m0756/.cache/huggingface/hub/models--meta-llama--Llama-3.2-3B-Instruct/snapshots/0cb88a4f764b7a12671c53f0838cd831a0843b95]
+INFO 11-17 08:54:51 [utils.py:253] non-default args: {'trust_remote_code': True, 'max_model_len': 8192, 'distributed_executor_backend': 'mp', 'gpu_memory_utilization': 0.85, 'disable_log_stats': True, 'enforce_eager': True, 'enable_lora': True, 'max_lora_rank': 64, 'max_cpu_loras': 1, 'model': '/home/speech-nlp-cse/24m0756/.cache/huggingface/hub/models--meta-llama--Llama-3.2-3B-Instruct/snapshots/0cb88a4f764b7a12671c53f0838cd831a0843b95'}
+The argument `trust_remote_code` is to be used with Auto classes. It has no effect here and is ignored.
+INFO 11-17 08:54:51 [model.py:631] Resolved architecture: LlamaForCausalLM
+INFO 11-17 08:54:51 [model.py:1745] Using max model len 8192
+INFO 11-17 08:54:54 [scheduler.py:216] Chunked prefill is enabled with max_num_batched_tokens=8192.
+INFO 11-17 08:54:54 [vllm.py:500] Cudagraph is disabled under eager mode
+[1;36m(EngineCore_DP0 pid=2401489)[0;0m INFO 11-17 08:54:54 [core.py:93] Initializing a V1 LLM engine (v0.11.2) with config: model='/home/speech-nlp-cse/24m0756/.cache/huggingface/hub/models--meta-llama--Llama-3.2-3B-Instruct/snapshots/0cb88a4f764b7a12671c53f0838cd831a0843b95', speculative_config=None, tokenizer='/home/speech-nlp-cse/24m0756/.cache/huggingface/hub/models--meta-llama--Llama-3.2-3B-Instruct/snapshots/0cb88a4f764b7a12671c53f0838cd831a0843b95', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=True, dtype=torch.bfloat16, max_seq_len=8192, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=True, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None), seed=0, served_model_name=/home/speech-nlp-cse/24m0756/.cache/huggingface/hub/models--meta-llama--Llama-3.2-3B-Instruct/snapshots/0cb88a4f764b7a12671c53f0838cd831a0843b95, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'splitting_ops': None, 'compile_mm_encoder': False, 'use_inductor': None, 'compile_sizes': [], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {}, 'max_cudagraph_capture_size': 0, 'local_cache_dir': None}
+[1;36m(EngineCore_DP0 pid=2401489)[0;0m WARNING 11-17 08:54:54 [multiproc_executor.py:869] Reducing Torch parallelism from 8 threads to 1 to avoid unnecessary CPU contention. Set OMP_NUM_THREADS in the external environment to tune this value as needed.
+[1;36m(EngineCore_DP0 pid=2401489)[0;0m INFO 11-17 08:55:21 [parallel_state.py:1208] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://127.0.0.1:46537 backend=nccl
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[1;36m(EngineCore_DP0 pid=2401489)[0;0m INFO 11-17 08:55:22 [parallel_state.py:1394] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0, EP rank 0
+[1;36m(EngineCore_DP0 pid=2401489)[0;0m [1;36m(Worker pid=2401495)[0;0m INFO 11-17 08:55:23 [gpu_model_runner.py:3259] Starting to load model /home/speech-nlp-cse/24m0756/.cache/huggingface/hub/models--meta-llama--Llama-3.2-3B-Instruct/snapshots/0cb88a4f764b7a12671c53f0838cd831a0843b95...
+[1;36m(EngineCore_DP0 pid=2401489)[0;0m [1;36m(Worker pid=2401495)[0;0m INFO 11-17 08:55:25 [cuda.py:418] Valid backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION']
+[1;36m(EngineCore_DP0 pid=2401489)[0;0m [1;36m(Worker pid=2401495)[0;0m INFO 11-17 08:55:25 [cuda.py:427] Using FLASH_ATTN backend.
+[1;36m(EngineCore_DP0 pid=2401489)[0;0m [1;36m(Worker pid=2401495)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+[1;36m(EngineCore_DP0 pid=2401489)[0;0m [1;36m(Worker pid=2401495)[0;0m Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:02<00:02,  2.34s/it]
+[1;36m(EngineCore_DP0 pid=2401489)[0;0m [1;36m(Worker pid=2401495)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:03<00:00,  1.42s/it]
+[1;36m(EngineCore_DP0 pid=2401489)[0;0m [1;36m(Worker pid=2401495)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:03<00:00,  1.56s/it]
+[1;36m(EngineCore_DP0 pid=2401489)[0;0m [1;36m(Worker pid=2401495)[0;0m 
+[1;36m(EngineCore_DP0 pid=2401489)[0;0m [1;36m(Worker pid=2401495)[0;0m INFO 11-17 08:55:28 [default_loader.py:314] Loading weights took 3.18 seconds
+[1;36m(EngineCore_DP0 pid=2401489)[0;0m [1;36m(Worker pid=2401495)[0;0m INFO 11-17 08:55:28 [punica_selector.py:20] Using PunicaWrapperGPU.
+[1;36m(EngineCore_DP0 pid=2401489)[0;0m [1;36m(Worker pid=2401495)[0;0m INFO 11-17 08:55:29 [gpu_model_runner.py:3338] Model loading took 6.2347 GiB memory and 4.922612 seconds
+[1;36m(EngineCore_DP0 pid=2401489)[0;0m [1;36m(Worker pid=2401495)[0;0m INFO 11-17 08:55:32 [gpu_worker.py:359] Available KV cache memory: 30.27 GiB
+[1;36m(EngineCore_DP0 pid=2401489)[0;0m INFO 11-17 08:55:33 [kv_cache_utils.py:1229] GPU KV cache size: 283,440 tokens
+[1;36m(EngineCore_DP0 pid=2401489)[0;0m INFO 11-17 08:55:33 [kv_cache_utils.py:1234] Maximum concurrency for 8,192 tokens per request: 34.60x
+[1;36m(EngineCore_DP0 pid=2401489)[0;0m INFO 11-17 08:55:33 [core.py:250] init engine (profile, create kv cache, warmup model) took 3.57 seconds
+[1;36m(EngineCore_DP0 pid=2401489)[0;0m INFO 11-17 08:55:34 [vllm.py:500] Cudagraph is disabled under eager mode
+INFO 11-17 08:55:34 [llm.py:352] Supported tasks: ['generate']
+
+======================================================================
+MODEL DTYPE INFORMATION
+======================================================================
+vLLM Model Config dtype: torch.bfloat16
+vLLM Model quantization: None
+KV cache dtype: auto
+======================================================================
+
+vLLM model loaded successfully!
+✓ Successfully created LoRA request for: ../ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/checkpoint-125
+
+======================================================================
+EVALUATION CONFIGURATION
+======================================================================
+Dataset: MGSM
+Thinking Mode: DISABLED
+Temperature: 0.0 (Qwen3 non-thinking mode)
+Top-P: 0.8
+Top-K: -1
+Min-P: 0.0
+Presence Penalty: 0.0
+Max New Tokens: 4096
+Val-N (solutions per problem): 1
+======================================================================
+
+Loading MGSM dataset...
+Loaded juletxara/mgsm (bn) dataset with 250 problems
+Evaluating on 250 problems with vLLM batch inference...
+
+Running vLLM batch inference on 250 problems...
+Using generate interface with manual chat template...
+
+======================================================================
+GENERATION DTYPE CHECK
+======================================================================
+Model dtype: torch.bfloat16
+Quantization: None
+KV cache dtype: auto
+Using LoRA: True
+LoRA path: ../ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/checkpoint-125
+======================================================================
+
+Adding requests:   0%|          | 0/250 [00:00<?, ?it/s]WARNING 11-17 08:55:35 [processor.py:246] vLLM has deprecated support for supporting different tokenizers for different LoRAs. By default, vLLM uses base model's tokenizer. If you are using a LoRA with its own tokenizer, consider specifying `--tokenizer [lora_path]` to use the LoRA tokenizer.
+Adding requests:  71%|███████   | 177/250 [00:00<00:00, 1769.08it/s]Adding requests: 100%|██████████| 250/250 [00:00<00:00, 1815.90it/s]
+Processed prompts:   0%|          | 0/250 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s][1;36m(EngineCore_DP0 pid=2401489)[0;0m [1;36m(Worker pid=2401495)[0;0m WARNING 11-17 08:55:36 [utils.py:250] Using default LoRA kernel configs
+Processed prompts:   0%|          | 1/250 [00:22<1:33:33, 22.55s/it, est. speed input: 11.98 toks/s, output: 10.42 toks/s]Processed prompts:   1%|          | 2/250 [00:23<40:24,  9.77s/it, est. speed input: 23.65 toks/s, output: 20.79 toks/s]  Processed prompts:   1%|          | 3/250 [00:24<23:06,  5.61s/it, est. speed input: 32.32 toks/s, output: 31.36 toks/s]Processed prompts:   2%|▏         | 5/250 [00:24<10:05,  2.47s/it, est. speed input: 51.98 toks/s, output: 53.09 toks/s]Processed prompts:   2%|▏         | 6/250 [00:24<07:17,  1.79s/it, est. speed input: 73.66 toks/s, output: 63.70 toks/s]Processed prompts:   3%|▎         | 7/250 [00:25<06:25,  1.59s/it, est. speed input: 81.07 toks/s, output: 72.20 toks/s]Processed prompts:   4%|▎         | 9/250 [00:25<03:35,  1.12it/s, est. speed input: 95.15 toks/s, output: 94.25 toks/s]Processed prompts:   4%|▍         | 10/250 [00:25<02:56,  1.36it/s, est. speed input: 102.76 toks/s, output: 104.55 toks/s]Processed prompts:   4%|▍         | 11/250 [00:25<02:17,  1.74it/s, est. speed input: 113.60 toks/s, output: 115.42 toks/s]Processed prompts:   5%|▍         | 12/250 [00:26<01:51,  2.13it/s, est. speed input: 122.75 toks/s, output: 126.05 toks/s]Processed prompts:   5%|▌         | 13/250 [00:26<01:56,  2.04it/s, est. speed input: 129.71 toks/s, output: 135.05 toks/s]Processed prompts:   6%|▌         | 14/250 [00:26<01:47,  2.20it/s, est. speed input: 136.07 toks/s, output: 144.86 toks/s]Processed prompts:   6%|▋         | 16/250 [00:27<01:05,  3.58it/s, est. speed input: 160.63 toks/s, output: 167.31 toks/s]Processed prompts:   7%|▋         | 17/250 [00:27<01:30,  2.57it/s, est. speed input: 171.64 toks/s, output: 174.63 toks/s]Processed prompts:   7%|▋         | 18/250 [00:27<01:14,  3.12it/s, est. speed input: 178.23 toks/s, output: 185.42 toks/s]Processed prompts:   8%|▊         | 19/250 [00:28<01:05,  3.52it/s, est. speed input: 183.46 toks/s, output: 195.87 toks/s]Processed prompts:   8%|▊         | 20/250 [00:28<01:02,  3.66it/s, est. speed input: 189.20 toks/s, output: 205.84 toks/s]Processed prompts:   9%|▉         | 23/250 [00:28<00:35,  6.31it/s, est. speed input: 215.71 toks/s, output: 240.09 toks/s]Processed prompts:  10%|▉         | 24/250 [00:28<00:36,  6.11it/s, est. speed input: 222.20 toks/s, output: 250.25 toks/s]Processed prompts:  10%|█         | 25/250 [00:28<00:34,  6.48it/s, est. speed input: 232.24 toks/s, output: 261.00 toks/s]Processed prompts:  11%|█         | 27/250 [00:29<00:34,  6.51it/s, est. speed input: 246.82 toks/s, output: 281.96 toks/s]Processed prompts:  11%|█         | 28/250 [00:29<00:35,  6.23it/s, est. speed input: 252.69 toks/s, output: 292.25 toks/s]Processed prompts:  12%|█▏        | 30/250 [00:29<00:47,  4.64it/s, est. speed input: 265.62 toks/s, output: 310.29 toks/s]Processed prompts:  12%|█▏        | 31/250 [00:30<00:45,  4.79it/s, est. speed input: 271.87 toks/s, output: 320.48 toks/s]Processed prompts:  13%|█▎        | 32/250 [00:30<00:50,  4.32it/s, est. speed input: 282.53 toks/s, output: 329.43 toks/s]Processed prompts:  13%|█▎        | 33/250 [00:30<00:57,  3.77it/s, est. speed input: 290.65 toks/s, output: 337.78 toks/s]Processed prompts:  14%|█▎        | 34/250 [00:30<00:49,  4.40it/s, est. speed input: 299.21 toks/s, output: 348.67 toks/s]Processed prompts:  14%|█▍        | 35/250 [00:31<01:22,  2.62it/s, est. speed input: 297.60 toks/s, output: 352.32 toks/s]Processed prompts:  15%|█▍        | 37/250 [00:32<01:05,  3.24it/s, est. speed input: 317.29 toks/s, output: 372.03 toks/s]Processed prompts:  15%|█▌        | 38/250 [00:32<01:05,  3.24it/s, est. speed input: 323.04 toks/s, output: 380.80 toks/s]Processed prompts:  16%|█▌        | 40/250 [00:32<00:48,  4.29it/s, est. speed input: 342.53 toks/s, output: 402.61 toks/s]Processed prompts:  16%|█▋        | 41/250 [00:32<00:43,  4.80it/s, est. speed input: 351.61 toks/s, output: 413.38 toks/s]Processed prompts:  17%|█▋        | 43/250 [00:33<00:41,  5.04it/s, est. speed input: 369.57 toks/s, output: 433.44 toks/s]Processed prompts:  18%|█▊        | 44/250 [00:33<00:48,  4.26it/s, est. speed input: 373.73 toks/s, output: 441.28 toks/s]Processed prompts:  18%|█▊        | 45/250 [00:34<01:24,  2.43it/s, est. speed input: 374.04 toks/s, output: 441.56 toks/s]Processed prompts:  19%|█▉        | 47/250 [00:34<00:54,  3.70it/s, est. speed input: 385.75 toks/s, output: 465.20 toks/s]Processed prompts:  20%|█▉        | 49/250 [00:35<00:50,  4.00it/s, est. speed input: 401.44 toks/s, output: 484.47 toks/s]Processed prompts:  20%|██        | 51/250 [00:35<00:38,  5.11it/s, est. speed input: 412.84 toks/s, output: 507.21 toks/s]Processed prompts:  22%|██▏       | 55/250 [00:35<00:22,  8.77it/s, est. speed input: 447.47 toks/s, output: 556.08 toks/s]Processed prompts:  23%|██▎       | 58/250 [00:35<00:22,  8.48it/s, est. speed input: 467.59 toks/s, output: 588.18 toks/s]Processed prompts:  24%|██▍       | 60/250 [00:36<00:26,  7.18it/s, est. speed input: 479.46 toks/s, output: 606.93 toks/s]Processed prompts:  25%|██▍       | 62/250 [00:36<00:29,  6.41it/s, est. speed input: 489.19 toks/s, output: 625.60 toks/s]Processed prompts:  25%|██▌       | 63/250 [00:36<00:29,  6.29it/s, est. speed input: 496.28 toks/s, output: 635.49 toks/s]Processed prompts:  26%|██▌       | 65/250 [00:37<00:33,  5.51it/s, est. speed input: 503.65 toks/s, output: 653.22 toks/s]Processed prompts:  26%|██▋       | 66/250 [00:37<00:31,  5.89it/s, est. speed input: 512.08 toks/s, output: 664.00 toks/s]Processed prompts:  27%|██▋       | 67/250 [00:37<00:42,  4.33it/s, est. speed input: 510.42 toks/s, output: 668.80 toks/s]Processed prompts:  28%|██▊       | 69/250 [00:37<00:30,  6.00it/s, est. speed input: 527.53 toks/s, output: 692.62 toks/s]Processed prompts:  29%|██▉       | 72/250 [00:38<00:30,  5.90it/s, est. speed input: 546.28 toks/s, output: 722.17 toks/s]Processed prompts:  29%|██▉       | 73/250 [00:38<00:28,  6.25it/s, est. speed input: 550.83 toks/s, output: 733.15 toks/s]Processed prompts:  30%|███       | 75/250 [00:39<00:36,  4.73it/s, est. speed input: 558.28 toks/s, output: 747.21 toks/s]Processed prompts:  30%|███       | 76/250 [00:39<00:41,  4.22it/s, est. speed input: 559.87 toks/s, output: 753.92 toks/s]Processed prompts:  32%|███▏      | 79/250 [00:39<00:31,  5.50it/s, est. speed input: 585.20 toks/s, output: 786.76 toks/s]Processed prompts:  32%|███▏      | 80/250 [00:40<00:30,  5.56it/s, est. speed input: 588.80 toks/s, output: 796.70 toks/s]Processed prompts:  33%|███▎      | 83/250 [00:40<00:19,  8.41it/s, est. speed input: 613.28 toks/s, output: 834.00 toks/s]Processed prompts:  34%|███▍      | 85/250 [00:40<00:27,  5.91it/s, est. speed input: 615.69 toks/s, output: 848.34 toks/s]Processed prompts:  35%|███▍      | 87/250 [00:40<00:22,  7.33it/s, est. speed input: 623.53 toks/s, output: 872.49 toks/s]Processed prompts:  36%|███▌      | 89/250 [00:41<00:24,  6.49it/s, est. speed input: 628.44 toks/s, output: 890.73 toks/s]Processed prompts:  36%|███▌      | 90/250 [00:41<00:29,  5.36it/s, est. speed input: 630.85 toks/s, output: 896.87 toks/s]Processed prompts:  36%|███▋      | 91/250 [00:41<00:30,  5.17it/s, est. speed input: 633.46 toks/s, output: 905.43 toks/s]Processed prompts:  37%|███▋      | 92/250 [00:41<00:29,  5.33it/s, est. speed input: 634.91 toks/s, output: 915.19 toks/s]Processed prompts:  38%|███▊      | 94/250 [00:42<00:26,  5.93it/s, est. speed input: 646.20 toks/s, output: 935.75 toks/s]Processed prompts:  38%|███▊      | 95/250 [00:42<00:33,  4.62it/s, est. speed input: 647.51 toks/s, output: 940.65 toks/s]Processed prompts:  38%|███▊      | 96/250 [00:42<00:29,  5.22it/s, est. speed input: 653.65 toks/s, output: 951.73 toks/s]Processed prompts:  39%|███▉      | 98/250 [00:43<00:25,  5.88it/s, est. speed input: 662.75 toks/s, output: 972.34 toks/s]Processed prompts:  40%|███▉      | 99/250 [00:43<00:27,  5.52it/s, est. speed input: 676.22 toks/s, output: 980.95 toks/s]Processed prompts:  41%|████      | 102/250 [00:43<00:17,  8.36it/s, est. speed input: 698.52 toks/s, output: 1017.72 toks/s]Processed prompts:  42%|████▏     | 104/250 [00:43<00:23,  6.27it/s, est. speed input: 704.47 toks/s, output: 1033.32 toks/s]Processed prompts:  42%|████▏     | 106/250 [00:44<00:21,  6.57it/s, est. speed input: 712.79 toks/s, output: 1054.04 toks/s]Processed prompts:  43%|████▎     | 108/250 [00:44<00:22,  6.44it/s, est. speed input: 722.45 toks/s, output: 1073.50 toks/s]Processed prompts:  44%|████▍     | 110/250 [00:44<00:19,  7.05it/s, est. speed input: 734.03 toks/s, output: 1095.38 toks/s]Processed prompts:  44%|████▍     | 111/250 [00:44<00:20,  6.84it/s, est. speed input: 742.50 toks/s, output: 1105.00 toks/s]Processed prompts:  45%|████▌     | 113/250 [00:45<00:23,  5.83it/s, est. speed input: 745.17 toks/s, output: 1121.45 toks/s]Processed prompts:  46%|████▌     | 115/250 [00:45<00:20,  6.60it/s, est. speed input: 753.71 toks/s, output: 1143.32 toks/s]Processed prompts:  46%|████▋     | 116/250 [00:46<00:35,  3.74it/s, est. speed input: 746.66 toks/s, output: 1138.18 toks/s]Processed prompts:  47%|████▋     | 118/250 [00:46<00:25,  5.17it/s, est. speed input: 759.77 toks/s, output: 1163.01 toks/s]Processed prompts:  48%|████▊     | 119/250 [00:46<00:26,  5.03it/s, est. speed input: 760.90 toks/s, output: 1171.38 toks/s]Processed prompts:  48%|████▊     | 120/250 [00:46<00:24,  5.23it/s, est. speed input: 762.73 toks/s, output: 1181.13 toks/s]Processed prompts:  48%|████▊     | 121/250 [00:47<00:27,  4.74it/s, est. speed input: 767.35 toks/s, output: 1188.16 toks/s]Processed prompts:  50%|████▉     | 124/250 [00:48<00:37,  3.38it/s, est. speed input: 779.30 toks/s, output: 1201.30 toks/s]Processed prompts:  50%|█████     | 125/250 [00:48<00:47,  2.63it/s, est. speed input: 778.57 toks/s, output: 1197.47 toks/s]Processed prompts:  50%|█████     | 126/250 [00:49<00:47,  2.58it/s, est. speed input: 779.11 toks/s, output: 1201.48 toks/s]Processed prompts:  51%|█████     | 128/250 [00:49<00:33,  3.59it/s, est. speed input: 787.53 toks/s, output: 1224.67 toks/s]Processed prompts:  53%|█████▎    | 132/250 [00:49<00:17,  6.84it/s, est. speed input: 815.20 toks/s, output: 1278.27 toks/s]Processed prompts:  54%|█████▎    | 134/250 [00:49<00:16,  7.09it/s, est. speed input: 831.23 toks/s, output: 1299.89 toks/s]Processed prompts:  54%|█████▍    | 136/250 [00:50<00:25,  4.39it/s, est. speed input: 831.89 toks/s, output: 1305.11 toks/s]Processed prompts:  55%|█████▍    | 137/250 [00:50<00:23,  4.84it/s, est. speed input: 834.60 toks/s, output: 1316.86 toks/s]Processed prompts:  55%|█████▌    | 138/250 [00:51<00:24,  4.66it/s, est. speed input: 840.10 toks/s, output: 1324.70 toks/s]Processed prompts:  56%|█████▌    | 139/250 [00:51<00:34,  3.21it/s, est. speed input: 841.83 toks/s, output: 1321.95 toks/s]Processed prompts:  56%|█████▋    | 141/250 [00:52<00:29,  3.72it/s, est. speed input: 845.69 toks/s, output: 1340.51 toks/s]Processed prompts:  57%|█████▋    | 143/250 [00:52<00:21,  4.99it/s, est. speed input: 859.03 toks/s, output: 1365.34 toks/s]Processed prompts:  58%|█████▊    | 146/250 [00:52<00:18,  5.66it/s, est. speed input: 870.65 toks/s, output: 1396.88 toks/s]Processed prompts:  60%|█████▉    | 149/250 [00:53<00:13,  7.46it/s, est. speed input: 889.21 toks/s, output: 1434.98 toks/s]Processed prompts:  60%|██████    | 151/250 [00:53<00:19,  5.19it/s, est. speed input: 887.23 toks/s, output: 1444.93 toks/s]Processed prompts:  61%|██████    | 153/250 [00:54<00:17,  5.60it/s, est. speed input: 899.39 toks/s, output: 1466.45 toks/s]Processed prompts:  62%|██████▏   | 154/250 [00:54<00:18,  5.12it/s, est. speed input: 904.55 toks/s, output: 1473.52 toks/s]Processed prompts:  62%|██████▏   | 155/250 [00:54<00:21,  4.38it/s, est. speed input: 910.40 toks/s, output: 1478.15 toks/s]slurmstepd: error: *** JOB 401242 ON cn37-a40 CANCELLED AT 2026-11-17T08:56:30 ***

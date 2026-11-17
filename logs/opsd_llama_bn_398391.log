@@ -1,0 +1,348 @@
+OPSD Llama-3.2 GSM8K->Bengali | model meta-llama/Llama-3.2-3B-Instruct | out /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k
+gpus 2 | bs 1 accum 16 | max_steps -1 save 25 | completion 4096
+flash_attn ok, vllm 0.11.2
+[W1117 02:23:35.817061490 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
+W1117 02:25:00.901000 4061986 site-packages/torch/distributed/run.py:803] 
+W1117 02:25:00.901000 4061986 site-packages/torch/distributed/run.py:803] *****************************************
+W1117 02:25:00.901000 4061986 site-packages/torch/distributed/run.py:803] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1117 02:25:00.901000 4061986 site-packages/torch/distributed/run.py:803] *****************************************
+⚙️  Running in WANDB offline mode⚙️  Running in WANDB offline mode
+
+
+================================================================================
+RUN CONFIGURATION
+================================================================================
+WandB Run Name: llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_lr5e-6_bs32
+Output Directory: /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k
+================================================================================
+
+
+================================================================================
+RUN CONFIGURATION
+================================================================================
+WandB Run Name: llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_lr5e-6_bs32
+Output Directory: /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k
+================================================================================
+
+
+================================================================================
+Loading model with dtype: bfloat16
+Using attention implementation: flash_attention_2
+================================================================================
+
+Using the latest cached version of the dataset since openai/gsm8k couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2026-11-17 02:26:05] WARNING load.py:820: Using the latest cached version of the dataset since openai/gsm8k couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'main' at /home/speech-nlp-cse/24m0756/.cache/huggingface/datasets/openai___gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866 (last modified on Mon Nov 16 20:21:54 2026).
+[2026-11-17 02:26:05] WARNING cache.py:95: Found the latest cached dataset configuration 'main' at /home/speech-nlp-cse/24m0756/.cache/huggingface/datasets/openai___gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866 (last modified on Mon Nov 16 20:21:54 2026).
+[DataCollator] Original padding_side: left
+[DataCollator] Set padding_side to: right
+[DataCollator] Reason first mode: False
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.73s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.50s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.69s/it]
+
+================================================================================
+FIXED TEACHER MODE ENABLED
+Teacher will use the initial policy (base model without LoRA adapters)
+Student will update with LoRA adapters
+================================================================================
+
+wandb: Tracking run with wandb version 0.25.0
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/wandb/offline-run-20261117_022605-pcnmhyq1
+wandb: Detected [openai] in use.
+wandb: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+wandb: For more information, check out the docs at: https://weave-docs.wandb.ai/
+
+================================================================================
+Loading model with dtype: bfloat16
+Using attention implementation: flash_attention_2
+================================================================================
+
+Using the latest cached version of the dataset since openai/gsm8k couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2026-11-17 02:26:23] WARNING load.py:820: Using the latest cached version of the dataset since openai/gsm8k couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'main' at /home/speech-nlp-cse/24m0756/.cache/huggingface/datasets/openai___gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866 (last modified on Mon Nov 16 20:21:54 2026).
+[2026-11-17 02:26:23] WARNING cache.py:95: Found the latest cached dataset configuration 'main' at /home/speech-nlp-cse/24m0756/.cache/huggingface/datasets/openai___gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866 (last modified on Mon Nov 16 20:21:54 2026).
+[DataCollator] Original padding_side: left
+[DataCollator] Set padding_side to: right
+[DataCollator] Reason first mode: False
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 73.62it/s]
+[2026-11-17 02:26:24] WARNING other.py:513: Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+
+================================================================================
+FIXED TEACHER MODE ENABLED
+Teacher will use the initial policy (base model without LoRA adapters)
+Student will update with LoRA adapters
+================================================================================
+
+[Gloo] Rank [Gloo] Rank 10 is connected to  is connected to 11 peer ranks.  peer ranks. Expected number of connected peer ranks is : Expected number of connected peer ranks is : 11
+
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:28<00:28, 28.23s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:35<00:00, 15.96s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:35<00:00, 17.81s/it]
+
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/7 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  14%|█▍        | 1/7 [00:00<00:00,  8.62it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  29%|██▊       | 2/7 [00:00<00:00,  5.10it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  71%|███████▏  | 5/7 [00:00<00:00, 11.93it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 7/7 [00:00<00:00,  6.58it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 7/7 [00:00<00:00,  7.07it/s]
+Capturing CUDA graphs (decode, FULL):   0%|          | 0/5 [00:00<?, ?it/s]Capturing CUDA graphs (decode, FULL):  20%|██        | 1/5 [00:01<00:05,  1.41s/it]Capturing CUDA graphs (decode, FULL): 100%|██████████| 5/5 [00:01<00:00,  4.15it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 5/5 [00:01<00:00,  3.21it/s]
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 128009, 'pad_token_id': 128004}.
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 128009, 'pad_token_id': 128004}.
+Before initializing optimizer states
+MA 19.21 GB         Max_MA 19.3 GB         CA 19.4 GB         Max_CA 19 GB 
+CPU Virtual Memory:  used = 33.58 GB, percent = 6.7%
+After initializing optimizer states
+MA 19.21 GB         Max_MA 19.39 GB         CA 19.57 GB         Max_CA 20 GB 
+CPU Virtual Memory:  used = 33.58 GB, percent = 6.7%
+After initializing ZeRO optimizer
+MA 19.21 GB         Max_MA 19.21 GB         CA 19.57 GB         Max_CA 20 GB 
+CPU Virtual Memory:  used = 33.58 GB, percent = 6.7%
+  0%|          | 0/234 [00:00<?, ?it/s]vLLM generation done - elapsed time: 11.15s, prompts: 1, total tokens: 777, avg length: 777.0, speed: 69.7 tok/s
+vLLM generation done - elapsed time: 36.04s, prompts: 1, total tokens: 2562, avg length: 2562.0, speed: 71.1 tok/s
+/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/utils/checkpoint.py:85: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/utils/checkpoint.py:85: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+Could not estimate the number of tokens of the input, floating-point operations will not be computed
+Could not estimate the number of tokens of the input, floating-point operations will not be computed
+vLLM generation done - elapsed time: 3.51s, prompts: 1, total tokens: 258, avg length: 258.0, speed: 73.4 tok/s
+vLLM generation done - elapsed time: 12.22s, prompts: 1, total tokens: 895, avg length: 895.0, speed: 73.2 tok/s
+vLLM generation done - elapsed time: 6.94s, prompts: 1, total tokens: 509, avg length: 509.0, speed: 73.4 tok/s
+vLLM generation done - elapsed time: 8.25s, prompts: 1, total tokens: 606, avg length: 606.0, speed: 73.4 tok/s
+vLLM generation done - elapsed time: 7.97s, prompts: 1, total tokens: 585, avg length: 585.0, speed: 73.4 tok/s
+vLLM generation done - elapsed time: 23.91s, prompts: 1, total tokens: 1740, avg length: 1740.0, speed: 72.8 tok/s
+vLLM generation done - elapsed time: 8.75s, prompts: 1, total tokens: 642, avg length: 642.0, speed: 73.4 tok/s
+vLLM generation done - elapsed time: 12.02s, prompts: 1, total tokens: 881, avg length: 881.0, speed: 73.3 tok/s
+vLLM generation done - elapsed time: 2.03s, prompts: 1, total tokens: 149, avg length: 149.0, speed: 73.5 tok/s
+vLLM generation done - elapsed time: 21.55s, prompts: 1, total tokens: 1568, avg length: 1568.0, speed: 72.8 tok/s
+vLLM generation done - elapsed time: 5.94s, prompts: 1, total tokens: 437, avg length: 437.0, speed: 73.5 tok/s
+vLLM generation done - elapsed time: 8.53s, prompts: 1, total tokens: 626, avg length: 626.0, speed: 73.4 tok/s
+vLLM generation done - elapsed time: 6.03s, prompts: 1, total tokens: 443, avg length: 443.0, speed: 73.5 tok/s
+vLLM generation done - elapsed time: 13.01s, prompts: 1, total tokens: 952, avg length: 952.0, speed: 73.2 tok/s
+vLLM generation done - elapsed time: 11.42s, prompts: 1, total tokens: 837, avg length: 837.0, speed: 73.3 tok/s
+vLLM generation done - elapsed time: 14.36s, prompts: 1, total tokens: 1051, avg length: 1051.0, speed: 73.2 tok/s
+vLLM generation done - elapsed time: 6.05s, prompts: 1, total tokens: 445, avg length: 445.0, speed: 73.5 tok/s
+vLLM generation done - elapsed time: 7.52s, prompts: 1, total tokens: 553, avg length: 553.0, speed: 73.5 tok/s
+vLLM generation done - elapsed time: 10.44s, prompts: 1, total tokens: 766, avg length: 766.0, speed: 73.4 tok/s
+vLLM generation done - elapsed time: 17.22s, prompts: 1, total tokens: 1258, avg length: 1258.0, speed: 73.1 tok/s
+vLLM generation done - elapsed time: 14.04s, prompts: 1, total tokens: 1027, avg length: 1027.0, speed: 73.2 tok/s
+vLLM generation done - elapsed time: 14.62s, prompts: 1, total tokens: 1070, avg length: 1070.0, speed: 73.2 tok/s
+vLLM generation done - elapsed time: 6.18s, prompts: 1, total tokens: 454, avg length: 454.0, speed: 73.4 tok/s
+vLLM generation done - elapsed time: 9.72s, prompts: 1, total tokens: 713, avg length: 713.0, speed: 73.4 tok/s
+vLLM generation done - elapsed time: 8.34s, prompts: 1, total tokens: 612, avg length: 612.0, speed: 73.4 tok/s
+vLLM generation done - elapsed time: 15.96s, prompts: 1, total tokens: 1167, avg length: 1167.0, speed: 73.1 tok/s
+
+================================================================================
+STUDENT GENERATION SAMPLE (Step 0):
+================================================================================
+
+Prompt:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+Today Date: 17 Nov 2026
+
+<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Problem: Jesse received $50 as a gift to buy what she wants. She goes to the mall and falls in love with a novel that costs her $7. Then she went to lunch because she was very hungry and spent twice as much as the novel cost her. How much money did Jesse have left after going to the mall?
+
+Solve the problem step by step, writing your entire reasoning in Bengali. Put your final numerical answer within \boxed{}.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+
+Completion:
+প্রশ্নটি সমাধান করার জন্য আমাদের প্রথমে নিম্নলিখিত ধাপগুলি অনুসরণ করতে হবে:
+
+1. কাউন্ট করুন কেউ প্রারম্ভের আসল পরিমাণ
+Jesse-এর 50 ডলারের আসল পরিমাণ।
+
+2. প্রথম ক্রয়ের পরে আমাদের কাছে যে পরিমাণ বাকি আছে তা গণনা করুন
+প্রথম ক্রয়ে খরচ হয় তাই, $50 - $7 = $43 অবশিষ্ট আছে।
+
+3. দ্বিতীয় ক্রয় হল উপভোগ লাঞ্চের পরে খরচ
+লাঞ্চের খরচ হল প্রথম ক্রয়ের চেয়ে দ্বিগুণ, তাই লাঞ্চ খরচ হল $7 x 2 = $14।
+
+4. আমাদের অবশিষ্ট পরিমাণ গণনা করার জন্য পরিমাণ নতুন সরানো।
+যেহেতু লাঞ্চের জন্য $14 খরচ হয়েছিল, তাই $43 - $14 = $29 অবশিষ্ট আছে।
+
+অতএব, Jesse যে পরিমাণ টাকা আছে তা হল:
+
+$\boxed{29}$<|eot_id|>
+================================================================================
+
+vLLM generation done - elapsed time: 7.94s, prompts: 1, total tokens: 583, avg length: 583.0, speed: 73.4 tok/s
+vLLM generation done - elapsed time: 23.85s, prompts: 1, total tokens: 1734, avg length: 1734.0, speed: 72.7 tok/s
+vLLM generation done - elapsed time: 6.39s, prompts: 1, total tokens: 470, avg length: 470.0, speed: 73.5 tok/s
+vLLM generation done - elapsed time: 9.24s, prompts: 1, total tokens: 678, avg length: 678.0, speed: 73.3 tok/s
+  0%|          | 1/234 [04:53<18:59:40, 293.48s/it]vLLM generation done - elapsed time: 7.97s, prompts: 1, total tokens: 585, avg length: 585.0, speed: 73.4 tok/s
+vLLM generation done - elapsed time: 17.67s, prompts: 1, total tokens: 1291, avg length: 1291.0, speed: 73.1 tok/s
+vLLM generation done - elapsed time: 9.30s, prompts: 1, total tokens: 683, avg length: 683.0, speed: 73.4 tok/s
+vLLM generation done - elapsed time: 10.07s, prompts: 1, total tokens: 738, avg length: 738.0, speed: 73.3 tok/s
+vLLM generation done - elapsed time: 11.52s, prompts: 1, total tokens: 845, avg length: 845.0, speed: 73.3 tok/s
+vLLM generation done - elapsed time: 16.76s, prompts: 1, total tokens: 1224, avg length: 1224.0, speed: 73.0 tok/s
+vLLM generation done - elapsed time: 8.51s, prompts: 1, total tokens: 625, avg length: 625.0, speed: 73.4 tok/s
+vLLM generation done - elapsed time: 9.88s, prompts: 1, total tokens: 724, avg length: 724.0, speed: 73.3 tok/s
+vLLM generation done - elapsed time: 9.61s, prompts: 1, total tokens: 705, avg length: 705.0, speed: 73.4 tok/s
+vLLM generation done - elapsed time: 14.92s, prompts: 1, total tokens: 1091, avg length: 1091.0, speed: 73.1 tok/s
+vLLM generation done - elapsed time: 10.08s, prompts: 1, total tokens: 739, avg length: 739.0, speed: 73.3 tok/s
+vLLM generation done - elapsed time: 22.36s, prompts: 1, total tokens: 1625, avg length: 1625.0, speed: 72.7 tok/s
+
+================================================================================
+STUDENT GENERATION SAMPLE (Step 1):
+================================================================================
+
+Prompt:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+Today Date: 17 Nov 2026
+
+<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Problem: Tara has been planning to buy a laptop which costs $1000. A computer shop accepts payment in installments of $65 per month provided that a 20% down payment is made. If Tara wants to pay an additional $20 for the down payment, how much will her balance be after paying for 4 months?
+
+Solve the problem step by step, writing your entire reasoning in Bengali. Put your final numerical answer within \boxed{}.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+
+Completion:
+হালকভাবে মোকাবেলা
+
+1. আসুন এটিকে ধাপে ধাপে ভেঙে দেওয়া যাক।
+
+2. প্রথমত, Tara $1000-এর কম একটি কমিশনের 20% প্রদান করবে, যা $1000 * 20% = $200। এই পরিমাণ আরও $20 যোগ করলে তাকে মোট $220 দিতে হবে।
+
+3. আসুন কমিশনটি চলাকালীন এটি সরলীকৃত করা যাক:
+
+$1000 (সমস্ত মূল্য) - $220 (ডাউন পেমেন্ট) = $780 (বাকি মূল্য)
+
+4. আসুন একসাথে এক বছরের বেতন দেওয়ার জন্য মাসিক অর্থ প্রতি বছরের 12 মাসে গুণ করি। 
+
+$65 (বেতন প্রতি মাস) * 12 (বছরের মাস) = $780 (বাকি মূল্য)
+
+5. এখন আমরা অর্থ যোগ এবং যোগফল বিয়োগ করি:
+
+ বছরের শুরুতে $220 প্রদান করলে, 
+$780 + $65 (মাস এবং আরও $20 প্রদান) = $845 পরিশোধ হয়েছে
+
+$845 - $845 = $0 
+
+সুতরাং, এই যে সময় তার $65 মাসিক অর্থ প্রতি মাস যোগ করা হবে না, তার অবশিষ্ট মূল্য $0।
+
+চূড়ান্ত উত্তর হল $\boxed{0}$<|eot_id|>
+================================================================================
+
+vLLM generation done - elapsed time: 14.69s, prompts: 1, total tokens: 1075, avg length: 1075.0, speed: 73.2 tok/s
+vLLM generation done - elapsed time: 57.44s, prompts: 1, total tokens: 4096, avg length: 4096.0, speed: 71.3 tok/s
+vLLM generation done - elapsed time: 6.16s, prompts: 1, total tokens: 452, avg length: 452.0, speed: 73.4 tok/s
+vLLM generation done - elapsed time: 16.73s, prompts: 1, total tokens: 1223, avg length: 1223.0, speed: 73.1 tok/s
+vLLM generation done - elapsed time: 9.72s, prompts: 1, total tokens: 713, avg length: 713.0, speed: 73.4 tok/s
+vLLM generation done - elapsed time: 21.07s, prompts: 1, total tokens: 1534, avg length: 1534.0, speed: 72.8 tok/s
+vLLM generation done - elapsed time: 13.45s, prompts: 1, total tokens: 985, avg length: 985.0, speed: 73.2 tok/s
+vLLM generation done - elapsed time: 14.26s, prompts: 1, total tokens: 1044, avg length: 1044.0, speed: 73.2 tok/s
+vLLM generation done - elapsed time: 16.10s, prompts: 1, total tokens: 1177, avg length: 1177.0, speed: 73.1 tok/s
+vLLM generation done - elapsed time: 25.37s, prompts: 1, total tokens: 1845, avg length: 1845.0, speed: 72.7 tok/s
+vLLM generation done - elapsed time: 6.29s, prompts: 1, total tokens: 462, avg length: 462.0, speed: 73.5 tok/s
+vLLM generation done - elapsed time: 15.30s, prompts: 1, total tokens: 1120, avg length: 1120.0, speed: 73.2 tok/s
+vLLM generation done - elapsed time: 12.98s, prompts: 1, total tokens: 951, avg length: 951.0, speed: 73.2 tok/s
+vLLM generation done - elapsed time: 18.96s, prompts: 1, total tokens: 1383, avg length: 1383.0, speed: 72.9 tok/s
+vLLM generation done - elapsed time: 9.24s, prompts: 1, total tokens: 678, avg length: 678.0, speed: 73.4 tok/s
+vLLM generation done - elapsed time: 15.57s, prompts: 1, total tokens: 1140, avg length: 1140.0, speed: 73.2 tok/s
+vLLM generation done - elapsed time: 8.23s, prompts: 1, total tokens: 604, avg length: 604.0, speed: 73.4 tok/s
+vLLM generation done - elapsed time: 8.39s, prompts: 1, total tokens: 616, avg length: 616.0, speed: 73.4 tok/s
+vLLM generation done - elapsed time: 6.95s, prompts: 1, total tokens: 509, avg length: 509.0, speed: 73.2 tok/s
+vLLM generation done - elapsed time: 28.51s, prompts: 1, total tokens: 2070, avg length: 2070.0, speed: 72.6 tok/s
+  1%|          | 2/234 [10:42<21:01:51, 326.34s/it]                                                   {'loss': -0.0275, 'grad_norm': 0.06265049427747726, 'learning_rate': 4.978632478632479e-06, 'on_policy_loss': -0.0275, 'epoch': 0.01}
+  1%|          | 2/234 [10:43<21:01:51, 326.34s/it]vLLM generation done - elapsed time: 7.58s, prompts: 1, total tokens: 556, avg length: 556.0, speed: 73.3 tok/s
+vLLM generation done - elapsed time: 12.55s, prompts: 1, total tokens: 920, avg length: 920.0, speed: 73.3 tok/s
+vLLM generation done - elapsed time: 3.27s, prompts: 1, total tokens: 240, avg length: 240.0, speed: 73.4 tok/s
+vLLM generation done - elapsed time: 8.05s, prompts: 1, total tokens: 591, avg length: 591.0, speed: 73.4 tok/s
+vLLM generation done - elapsed time: 8.36s, prompts: 1, total tokens: 614, avg length: 614.0, speed: 73.4 tok/s
+vLLM generation done - elapsed time: 23.10s, prompts: 1, total tokens: 1681, avg length: 1681.0, speed: 72.8 tok/s
+vLLM generation done - elapsed time: 8.45s, prompts: 1, total tokens: 620, avg length: 620.0, speed: 73.3 tok/s
+vLLM generation done - elapsed time: 15.75s, prompts: 1, total tokens: 1152, avg length: 1152.0, speed: 73.2 tok/s
+vLLM generation done - elapsed time: 6.14s, prompts: 1, total tokens: 451, avg length: 451.0, speed: 73.5 tok/s
+vLLM generation done - elapsed time: 15.52s, prompts: 1, total tokens: 1134, avg length: 1134.0, speed: 73.1 tok/s
+vLLM generation done - elapsed time: 4.82s, prompts: 1, total tokens: 354, avg length: 354.0, speed: 73.5 tok/s
+vLLM generation done - elapsed time: 57.46s, prompts: 1, total tokens: 4096, avg length: 4096.0, speed: 71.3 tok/s
+vLLM generation done - elapsed time: 11.87s, prompts: 1, total tokens: 870, avg length: 870.0, speed: 73.3 tok/s
+vLLM generation done - elapsed time: 23.00s, prompts: 1, total tokens: 1673, avg length: 1673.0, speed: 72.7 tok/s
+vLLM generation done - elapsed time: 10.47s, prompts: 1, total tokens: 767, avg length: 767.0, speed: 73.3 tok/s
+vLLM generation done - elapsed time: 12.14s, prompts: 1, total tokens: 890, avg length: 890.0, speed: 73.3 tok/s
+vLLM generation done - elapsed time: 6.90s, prompts: 1, total tokens: 507, avg length: 507.0, speed: 73.5 tok/s
+vLLM generation done - elapsed time: 14.85s, prompts: 1, total tokens: 1086, avg length: 1086.0, speed: 73.1 tok/s
+
+================================================================================
+STUDENT GENERATION SAMPLE (Step 2):
+================================================================================
+
+Prompt:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+Today Date: 17 Nov 2026
+
+<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Problem: A library has a collection of 100 historical novels arranged on a shelf. 5 people borrow 2 books each from the shelf on a particular day,  and 20 more books are borrowed from the shelf on the second day. How many books are remaining on the shelf after the second day?
+
+Solve the problem step by step, writing your entire reasoning in Bengali. Put your final numerical answer within \boxed{}.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+
+Completion:
+প্রথমত, আমাদের 5 জনেরা প্রতিদিন 2টি বই প্রত্যেক দিন ব্যবহার করে। অর্থাৎ, 5 জন x 2 বই প্রতিদিন = 10 বই প্রতিদিন।
+
+প্রথম দিন শেষ হওয়ার পর 100টি বইয়ের সাথে, বাকি থাকে 100 - 10 = 90টি বই।
+
+সুতরাং প্রথম দিনের পর, মোট 10টি বই ব্যবহার করা হয়েছে। 
+
+আমাদের বলা হয়েছে যে 2 দিন পর, 20টি বেশি বই ব্যবহার করা হয়। 
+
+মোট বই ব্যবহার করা 10 + 20 = 30টি বই।
+
+তারপর, আমাদের 100 - 30 = 70 বই দেওয়া হয়।
+
+সুতরাং, দ্বিতীয় দিন শেষে 70টি বই বাকি আছে।
+
+চূড়ান্ত উত্তর হল 70।<|eot_id|>
+================================================================================
+
+vLLM generation done - elapsed time: 5.73s, prompts: 1, total tokens: 421, avg length: 421.0, speed: 73.5 tok/s
+vLLM generation done - elapsed time: 10.58s, prompts: 1, total tokens: 775, avg length: 775.0, speed: 73.3 tok/s
+vLLM generation done - elapsed time: 10.48s, prompts: 1, total tokens: 769, avg length: 769.0, speed: 73.4 tok/s
+vLLM generation done - elapsed time: 10.57s, prompts: 1, total tokens: 774, avg length: 774.0, speed: 73.3 tok/s
+vLLM generation done - elapsed time: 12.32s, prompts: 1, total tokens: 903, avg length: 903.0, speed: 73.3 tok/s
+vLLM generation done - elapsed time: 17.07s, prompts: 1, total tokens: 1246, avg length: 1246.0, speed: 73.0 tok/s
+vLLM generation done - elapsed time: 17.65s, prompts: 1, total tokens: 1289, avg length: 1289.0, speed: 73.0 tok/s
+vLLM generation done - elapsed time: 30.94s, prompts: 1, total tokens: 2241, avg length: 2241.0, speed: 72.4 tok/s
+vLLM generation done - elapsed time: 16.74s, prompts: 1, total tokens: 1223, avg length: 1223.0, speed: 73.1 tok/s
+vLLM generation done - elapsed time: 20.49s, prompts: 1, total tokens: 1493, avg length: 1493.0, speed: 72.9 tok/s
+vLLM generation done - elapsed time: 6.21s, prompts: 1, total tokens: 456, avg length: 456.0, speed: 73.5 tok/s
+vLLM generation done - elapsed time: 17.35s, prompts: 1, total tokens: 1266, avg length: 1266.0, speed: 73.0 tok/s
+vLLM generation done - elapsed time: 5.56s, prompts: 1, total tokens: 408, avg length: 408.0, speed: 73.4 tok/s
+vLLM generation done - elapsed time: 14.20s, prompts: 1, total tokens: 1040, avg length: 1040.0, speed: 73.2 tok/s
+  1%|▏         | 3/234 [16:22<21:19:44, 332.40s/it]vLLM generation done - elapsed time: 8.77s, prompts: 1, total tokens: 643, avg length: 643.0, speed: 73.3 tok/s
+vLLM generation done - elapsed time: 10.71s, prompts: 1, total tokens: 786, avg length: 786.0, speed: 73.4 tok/s
+vLLM generation done - elapsed time: 11.46s, prompts: 1, total tokens: 840, avg length: 840.0, speed: 73.3 tok/s
+vLLM generation done - elapsed time: 33.94s, prompts: 1, total tokens: 2453, avg length: 2453.0, speed: 72.3 tok/s
+vLLM generation done - elapsed time: 7.70s, prompts: 1, total tokens: 565, avg length: 565.0, speed: 73.3 tok/s
+vLLM generation done - elapsed time: 11.34s, prompts: 1, total tokens: 831, avg length: 831.0, speed: 73.3 tok/s
+vLLM generation done - elapsed time: 10.12s, prompts: 1, total tokens: 742, avg length: 742.0, speed: 73.3 tok/s
+vLLM generation done - elapsed time: 11.79s, prompts: 1, total tokens: 863, avg length: 863.0, speed: 73.2 tok/s
+vLLM generation done - elapsed time: 15.28s, prompts: 1, total tokens: 1117, avg length: 1117.0, speed: 73.1 tok/s
+vLLM generation done - elapsed time: 30.85s, prompts: 1, total tokens: 2237, avg length: 2237.0, speed: 72.5 tok/s
+vLLM generation done - elapsed time: 8.70s, prompts: 1, total tokens: 638, avg length: 638.0, speed: 73.3 tok/s
+vLLM generation done - elapsed time: 19.41s, prompts: 1, total tokens: 1415, avg length: 1415.0, speed: 72.9 tok/s
+vLLM generation done - elapsed time: 13.11s, prompts: 1, total tokens: 960, avg length: 960.0, speed: 73.2 tok/s
+vLLM generation done - elapsed time: 53.55s, prompts: 1, total tokens: 3787, avg length: 3787.0, speed: 70.7 tok/s
+vLLM generation done - elapsed time: 9.11s, prompts: 1, total tokens: 668, avg length: 668.0, speed: 73.4 tok/s
+slurmstepd: error: *** JOB 398391 ON cn29-a40 CANCELLED AT 2026-11-17T02:48:04 ***

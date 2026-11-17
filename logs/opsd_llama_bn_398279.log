@@ -1,0 +1,138 @@
+OPSD Llama-3.2 GSM8K->Bengali | model meta-llama/Llama-3.2-3B-Instruct | out /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/smoke_20261117_020057
+gpus 2 | bs 1 accum 2 | max_steps 2 save 2 | completion 4096
+flash_attn ok, vllm 0.11.2
+[W1117 02:12:23.373372611 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
+W1117 02:13:41.804000 3391384 site-packages/torch/distributed/run.py:803] 
+W1117 02:13:41.804000 3391384 site-packages/torch/distributed/run.py:803] *****************************************
+W1117 02:13:41.804000 3391384 site-packages/torch/distributed/run.py:803] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1117 02:13:41.804000 3391384 site-packages/torch/distributed/run.py:803] *****************************************
+⚙️  Running in WANDB offline mode⚙️  Running in WANDB offline mode
+
+
+================================================================================
+RUN CONFIGURATION
+================================================================================
+WandB Run Name: smoke_20261117_020057_lr5e-6_bs4
+Output Directory: /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/smoke_20261117_020057
+================================================================================
+
+
+================================================================================
+RUN CONFIGURATION
+================================================================================
+WandB Run Name: smoke_20261117_020057_lr5e-6_bs4
+Output Directory: /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/smoke_20261117_020057
+================================================================================
+
+
+================================================================================
+Loading model with dtype: bfloat16
+Using attention implementation: flash_attention_2
+================================================================================
+
+Using the latest cached version of the dataset since openai/gsm8k couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2026-11-17 02:14:42] WARNING load.py:820: Using the latest cached version of the dataset since openai/gsm8k couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'main' at /home/speech-nlp-cse/24m0756/.cache/huggingface/datasets/openai___gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866 (last modified on Mon Nov 16 20:21:54 2026).
+[2026-11-17 02:14:42] WARNING cache.py:95: Found the latest cached dataset configuration 'main' at /home/speech-nlp-cse/24m0756/.cache/huggingface/datasets/openai___gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866 (last modified on Mon Nov 16 20:21:54 2026).
+[DataCollator] Original padding_side: left
+[DataCollator] Set padding_side to: right
+[DataCollator] Reason first mode: False
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.29s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.18s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.35s/it]
+
+================================================================================
+FIXED TEACHER MODE ENABLED
+Teacher will use the initial policy (base model without LoRA adapters)
+Student will update with LoRA adapters
+================================================================================
+
+wandb: Tracking run with wandb version 0.25.0
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/wandb/offline-run-20261117_021442-miegemgi
+wandb: Detected [openai] in use.
+wandb: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+wandb: For more information, check out the docs at: https://weave-docs.wandb.ai/
+
+================================================================================
+Loading model with dtype: bfloat16
+Using attention implementation: flash_attention_2
+================================================================================
+
+Using the latest cached version of the dataset since openai/gsm8k couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2026-11-17 02:15:00] WARNING load.py:820: Using the latest cached version of the dataset since openai/gsm8k couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'main' at /home/speech-nlp-cse/24m0756/.cache/huggingface/datasets/openai___gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866 (last modified on Mon Nov 16 20:21:54 2026).
+[2026-11-17 02:15:00] WARNING cache.py:95: Found the latest cached dataset configuration 'main' at /home/speech-nlp-cse/24m0756/.cache/huggingface/datasets/openai___gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866 (last modified on Mon Nov 16 20:21:54 2026).
+[DataCollator] Original padding_side: left
+[DataCollator] Set padding_side to: right
+[DataCollator] Reason first mode: False
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 73.06it/s]
+[2026-11-17 02:15:01] WARNING other.py:513: Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+
+================================================================================
+FIXED TEACHER MODE ENABLED
+Teacher will use the initial policy (base model without LoRA adapters)
+Student will update with LoRA adapters
+================================================================================
+
+[Gloo] Rank 1 is connected to [Gloo] Rank 10 peer ranks.  is connected to Expected number of connected peer ranks is : 11 peer ranks. 
+Expected number of connected peer ranks is : 1
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:27<00:27, 27.91s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:34<00:00, 15.60s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:34<00:00, 17.45s/it]
+
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/3 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  33%|███▎      | 1/3 [00:02<00:04,  2.38s/it]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 3/3 [00:03<00:00,  1.18it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 3/3 [00:03<00:00,  1.00s/it]
+Capturing CUDA graphs (decode, FULL):   0%|          | 0/2 [00:00<?, ?it/s]Capturing CUDA graphs (decode, FULL):  50%|█████     | 1/2 [00:02<00:02,  2.36s/it]Capturing CUDA graphs (decode, FULL): 100%|██████████| 2/2 [00:02<00:00,  1.30s/it]Capturing CUDA graphs (decode, FULL): 100%|██████████| 2/2 [00:02<00:00,  1.46s/it]
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 128009, 'pad_token_id': 128004}.
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 128009, 'pad_token_id': 128004}.
+Before initializing optimizer states
+MA 19.21 GB         Max_MA 19.3 GB         CA 19.4 GB         Max_CA 19 GB 
+CPU Virtual Memory:  used = 16.18 GB, percent = 3.2%
+After initializing optimizer states
+MA 19.21 GB         Max_MA 19.39 GB         CA 19.57 GB         Max_CA 20 GB 
+CPU Virtual Memory:  used = 16.18 GB, percent = 3.2%
+After initializing ZeRO optimizer
+MA 19.21 GB         Max_MA 19.21 GB         CA 19.57 GB         Max_CA 20 GB 
+CPU Virtual Memory:  used = 16.18 GB, percent = 3.2%
+  0%|          | 0/2 [00:00<?, ?it/s]vLLM generation done - elapsed time: 11.21s, prompts: 1, total tokens: 777, avg length: 777.0, speed: 69.3 tok/s
+vLLM generation done - elapsed time: 36.10s, prompts: 1, total tokens: 2562, avg length: 2562.0, speed: 71.0 tok/s
+/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/utils/checkpoint.py:85: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/utils/checkpoint.py:85: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+Could not estimate the number of tokens of the input, floating-point operations will not be computed
+Could not estimate the number of tokens of the input, floating-point operations will not be computed
+vLLM generation done - elapsed time: 3.51s, prompts: 1, total tokens: 258, avg length: 258.0, speed: 73.5 tok/s
+vLLM generation done - elapsed time: 12.22s, prompts: 1, total tokens: 895, avg length: 895.0, speed: 73.2 tok/s
+ 50%|█████     | 1/2 [01:08<01:08, 68.53s/it]vLLM generation done - elapsed time: 9.73s, prompts: 1, total tokens: 714, avg length: 714.0, speed: 73.4 tok/s
+vLLM generation done - elapsed time: 11.68s, prompts: 1, total tokens: 854, avg length: 854.0, speed: 73.1 tok/s
+vLLM generation done - elapsed time: 7.22s, prompts: 1, total tokens: 530, avg length: 530.0, speed: 73.5 tok/s
+vLLM generation done - elapsed time: 17.35s, prompts: 1, total tokens: 1268, avg length: 1268.0, speed: 73.1 tok/s
+100%|██████████| 2/2 [01:44<00:00, 49.65s/it]                                             {'loss': -0.0268, 'grad_norm': 0.10524163395166397, 'learning_rate': 2.5e-06, 'on_policy_loss': -0.0268, 'epoch': 0.0}
+100%|██████████| 2/2 [01:45<00:00, 49.65s/it]wandb: WARNING URL not available in offline run
+/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in meta-llama/Llama-3.2-3B-Instruct - will assume that the vocabulary was not modified.
+  warnings.warn(
+                                             {'train_runtime': 108.9118, 'train_samples_per_second': 0.073, 'train_steps_per_second': 0.018, 'train_loss': -0.0267791748046875, 'epoch': 0.0}
+100%|██████████| 2/2 [01:48<00:00, 49.65s/it]100%|██████████| 2/2 [01:48<00:00, 54.45s/it]
+/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in meta-llama/Llama-3.2-3B-Instruct - will assume that the vocabulary was not modified.
+  warnings.warn(
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/wandb/offline-run-20261117_021442-miegemgi[0m
+[1;34mwandb[0m: Find logs at: [1;35mckpts/opsd/wandb/offline-run-20261117_021442-miegemgi/logs[0m
+[rank0]:[W1117 02:19:30.715739223 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[rank1]:[W1117 02:19:33.290258587 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[rank0]:[W1117 02:19:49.914217282 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
+[rank1]:[W1117 02:19:49.914422671 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
+[W1117 02:19:51.588981548 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())

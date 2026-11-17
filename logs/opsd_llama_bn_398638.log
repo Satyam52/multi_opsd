@@ -1,0 +1,1483 @@
+OPSD Llama-3.2 GSM8K->Bengali | model meta-llama/Llama-3.2-3B-Instruct | out /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16
+gpus 2 | bs 1 accum 16 gen_batch 16 | max_steps -1 save 25 | completion 4096
+flash_attn ok, vllm 0.11.2
+[W1117 02:56:03.254083447 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
+W1117 02:56:29.187000 4064063 site-packages/torch/distributed/run.py:803] 
+W1117 02:56:29.187000 4064063 site-packages/torch/distributed/run.py:803] *****************************************
+W1117 02:56:29.187000 4064063 site-packages/torch/distributed/run.py:803] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1117 02:56:29.187000 4064063 site-packages/torch/distributed/run.py:803] *****************************************
+⚙️  Running in WANDB offline mode⚙️  Running in WANDB offline mode
+
+
+================================================================================
+RUN CONFIGURATION
+================================================================================
+WandB Run Name: llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16_lr5e-6_bs32
+Output Directory: /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16
+================================================================================
+
+
+================================================================================
+RUN CONFIGURATION
+================================================================================
+WandB Run Name: llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16_lr5e-6_bs32
+Output Directory: /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16
+================================================================================
+
+
+================================================================================
+Loading model with dtype: bfloat16
+Using attention implementation: flash_attention_2
+================================================================================
+
+Using the latest cached version of the dataset since openai/gsm8k couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2026-11-17 02:56:58] WARNING load.py:820: Using the latest cached version of the dataset since openai/gsm8k couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'main' at /home/speech-nlp-cse/24m0756/.cache/huggingface/datasets/openai___gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866 (last modified on Mon Nov 16 20:21:54 2026).
+[2026-11-17 02:56:58] WARNING cache.py:95: Found the latest cached dataset configuration 'main' at /home/speech-nlp-cse/24m0756/.cache/huggingface/datasets/openai___gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866 (last modified on Mon Nov 16 20:21:54 2026).
+[DataCollator] Original padding_side: left
+[DataCollator] Set padding_side to: right
+[DataCollator] Reason first mode: False
+`torch_dtype` is deprecated! Use `dtype` instead!
+wandb: Tracking run with wandb version 0.25.0
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/wandb/offline-run-20261117_025657-ii31jqjo
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  4.03it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  7.82it/s]
+wandb: Detected [openai] in use.
+wandb: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+wandb: For more information, check out the docs at: https://weave-docs.wandb.ai/
+
+================================================================================
+Loading model with dtype: bfloat16
+Using attention implementation: flash_attention_2
+================================================================================
+
+
+SPLIT GENERATE/BACKWARD: generate 16/GPU, backward 1/GPU, steps_per_generation=16
+
+
+================================================================================
+FIXED TEACHER MODE ENABLED
+Teacher will use the initial policy (base model without LoRA adapters)
+Student will update with LoRA adapters
+================================================================================
+
+Using the latest cached version of the dataset since openai/gsm8k couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2026-11-17 02:57:02] WARNING load.py:820: Using the latest cached version of the dataset since openai/gsm8k couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'main' at /home/speech-nlp-cse/24m0756/.cache/huggingface/datasets/openai___gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866 (last modified on Mon Nov 16 20:21:54 2026).
+[2026-11-17 02:57:02] WARNING cache.py:95: Found the latest cached dataset configuration 'main' at /home/speech-nlp-cse/24m0756/.cache/huggingface/datasets/openai___gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866 (last modified on Mon Nov 16 20:21:54 2026).
+[DataCollator] Original padding_side: left
+[DataCollator] Set padding_side to: right
+[DataCollator] Reason first mode: False
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 71.53it/s]
+[2026-11-17 02:57:03] WARNING other.py:513: Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+
+SPLIT GENERATE/BACKWARD: generate 16/GPU, backward 1/GPU, steps_per_generation=16
+
+
+================================================================================
+FIXED TEACHER MODE ENABLED
+Teacher will use the initial policy (base model without LoRA adapters)
+Student will update with LoRA adapters
+================================================================================
+
+[Gloo] Rank [Gloo] Rank 10 is connected to  is connected to 11 peer ranks.  peer ranks. Expected number of connected peer ranks is : Expected number of connected peer ranks is : 11
+
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:02<00:02,  2.37s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:03<00:00,  1.43s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:03<00:00,  1.57s/it]
+
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/7 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  29%|██▊       | 2/7 [00:00<00:00, 19.37it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  86%|████████▌ | 6/7 [00:00<00:00, 29.25it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 7/7 [00:00<00:00, 27.41it/s]
+Capturing CUDA graphs (decode, FULL):   0%|          | 0/5 [00:00<?, ?it/s]Capturing CUDA graphs (decode, FULL):  20%|██        | 1/5 [00:00<00:00,  7.92it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 5/5 [00:00<00:00, 21.43it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 5/5 [00:00<00:00, 19.42it/s]
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 128009, 'pad_token_id': 128004}.
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 128009, 'pad_token_id': 128004}.
+Before initializing optimizer states
+MA 19.21 GB         Max_MA 19.3 GB         CA 19.4 GB         Max_CA 19 GB 
+CPU Virtual Memory:  used = 34.15 GB, percent = 6.8%
+After initializing optimizer states
+MA 19.21 GB         Max_MA 19.39 GB         CA 19.57 GB         Max_CA 20 GB 
+CPU Virtual Memory:  used = 34.15 GB, percent = 6.8%
+After initializing ZeRO optimizer
+MA 19.21 GB         Max_MA 19.21 GB         CA 19.57 GB         Max_CA 20 GB 
+CPU Virtual Memory:  used = 34.15 GB, percent = 6.8%
+  0%|          | 0/233 [00:00<?, ?it/s]vLLM generation done - elapsed time: 39.84s, prompts: 16, total tokens: 16092, avg length: 1005.8, speed: 403.9 tok/s
+vLLM generation done - elapsed time: 63.09s, prompts: 16, total tokens: 19557, avg length: 1222.3, speed: 310.0 tok/s
+/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/utils/checkpoint.py:85: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/utils/checkpoint.py:85: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+Could not estimate the number of tokens of the input, floating-point operations will not be computed
+Could not estimate the number of tokens of the input, floating-point operations will not be computed
+  0%|          | 1/233 [01:25<5:31:01, 85.61s/it]vLLM generation done - elapsed time: 27.30s, prompts: 16, total tokens: 13970, avg length: 873.1, speed: 511.8 tok/s
+vLLM generation done - elapsed time: 63.58s, prompts: 16, total tokens: 20394, avg length: 1274.6, speed: 320.8 tok/s
+  1%|          | 2/233 [02:50<5:27:15, 85.00s/it]                                                 {'loss': -0.0273, 'grad_norm': 0.06301771849393845, 'learning_rate': 4.978540772532189e-06, 'on_policy_loss': -0.0273, 'epoch': 0.01}
+  1%|          | 2/233 [02:50<5:27:15, 85.00s/it]vLLM generation done - elapsed time: 61.77s, prompts: 16, total tokens: 16867, avg length: 1054.2, speed: 273.1 tok/s
+vLLM generation done - elapsed time: 62.32s, prompts: 16, total tokens: 18191, avg length: 1136.9, speed: 291.9 tok/s
+  1%|▏         | 3/233 [04:14<5:24:45, 84.72s/it]vLLM generation done - elapsed time: 45.61s, prompts: 16, total tokens: 19239, avg length: 1202.4, speed: 421.8 tok/s
+vLLM generation done - elapsed time: 65.35s, prompts: 16, total tokens: 22721, avg length: 1420.1, speed: 347.7 tok/s
+  2%|▏         | 4/233 [05:42<5:28:41, 86.12s/it]                                                 {'loss': -0.0272, 'grad_norm': 0.06701350212097168, 'learning_rate': 4.935622317596566e-06, 'on_policy_loss': -0.0272, 'epoch': 0.02}
+  2%|▏         | 4/233 [05:43<5:28:41, 86.12s/it]vLLM generation done - elapsed time: 41.25s, prompts: 16, total tokens: 16364, avg length: 1022.8, speed: 396.7 tok/s
+vLLM generation done - elapsed time: 65.56s, prompts: 16, total tokens: 21444, avg length: 1340.2, speed: 327.1 tok/s
+  2%|▏         | 5/233 [07:10<5:29:37, 86.75s/it]vLLM generation done - elapsed time: 20.89s, prompts: 16, total tokens: 12637, avg length: 789.8, speed: 604.9 tok/s
+vLLM generation done - elapsed time: 63.27s, prompts: 16, total tokens: 18740, avg length: 1171.2, speed: 296.2 tok/s
+
+================================================================================
+Saved 96 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_5.json
+================================================================================
+
+  3%|▎         | 6/233 [08:34<5:24:52, 85.87s/it]                                                 {'loss': -0.0281, 'grad_norm': 0.08419375866651535, 'learning_rate': 4.8927038626609445e-06, 'on_policy_loss': -0.0281, 'epoch': 0.03}
+  3%|▎         | 6/233 [08:35<5:24:52, 85.87s/it]vLLM generation done - elapsed time: 60.99s, prompts: 16, total tokens: 16043, avg length: 1002.7, speed: 263.1 tok/s
+vLLM generation done - elapsed time: 63.89s, prompts: 16, total tokens: 19192, avg length: 1199.5, speed: 300.4 tok/s
+  3%|▎         | 7/233 [10:00<5:23:22, 85.85s/it]vLLM generation done - elapsed time: 47.28s, prompts: 16, total tokens: 18259, avg length: 1141.2, speed: 386.2 tok/s
+vLLM generation done - elapsed time: 61.72s, prompts: 16, total tokens: 17840, avg length: 1115.0, speed: 289.0 tok/s
+  3%|▎         | 8/233 [11:23<5:18:44, 85.00s/it]                                                 {'loss': -0.0278, 'grad_norm': 0.09959656745195389, 'learning_rate': 4.849785407725322e-06, 'on_policy_loss': -0.0278, 'epoch': 0.03}
+  3%|▎         | 8/233 [11:24<5:18:44, 85.00s/it]vLLM generation done - elapsed time: 21.30s, prompts: 16, total tokens: 10956, avg length: 684.8, speed: 514.3 tok/s
+vLLM generation done - elapsed time: 22.88s, prompts: 16, total tokens: 13713, avg length: 857.1, speed: 599.4 tok/s
+  4%|▍         | 9/233 [12:05<4:26:41, 71.44s/it]vLLM generation done - elapsed time: 23.09s, prompts: 16, total tokens: 12769, avg length: 798.1, speed: 553.0 tok/s
+vLLM generation done - elapsed time: 31.25s, prompts: 16, total tokens: 13927, avg length: 870.4, speed: 445.7 tok/s
+  4%|▍         | 10/233 [12:55<4:01:10, 64.89s/it]                                                  {'loss': -0.0306, 'grad_norm': 0.12062982469797134, 'learning_rate': 4.8068669527897e-06, 'on_policy_loss': -0.0306, 'epoch': 0.04}
+  4%|▍         | 10/233 [12:55<4:01:10, 64.89s/it]vLLM generation done - elapsed time: 20.83s, prompts: 16, total tokens: 11714, avg length: 732.1, speed: 562.4 tok/s
+vLLM generation done - elapsed time: 22.52s, prompts: 16, total tokens: 12328, avg length: 770.5, speed: 547.4 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_10.json
+================================================================================
+
+  5%|▍         | 11/233 [13:36<3:32:45, 57.50s/it]vLLM generation done - elapsed time: 27.62s, prompts: 16, total tokens: 11813, avg length: 738.3, speed: 427.6 tok/s
+vLLM generation done - elapsed time: 29.02s, prompts: 16, total tokens: 12828, avg length: 801.8, speed: 442.0 tok/s
+  5%|▌         | 12/233 [14:23<3:20:19, 54.39s/it]                                                  {'loss': -0.034, 'grad_norm': 0.14521443843841553, 'learning_rate': 4.763948497854078e-06, 'on_policy_loss': -0.034, 'epoch': 0.05}
+  5%|▌         | 12/233 [14:23<3:20:19, 54.39s/it]vLLM generation done - elapsed time: 27.41s, prompts: 16, total tokens: 13137, avg length: 821.1, speed: 479.2 tok/s
+vLLM generation done - elapsed time: 53.86s, prompts: 16, total tokens: 15341, avg length: 958.8, speed: 284.9 tok/s
+  6%|▌         | 13/233 [15:37<3:40:28, 60.13s/it]vLLM generation done - elapsed time: 26.67s, prompts: 16, total tokens: 11766, avg length: 735.4, speed: 441.1 tok/s
+vLLM generation done - elapsed time: 30.05s, prompts: 16, total tokens: 12113, avg length: 757.1, speed: 403.0 tok/s
+
+================================================================================
+STUDENT GENERATION SAMPLE (Step 13):
+================================================================================
+
+Prompt:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+Today Date: 17 Nov 2026
+
+<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Problem: Mrs. Carlton gives out penalty points whenever her students misbehave. They get 5 points for interrupting, 10 points for insulting their classmates, and 25 points for throwing things. If they get 100 points, they have to go to the office. Jerry already interrupted twice and insulted his classmates 4 times. How many times can he throw things before he gets sent to the office?
+
+Solve the problem step by step, writing your entire reasoning in Bengali. Put your final numerical answer within \boxed{}.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|>
+
+Completion:
+এই সমস্যাটি সমাধান করার জন্য, আমরা প্রথমে জেরি এখনও পাওয়া যেতে পারে যে কী মোট প্রকৃত পরিমাণের জন্য তার স্কোর হতে পারে। তার 2টি আঘাত এবং 4টি ক্ল্যাসমেটস অন্যায় বলার মান 2*5 + 4*10 = 30।
+
+অতএব, সম্ভাব্য মোট স্কোর হল 100-30 = 70।
+
+সুতরাং, Jerry অতিরিক্ত 70-25 = 45 পয়েন্টস তৈরি করতে পারে।
+
+অতএব, জেরি স্কুলে যেতে 45/25 = 1.8 = 1 থ্রম পাওয়ার জন্য পৌঁছাতে পারে। অর্থাৎ, সে থ্রম 1 বা 2 করতে পারে, যেহেতু তিনি 1.8 থ্রম করতে পারেন না।
+
+এইভাবে, জেরি 1 বা 2 বার থ্রম করার জন্য যে সীমানা লাভ করবেন তা হল:
+
+$\boxed{1}$<|eot_id|>
+================================================================================
+
+  6%|▌         | 14/233 [16:27<3:29:09, 57.30s/it]                                                  {'loss': -0.0333, 'grad_norm': 0.16662627458572388, 'learning_rate': 4.721030042918455e-06, 'on_policy_loss': -0.0333, 'epoch': 0.06}
+  6%|▌         | 14/233 [16:28<3:29:09, 57.30s/it]vLLM generation done - elapsed time: 17.50s, prompts: 16, total tokens: 9458, avg length: 591.1, speed: 540.6 tok/s
+vLLM generation done - elapsed time: 49.73s, prompts: 16, total tokens: 15337, avg length: 958.6, speed: 308.4 tok/s
+  6%|▋         | 15/233 [17:36<3:40:50, 60.78s/it]vLLM generation done - elapsed time: 17.48s, prompts: 16, total tokens: 10786, avg length: 674.1, speed: 616.9 tok/s
+vLLM generation done - elapsed time: 22.77s, prompts: 16, total tokens: 11027, avg length: 689.2, speed: 484.2 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_15.json
+================================================================================
+
+  7%|▋         | 16/233 [18:17<3:18:22, 54.85s/it]                                                  {'loss': -0.0387, 'grad_norm': 0.17441074550151825, 'learning_rate': 4.6781115879828334e-06, 'on_policy_loss': -0.0387, 'epoch': 0.07}
+  7%|▋         | 16/233 [18:17<3:18:22, 54.85s/it]vLLM generation done - elapsed time: 23.45s, prompts: 16, total tokens: 11484, avg length: 717.8, speed: 489.8 tok/s
+vLLM generation done - elapsed time: 27.87s, prompts: 16, total tokens: 11945, avg length: 746.6, speed: 428.6 tok/s
+  7%|▋         | 17/233 [19:03<3:07:57, 52.21s/it]vLLM generation done - elapsed time: 12.75s, prompts: 16, total tokens: 8100, avg length: 506.2, speed: 635.2 tok/s
+vLLM generation done - elapsed time: 16.70s, prompts: 16, total tokens: 9042, avg length: 565.1, speed: 541.3 tok/s
+  8%|▊         | 18/233 [19:37<2:47:11, 46.66s/it]                                                  {'loss': -0.044, 'grad_norm': 0.19671128690242767, 'learning_rate': 4.635193133047211e-06, 'on_policy_loss': -0.044, 'epoch': 0.08}
+  8%|▊         | 18/233 [19:37<2:47:11, 46.66s/it]vLLM generation done - elapsed time: 21.41s, prompts: 16, total tokens: 10294, avg length: 643.4, speed: 480.7 tok/s
+vLLM generation done - elapsed time: 35.18s, prompts: 16, total tokens: 11352, avg length: 709.5, speed: 322.7 tok/s
+  8%|▊         | 19/233 [20:30<2:53:22, 48.61s/it]vLLM generation done - elapsed time: 17.99s, prompts: 16, total tokens: 9971, avg length: 623.2, speed: 554.1 tok/s
+vLLM generation done - elapsed time: 50.85s, prompts: 16, total tokens: 12399, avg length: 774.9, speed: 243.8 tok/s
+  9%|▊         | 20/233 [21:39<3:14:35, 54.82s/it]                                                  {'loss': -0.0443, 'grad_norm': 0.1716756820678711, 'learning_rate': 4.592274678111589e-06, 'on_policy_loss': -0.0443, 'epoch': 0.09}
+  9%|▊         | 20/233 [21:40<3:14:35, 54.82s/it]vLLM generation done - elapsed time: 14.25s, prompts: 16, total tokens: 9462, avg length: 591.4, speed: 664.2 tok/s
+vLLM generation done - elapsed time: 15.22s, prompts: 16, total tokens: 8576, avg length: 536.0, speed: 563.4 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_20.json
+================================================================================
+
+  9%|▉         | 21/233 [22:12<2:50:08, 48.15s/it]vLLM generation done - elapsed time: 15.78s, prompts: 16, total tokens: 9585, avg length: 599.1, speed: 607.3 tok/s
+vLLM generation done - elapsed time: 21.07s, prompts: 16, total tokens: 9196, avg length: 574.8, speed: 436.5 tok/s
+
+================================================================================
+STUDENT GENERATION SAMPLE (Step 21):
+================================================================================
+
+Prompt:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+Today Date: 17 Nov 2026
+
+<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Problem: Wayne wants to serve shrimp cocktail as an appetizer.  He plans on 5 shrimp per guest and will have 40 guests.  If the shrimp costs $17.00 per pound and each pound has 20 shrimp, how much will he spend on the appetizer?
+
+Solve the problem step by step, writing your entire reasoning in Bengali. Put your final numerical answer within \boxed{}.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|>
+
+Completion:
+সমস্যাটি সমাধান করার জন্য, আমরা ধাপে ধাপে কাজ করব।
+
+প্রথমে, আমাদের প্রয়োজন শ্রিম্পের মোট সংখ্যা খুঁজে বের করতে হবে। যেহেতু প্রতিটি গ্রেস্টের 5 শ্রিম্প থাকবে এবং আছে 40 জন গ্রেস্ট, তাই মোট শ্রিম্পের সংখ্যা হল:
+
+40 গ্রেস্ট × 5 শ্রিম্প/গ্রেস্ট = 200 শ্রিম্প
+
+এর পরে, আমাদের খুঁজে বের করতে হবে কত পাউন্ড শ্রিম্প প্রয়োজন। যেহেতু প্রতিটি পাউন্ডে 20 শ্রিম্প রয়েছে, তাই আমরা শ্রিম্পের মোট সংখ্যা দ্বারা ভাগ করে শ্রিম্পের পাউন্ডের সংখ্যা খুঁজে পেতে পারি:
+
+200 শ্রিম্প ÷ 20 শ্রিম্প/পাউন্ড = 10 পাউন্ড
+
+এখন, আমরা জানি যে শ্রিম্পের দাম $17.00 প্রতি পাউন্ড, তাই আমরা খরচ খুঁজে পেতে পাউন্ডের সংখ্যা দিয়ে গুণ করতে পারি:
+
+10 পাউন্ড × $17.00/পাউন্ড = $170.00
+
+অতএব, উইন শ্রিম্প খরচের জন্য $170.00 খরচ করবে।
+
+উত্তর:
+\boxed{$170.00}<|eot_id|>
+================================================================================
+
+  9%|▉         | 22/233 [22:51<2:39:39, 45.40s/it]                                                  {'loss': -0.0492, 'grad_norm': 0.1611621379852295, 'learning_rate': 4.549356223175966e-06, 'on_policy_loss': -0.0492, 'epoch': 0.09}
+  9%|▉         | 22/233 [22:51<2:39:39, 45.40s/it]vLLM generation done - elapsed time: 16.68s, prompts: 16, total tokens: 9762, avg length: 610.1, speed: 585.3 tok/s
+vLLM generation done - elapsed time: 23.80s, prompts: 16, total tokens: 11228, avg length: 701.8, speed: 471.8 tok/s
+ 10%|▉         | 23/233 [23:33<2:34:53, 44.26s/it]vLLM generation done - elapsed time: 12.53s, prompts: 16, total tokens: 8532, avg length: 533.2, speed: 681.0 tok/s
+vLLM generation done - elapsed time: 60.50s, prompts: 16, total tokens: 14413, avg length: 900.8, speed: 238.2 tok/s
+ 10%|█         | 24/233 [24:52<3:10:42, 54.75s/it]                                                  {'loss': -0.049, 'grad_norm': 0.12396924197673798, 'learning_rate': 4.5064377682403434e-06, 'on_policy_loss': -0.049, 'epoch': 0.1}
+ 10%|█         | 24/233 [24:52<3:10:42, 54.75s/it]vLLM generation done - elapsed time: 17.03s, prompts: 16, total tokens: 9003, avg length: 562.7, speed: 528.7 tok/s
+vLLM generation done - elapsed time: 38.21s, prompts: 16, total tokens: 12902, avg length: 806.4, speed: 337.7 tok/s
+ 11%|█         | 25/233 [25:48<3:11:25, 55.22s/it]wandb: WARNING URL not available in offline run
+/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in meta-llama/Llama-3.2-3B-Instruct - will assume that the vocabulary was not modified.
+  warnings.warn(
+vLLM generation done - elapsed time: 11.70s, prompts: 16, total tokens: 8474, avg length: 529.6, speed: 724.1 tok/s
+vLLM generation done - elapsed time: 16.02s, prompts: 16, total tokens: 9161, avg length: 572.6, speed: 571.7 tok/s
+/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/utils/checkpoint.py:85: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_25.json
+================================================================================
+
+ 11%|█         | 26/233 [26:25<2:51:38, 49.75s/it]                                                  {'loss': -0.0494, 'grad_norm': 0.10585477948188782, 'learning_rate': 4.4635193133047216e-06, 'on_policy_loss': -0.0494, 'epoch': 0.11}
+ 11%|█         | 26/233 [26:25<2:51:38, 49.75s/it]vLLM generation done - elapsed time: 29.79s, prompts: 16, total tokens: 11269, avg length: 704.3, speed: 378.3 tok/s
+vLLM generation done - elapsed time: 59.54s, prompts: 16, total tokens: 12357, avg length: 772.3, speed: 207.5 tok/s
+ 12%|█▏        | 27/233 [27:44<3:20:16, 58.33s/it]vLLM generation done - elapsed time: 17.24s, prompts: 16, total tokens: 9028, avg length: 564.2, speed: 523.6 tok/s
+vLLM generation done - elapsed time: 18.65s, prompts: 16, total tokens: 11311, avg length: 706.9, speed: 606.4 tok/s
+ 12%|█▏        | 28/233 [28:20<2:56:42, 51.72s/it]                                                  {'loss': -0.0495, 'grad_norm': 0.08759644627571106, 'learning_rate': 4.420600858369099e-06, 'on_policy_loss': -0.0495, 'epoch': 0.12}
+ 12%|█▏        | 28/233 [28:20<2:56:42, 51.72s/it]vLLM generation done - elapsed time: 15.98s, prompts: 16, total tokens: 9494, avg length: 593.4, speed: 594.1 tok/s
+vLLM generation done - elapsed time: 18.96s, prompts: 16, total tokens: 10133, avg length: 633.3, speed: 534.5 tok/s
+ 12%|█▏        | 29/233 [28:56<2:40:19, 47.15s/it]vLLM generation done - elapsed time: 15.81s, prompts: 16, total tokens: 9565, avg length: 597.8, speed: 605.1 tok/s
+vLLM generation done - elapsed time: 16.76s, prompts: 16, total tokens: 9435, avg length: 589.7, speed: 563.1 tok/s
+ 13%|█▎        | 30/233 [29:31<2:27:13, 43.52s/it]                                                  {'loss': -0.0548, 'grad_norm': 0.09788457304239273, 'learning_rate': 4.377682403433477e-06, 'on_policy_loss': -0.0548, 'epoch': 0.13}
+ 13%|█▎        | 30/233 [29:32<2:27:13, 43.52s/it]vLLM generation done - elapsed time: 13.78s, prompts: 16, total tokens: 9358, avg length: 584.9, speed: 679.0 tok/s
+vLLM generation done - elapsed time: 14.16s, prompts: 16, total tokens: 8307, avg length: 519.2, speed: 586.5 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_30.json
+================================================================================
+
+ 13%|█▎        | 31/233 [30:03<2:14:21, 39.91s/it]vLLM generation done - elapsed time: 13.67s, prompts: 16, total tokens: 9550, avg length: 596.9, speed: 698.5 tok/s
+vLLM generation done - elapsed time: 14.44s, prompts: 16, total tokens: 8609, avg length: 538.1, speed: 596.3 tok/s
+ 14%|█▎        | 32/233 [30:34<2:05:14, 37.38s/it]                                                  {'loss': -0.0562, 'grad_norm': 0.09635356813669205, 'learning_rate': 4.334763948497854e-06, 'on_policy_loss': -0.0562, 'epoch': 0.14}
+ 14%|█▎        | 32/233 [30:35<2:05:14, 37.38s/it]vLLM generation done - elapsed time: 13.71s, prompts: 16, total tokens: 8924, avg length: 557.8, speed: 651.0 tok/s
+vLLM generation done - elapsed time: 13.83s, prompts: 16, total tokens: 8631, avg length: 539.4, speed: 623.9 tok/s
+ 14%|█▍        | 33/233 [31:05<1:58:02, 35.41s/it]vLLM generation done - elapsed time: 14.57s, prompts: 16, total tokens: 9140, avg length: 571.2, speed: 627.2 tok/s
+vLLM generation done - elapsed time: 19.00s, prompts: 16, total tokens: 9170, avg length: 573.1, speed: 482.6 tok/s
+ 15%|█▍        | 34/233 [31:41<1:58:11, 35.63s/it]                                                  {'loss': -0.0562, 'grad_norm': 0.08069794625043869, 'learning_rate': 4.291845493562232e-06, 'on_policy_loss': -0.0562, 'epoch': 0.15}
+ 15%|█▍        | 34/233 [31:42<1:58:11, 35.63s/it]vLLM generation done - elapsed time: 12.16s, prompts: 16, total tokens: 7603, avg length: 475.2, speed: 625.2 tok/s
+vLLM generation done - elapsed time: 17.26s, prompts: 16, total tokens: 9799, avg length: 612.4, speed: 567.6 tok/s
+ 15%|█▌        | 35/233 [32:16<1:56:09, 35.20s/it]vLLM generation done - elapsed time: 18.02s, prompts: 16, total tokens: 8764, avg length: 547.8, speed: 486.4 tok/s
+vLLM generation done - elapsed time: 20.97s, prompts: 16, total tokens: 10451, avg length: 653.2, speed: 498.4 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_35.json
+================================================================================
+
+ 15%|█▌        | 36/233 [32:54<1:58:37, 36.13s/it]                                                  {'loss': -0.0584, 'grad_norm': 0.0794355645775795, 'learning_rate': 4.24892703862661e-06, 'on_policy_loss': -0.0584, 'epoch': 0.15}
+ 15%|█▌        | 36/233 [32:54<1:58:37, 36.13s/it]vLLM generation done - elapsed time: 16.65s, prompts: 16, total tokens: 10306, avg length: 644.1, speed: 618.9 tok/s
+vLLM generation done - elapsed time: 17.75s, prompts: 16, total tokens: 10202, avg length: 637.6, speed: 574.8 tok/s
+ 16%|█▌        | 37/233 [33:29<1:57:11, 35.88s/it]vLLM generation done - elapsed time: 12.24s, prompts: 16, total tokens: 8065, avg length: 504.1, speed: 658.8 tok/s
+vLLM generation done - elapsed time: 34.52s, prompts: 16, total tokens: 11157, avg length: 697.3, speed: 323.2 tok/s
+ 16%|█▋        | 38/233 [34:21<2:12:22, 40.73s/it]                                                  {'loss': -0.0563, 'grad_norm': 0.07987776398658752, 'learning_rate': 4.206008583690988e-06, 'on_policy_loss': -0.0563, 'epoch': 0.16}
+ 16%|█▋        | 38/233 [34:21<2:12:22, 40.73s/it]vLLM generation done - elapsed time: 19.68s, prompts: 16, total tokens: 8950, avg length: 559.4, speed: 454.9 tok/s
+vLLM generation done - elapsed time: 23.35s, prompts: 16, total tokens: 10609, avg length: 663.1, speed: 454.4 tok/s
+ 17%|█▋        | 39/233 [35:02<2:12:00, 40.83s/it]vLLM generation done - elapsed time: 16.18s, prompts: 16, total tokens: 8002, avg length: 500.1, speed: 494.5 tok/s
+vLLM generation done - elapsed time: 21.17s, prompts: 16, total tokens: 9976, avg length: 623.5, speed: 471.2 tok/s
+ 17%|█▋        | 40/233 [35:41<2:08:54, 40.07s/it]                                                  {'loss': -0.0592, 'grad_norm': 0.08202553540468216, 'learning_rate': 4.163090128755365e-06, 'on_policy_loss': -0.0592, 'epoch': 0.17}
+ 17%|█▋        | 40/233 [35:41<2:08:54, 40.07s/it]vLLM generation done - elapsed time: 15.52s, prompts: 16, total tokens: 8137, avg length: 508.6, speed: 524.3 tok/s
+vLLM generation done - elapsed time: 24.88s, prompts: 16, total tokens: 9303, avg length: 581.4, speed: 374.0 tok/s
+
+================================================================================
+STUDENT GENERATION SAMPLE (Step 40):
+================================================================================
+
+Prompt:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+Today Date: 17 Nov 2026
+
+<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Problem: Xander read 20% of his 500-page book in one hour.  The next night he read another 20% of the book.  On the third night, he read 30% of his book.  How many pages does he have left to read?
+
+Solve the problem step by step, writing your entire reasoning in Bengali. Put your final numerical answer within \boxed{}.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|>
+
+Completion:
+step 1: Xander তার 500-পৃষ্ঠা বইয়ের 20% প্রথম ঘন্টায় পড়েছিল। 20% of 500 pages = 0.2 x 500 = 100 pages
+
+step 2: প্রথম নজরে, Xander তার বইয়ে 100 পৃষ্ঠা পড়েছিলেন। তার বইতে বাকি পৃষ্ঠা = 500 - 100 = 400 pages
+
+step 3: পরবর্তী রাতে, Xander আবার 20% তার বই পড়েছিলেন। 20% of 400 pages = 0.2 x 400 = 80 pages
+
+step 4: দ্বিতীয় নজরে, Xander তার বইয়ে 80 পৃষ্ঠা পড়েছিলেন। তার বইতে বাকি পৃষ্ঠা = 400 - 80 = 320 pages
+
+step 5: তৃতীয় রাতে, Xander 30% তার বই পড়েছিলেন। 30% of 320 pages = 0.3 x 320 = 96 pages
+
+step 6: তৃতীয় নজরে, Xander তার বইয়ে 96 পৃষ্ঠা পড়েছিলেন। তার বইতে বাকি পৃষ্ঠা = 320 - 96 = 224 pages
+
+উত্তর:
+\বাক্স {224}<|eot_id|>
+================================================================================
+
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_40.json
+================================================================================
+
+ 18%|█▊        | 41/233 [36:23<2:10:07, 40.66s/it]vLLM generation done - elapsed time: 12.39s, prompts: 16, total tokens: 7998, avg length: 499.9, speed: 645.6 tok/s
+vLLM generation done - elapsed time: 13.03s, prompts: 16, total tokens: 7586, avg length: 474.1, speed: 582.1 tok/s
+ 18%|█▊        | 42/233 [36:52<1:58:52, 37.34s/it]                                                  {'loss': -0.0615, 'grad_norm': 0.09315481781959534, 'learning_rate': 4.120171673819742e-06, 'on_policy_loss': -0.0615, 'epoch': 0.18}
+ 18%|█▊        | 42/233 [36:52<1:58:52, 37.34s/it]vLLM generation done - elapsed time: 12.54s, prompts: 16, total tokens: 7994, avg length: 499.6, speed: 637.3 tok/s
+vLLM generation done - elapsed time: 28.74s, prompts: 16, total tokens: 10823, avg length: 676.4, speed: 376.6 tok/s
+ 18%|█▊        | 43/233 [37:38<2:06:30, 39.95s/it]vLLM generation done - elapsed time: 15.15s, prompts: 16, total tokens: 8644, avg length: 540.2, speed: 570.7 tok/s
+vLLM generation done - elapsed time: 15.31s, prompts: 16, total tokens: 7753, avg length: 484.6, speed: 506.4 tok/s
+ 19%|█▉        | 44/233 [38:10<1:58:19, 37.56s/it]                                                  {'loss': -0.0648, 'grad_norm': 0.09179167449474335, 'learning_rate': 4.0772532188841205e-06, 'on_policy_loss': -0.0648, 'epoch': 0.19}
+ 19%|█▉        | 44/233 [38:10<1:58:19, 37.56s/it]vLLM generation done - elapsed time: 16.20s, prompts: 16, total tokens: 10186, avg length: 636.6, speed: 628.7 tok/s
+vLLM generation done - elapsed time: 17.96s, prompts: 16, total tokens: 9301, avg length: 581.3, speed: 518.0 tok/s
+ 19%|█▉        | 45/233 [38:45<1:55:25, 36.84s/it]vLLM generation done - elapsed time: 13.91s, prompts: 16, total tokens: 8177, avg length: 511.1, speed: 587.7 tok/s
+vLLM generation done - elapsed time: 18.31s, prompts: 16, total tokens: 10561, avg length: 660.1, speed: 576.7 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_45.json
+================================================================================
+
+ 20%|█▉        | 46/233 [39:21<1:53:35, 36.45s/it]                                                  {'loss': -0.0637, 'grad_norm': 0.08546721935272217, 'learning_rate': 4.034334763948498e-06, 'on_policy_loss': -0.0637, 'epoch': 0.2}
+ 20%|█▉        | 46/233 [39:21<1:53:35, 36.45s/it]vLLM generation done - elapsed time: 10.90s, prompts: 16, total tokens: 7595, avg length: 474.7, speed: 696.6 tok/s
+vLLM generation done - elapsed time: 19.76s, prompts: 16, total tokens: 9308, avg length: 581.8, speed: 470.9 tok/s
+ 20%|██        | 47/233 [39:57<1:53:08, 36.50s/it]vLLM generation done - elapsed time: 13.46s, prompts: 16, total tokens: 8412, avg length: 525.8, speed: 625.1 tok/s
+vLLM generation done - elapsed time: 23.63s, prompts: 16, total tokens: 9620, avg length: 601.2, speed: 407.2 tok/s
+ 21%|██        | 48/233 [40:38<1:56:37, 37.82s/it]                                                  {'loss': -0.0685, 'grad_norm': 0.12271246314048767, 'learning_rate': 3.991416309012876e-06, 'on_policy_loss': -0.0685, 'epoch': 0.21}
+ 21%|██        | 48/233 [40:39<1:56:37, 37.82s/it]vLLM generation done - elapsed time: 13.35s, prompts: 16, total tokens: 8175, avg length: 510.9, speed: 612.3 tok/s
+vLLM generation done - elapsed time: 15.07s, prompts: 16, total tokens: 8292, avg length: 518.2, speed: 550.3 tok/s
+ 21%|██        | 49/233 [41:10<1:50:24, 36.01s/it]vLLM generation done - elapsed time: 12.84s, prompts: 16, total tokens: 7356, avg length: 459.8, speed: 573.1 tok/s
+vLLM generation done - elapsed time: 17.64s, prompts: 16, total tokens: 10393, avg length: 649.6, speed: 589.0 tok/s
+ 21%|██▏       | 50/233 [41:45<1:48:36, 35.61s/it]                                                  {'loss': -0.0665, 'grad_norm': 0.09223707765340805, 'learning_rate': 3.948497854077253e-06, 'on_policy_loss': -0.0665, 'epoch': 0.21}
+ 21%|██▏       | 50/233 [41:45<1:48:36, 35.61s/it]wandb: WARNING URL not available in offline run
+/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in meta-llama/Llama-3.2-3B-Instruct - will assume that the vocabulary was not modified.
+  warnings.warn(
+vLLM generation done - elapsed time: 13.07s, prompts: 16, total tokens: 7930, avg length: 495.6, speed: 606.7 tok/s
+vLLM generation done - elapsed time: 14.93s, prompts: 16, total tokens: 7899, avg length: 493.7, speed: 529.1 tok/s
+/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/utils/checkpoint.py:85: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_50.json
+================================================================================
+
+ 22%|██▏       | 51/233 [42:21<1:48:52, 35.89s/it]vLLM generation done - elapsed time: 16.10s, prompts: 16, total tokens: 9247, avg length: 577.9, speed: 574.2 tok/s
+vLLM generation done - elapsed time: 59.27s, prompts: 16, total tokens: 11126, avg length: 695.4, speed: 187.7 tok/s
+ 22%|██▏       | 52/233 [43:39<2:26:01, 48.41s/it]                                                  {'loss': -0.0682, 'grad_norm': 0.10117585957050323, 'learning_rate': 3.905579399141631e-06, 'on_policy_loss': -0.0682, 'epoch': 0.22}
+ 22%|██▏       | 52/233 [43:39<2:26:01, 48.41s/it]vLLM generation done - elapsed time: 16.46s, prompts: 16, total tokens: 9253, avg length: 578.3, speed: 562.3 tok/s
+vLLM generation done - elapsed time: 20.89s, prompts: 16, total tokens: 10109, avg length: 631.8, speed: 483.8 tok/s
+ 23%|██▎       | 53/233 [44:17<2:16:05, 45.37s/it]vLLM generation done - elapsed time: 17.09s, prompts: 16, total tokens: 8782, avg length: 548.9, speed: 513.7 tok/s
+vLLM generation done - elapsed time: 43.25s, prompts: 16, total tokens: 9104, avg length: 569.0, speed: 210.5 tok/s
+ 23%|██▎       | 54/233 [45:18<2:29:02, 49.96s/it]                                                  {'loss': -0.0659, 'grad_norm': 0.10333240032196045, 'learning_rate': 3.862660944206009e-06, 'on_policy_loss': -0.0659, 'epoch': 0.23}
+ 23%|██▎       | 54/233 [45:18<2:29:02, 49.96s/it]vLLM generation done - elapsed time: 16.57s, prompts: 16, total tokens: 8180, avg length: 511.2, speed: 493.6 tok/s
+vLLM generation done - elapsed time: 17.36s, prompts: 16, total tokens: 8846, avg length: 552.9, speed: 509.5 tok/s
+ 24%|██▎       | 55/233 [45:52<2:14:20, 45.28s/it]vLLM generation done - elapsed time: 15.35s, prompts: 16, total tokens: 8499, avg length: 531.2, speed: 553.6 tok/s
+vLLM generation done - elapsed time: 16.47s, prompts: 16, total tokens: 8578, avg length: 536.1, speed: 520.9 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_55.json
+================================================================================
+
+ 24%|██▍       | 56/233 [46:26<2:02:58, 41.69s/it]                                                  {'loss': -0.0636, 'grad_norm': 0.08987051248550415, 'learning_rate': 3.819742489270387e-06, 'on_policy_loss': -0.0636, 'epoch': 0.24}
+ 24%|██▍       | 56/233 [46:26<2:02:58, 41.69s/it]vLLM generation done - elapsed time: 18.33s, prompts: 16, total tokens: 9766, avg length: 610.4, speed: 532.8 tok/s
+vLLM generation done - elapsed time: 18.93s, prompts: 16, total tokens: 8890, avg length: 555.6, speed: 469.7 tok/s
+ 24%|██▍       | 57/233 [47:02<1:57:28, 40.05s/it]vLLM generation done - elapsed time: 13.08s, prompts: 16, total tokens: 8270, avg length: 516.9, speed: 632.4 tok/s
+vLLM generation done - elapsed time: 60.12s, prompts: 16, total tokens: 13283, avg length: 830.2, speed: 221.0 tok/s
+ 25%|██▍       | 58/233 [48:21<2:30:38, 51.65s/it]                                                  {'loss': -0.0659, 'grad_norm': 0.1030614897608757, 'learning_rate': 3.7768240343347645e-06, 'on_policy_loss': -0.0659, 'epoch': 0.25}
+ 25%|██▍       | 58/233 [48:21<2:30:38, 51.65s/it]vLLM generation done - elapsed time: 14.80s, prompts: 16, total tokens: 9156, avg length: 572.2, speed: 618.7 tok/s
+vLLM generation done - elapsed time: 60.47s, prompts: 16, total tokens: 13502, avg length: 843.9, speed: 223.3 tok/s
+ 25%|██▌       | 59/233 [49:40<2:53:40, 59.89s/it]vLLM generation done - elapsed time: 11.48s, prompts: 16, total tokens: 7081, avg length: 442.6, speed: 616.8 tok/s
+vLLM generation done - elapsed time: 22.25s, prompts: 16, total tokens: 9288, avg length: 580.5, speed: 417.4 tok/s
+ 26%|██▌       | 60/233 [50:19<2:34:43, 53.66s/it]                                                  {'loss': -0.0663, 'grad_norm': 0.11103816330432892, 'learning_rate': 3.733905579399142e-06, 'on_policy_loss': -0.0663, 'epoch': 0.26}
+ 26%|██▌       | 60/233 [50:19<2:34:43, 53.66s/it]vLLM generation done - elapsed time: 11.79s, prompts: 16, total tokens: 7261, avg length: 453.8, speed: 615.6 tok/s
+vLLM generation done - elapsed time: 17.30s, prompts: 16, total tokens: 9039, avg length: 564.9, speed: 522.6 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_60.json
+================================================================================
+
+ 26%|██▌       | 61/233 [50:53<2:16:55, 47.76s/it]vLLM generation done - elapsed time: 14.34s, prompts: 16, total tokens: 7826, avg length: 489.1, speed: 545.9 tok/s
+vLLM generation done - elapsed time: 17.76s, prompts: 16, total tokens: 10280, avg length: 642.5, speed: 578.9 tok/s
+ 27%|██▋       | 62/233 [51:28<2:05:04, 43.89s/it]                                                  {'loss': -0.0692, 'grad_norm': 0.08929357677698135, 'learning_rate': 3.69098712446352e-06, 'on_policy_loss': -0.0692, 'epoch': 0.27}
+ 27%|██▋       | 62/233 [51:28<2:05:04, 43.89s/it]vLLM generation done - elapsed time: 17.69s, prompts: 16, total tokens: 8605, avg length: 537.8, speed: 486.6 tok/s
+vLLM generation done - elapsed time: 17.92s, prompts: 16, total tokens: 9267, avg length: 579.2, speed: 517.0 tok/s
+ 27%|██▋       | 63/233 [52:03<1:56:51, 41.24s/it]vLLM generation done - elapsed time: 13.83s, prompts: 16, total tokens: 9242, avg length: 577.6, speed: 668.1 tok/s
+vLLM generation done - elapsed time: 16.40s, prompts: 16, total tokens: 9982, avg length: 623.9, speed: 608.8 tok/s
+ 27%|██▋       | 64/233 [52:36<1:49:40, 38.94s/it]                                                  {'loss': -0.0678, 'grad_norm': 0.09614589065313339, 'learning_rate': 3.648068669527897e-06, 'on_policy_loss': -0.0678, 'epoch': 0.27}
+ 27%|██▋       | 64/233 [52:36<1:49:40, 38.94s/it]vLLM generation done - elapsed time: 15.11s, prompts: 16, total tokens: 9721, avg length: 607.6, speed: 643.3 tok/s
+vLLM generation done - elapsed time: 27.73s, prompts: 16, total tokens: 9170, avg length: 573.1, speed: 330.7 tok/s
+ 28%|██▊       | 65/233 [53:21<1:54:16, 40.82s/it]vLLM generation done - elapsed time: 17.22s, prompts: 16, total tokens: 9196, avg length: 574.8, speed: 534.0 tok/s
+vLLM generation done - elapsed time: 19.95s, prompts: 16, total tokens: 9328, avg length: 583.0, speed: 467.7 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_65.json
+================================================================================
+
+ 28%|██▊       | 66/233 [53:59<1:50:44, 39.79s/it]                                                  {'loss': -0.0676, 'grad_norm': 0.0853709727525711, 'learning_rate': 3.605150214592275e-06, 'on_policy_loss': -0.0676, 'epoch': 0.28}
+ 28%|██▊       | 66/233 [53:59<1:50:44, 39.79s/it]vLLM generation done - elapsed time: 25.49s, prompts: 16, total tokens: 10530, avg length: 658.1, speed: 413.1 tok/s
+vLLM generation done - elapsed time: 35.15s, prompts: 16, total tokens: 11800, avg length: 737.5, speed: 335.7 tok/s
+ 29%|██▉       | 67/233 [54:52<2:01:03, 43.75s/it]vLLM generation done - elapsed time: 15.63s, prompts: 16, total tokens: 9868, avg length: 616.8, speed: 631.3 tok/s
+vLLM generation done - elapsed time: 17.49s, prompts: 16, total tokens: 10166, avg length: 635.4, speed: 581.3 tok/s
+ 29%|██▉       | 68/233 [55:27<1:52:57, 41.08s/it]                                                  {'loss': -0.065, 'grad_norm': 0.0788981094956398, 'learning_rate': 3.5622317596566526e-06, 'on_policy_loss': -0.065, 'epoch': 0.29}
+ 29%|██▉       | 68/233 [55:27<1:52:57, 41.08s/it]vLLM generation done - elapsed time: 13.17s, prompts: 16, total tokens: 7814, avg length: 488.4, speed: 593.5 tok/s
+vLLM generation done - elapsed time: 17.28s, prompts: 16, total tokens: 9281, avg length: 580.1, speed: 537.1 tok/s
+ 30%|██▉       | 69/233 [56:01<1:46:32, 38.98s/it]vLLM generation done - elapsed time: 15.03s, prompts: 16, total tokens: 8952, avg length: 559.5, speed: 595.5 tok/s
+vLLM generation done - elapsed time: 31.12s, prompts: 16, total tokens: 10645, avg length: 665.3, speed: 342.0 tok/s
+ 30%|███       | 70/233 [56:49<1:53:47, 41.88s/it]                                                  {'loss': -0.0681, 'grad_norm': 0.08972252905368805, 'learning_rate': 3.5193133047210303e-06, 'on_policy_loss': -0.0681, 'epoch': 0.3}
+ 30%|███       | 70/233 [56:50<1:53:47, 41.88s/it]vLLM generation done - elapsed time: 16.95s, prompts: 16, total tokens: 9492, avg length: 593.2, speed: 560.0 tok/s
+vLLM generation done - elapsed time: 60.46s, prompts: 16, total tokens: 14011, avg length: 875.7, speed: 231.7 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_70.json
+================================================================================
+
+ 30%|███       | 71/233 [58:09<2:23:23, 53.11s/it]vLLM generation done - elapsed time: 16.95s, prompts: 16, total tokens: 9026, avg length: 564.1, speed: 532.7 tok/s
+vLLM generation done - elapsed time: 25.51s, prompts: 16, total tokens: 10360, avg length: 647.5, speed: 406.1 tok/s
+ 31%|███       | 72/233 [58:52<2:14:25, 50.10s/it]                                                  {'loss': -0.0649, 'grad_norm': 0.09078385680913925, 'learning_rate': 3.4763948497854076e-06, 'on_policy_loss': -0.0649, 'epoch': 0.31}
+ 31%|███       | 72/233 [58:52<2:14:25, 50.10s/it]vLLM generation done - elapsed time: 16.08s, prompts: 16, total tokens: 8659, avg length: 541.2, speed: 538.4 tok/s
+vLLM generation done - elapsed time: 43.17s, prompts: 16, total tokens: 12344, avg length: 771.5, speed: 286.0 tok/s
+ 31%|███▏      | 73/233 [59:53<2:22:31, 53.45s/it]vLLM generation done - elapsed time: 16.65s, prompts: 16, total tokens: 9366, avg length: 585.4, speed: 562.6 tok/s
+vLLM generation done - elapsed time: 20.21s, prompts: 16, total tokens: 8323, avg length: 520.2, speed: 411.8 tok/s
+ 32%|███▏      | 74/233 [1:00:30<2:08:43, 48.57s/it]                                                    {'loss': -0.0662, 'grad_norm': 0.09244941174983978, 'learning_rate': 3.4334763948497858e-06, 'on_policy_loss': -0.0662, 'epoch': 0.32}
+ 32%|███▏      | 74/233 [1:00:30<2:08:43, 48.57s/it]vLLM generation done - elapsed time: 17.37s, prompts: 16, total tokens: 9863, avg length: 616.4, speed: 567.8 tok/s
+vLLM generation done - elapsed time: 19.76s, prompts: 16, total tokens: 10937, avg length: 683.6, speed: 553.6 tok/s
+ 32%|███▏      | 75/233 [1:01:08<1:59:07, 45.24s/it]wandb: WARNING URL not available in offline run
+/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in meta-llama/Llama-3.2-3B-Instruct - will assume that the vocabulary was not modified.
+  warnings.warn(
+vLLM generation done - elapsed time: 19.62s, prompts: 16, total tokens: 9765, avg length: 610.3, speed: 497.7 tok/s
+vLLM generation done - elapsed time: 21.84s, prompts: 16, total tokens: 10113, avg length: 632.1, speed: 463.0 tok/s
+/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/utils/checkpoint.py:85: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_75.json
+================================================================================
+
+ 33%|███▎      | 76/233 [1:01:54<1:58:46, 45.39s/it]                                                    {'loss': -0.0657, 'grad_norm': 0.07844610512256622, 'learning_rate': 3.3905579399141635e-06, 'on_policy_loss': -0.0657, 'epoch': 0.33}
+ 33%|███▎      | 76/233 [1:01:54<1:58:46, 45.39s/it]vLLM generation done - elapsed time: 20.34s, prompts: 16, total tokens: 9742, avg length: 608.9, speed: 479.0 tok/s
+vLLM generation done - elapsed time: 20.69s, prompts: 16, total tokens: 10144, avg length: 634.0, speed: 490.2 tok/s
+ 33%|███▎      | 77/233 [1:02:32<1:52:38, 43.32s/it]vLLM generation done - elapsed time: 20.60s, prompts: 16, total tokens: 10747, avg length: 671.7, speed: 521.6 tok/s
+vLLM generation done - elapsed time: 31.14s, prompts: 16, total tokens: 10534, avg length: 658.4, speed: 338.3 tok/s
+ 33%|███▎      | 78/233 [1:03:21<1:56:12, 44.98s/it]                                                    {'loss': -0.065, 'grad_norm': 0.08219599723815918, 'learning_rate': 3.3476394849785408e-06, 'on_policy_loss': -0.065, 'epoch': 0.33}
+ 33%|███▎      | 78/233 [1:03:21<1:56:12, 44.98s/it]vLLM generation done - elapsed time: 14.33s, prompts: 16, total tokens: 8015, avg length: 500.9, speed: 559.4 tok/s
+vLLM generation done - elapsed time: 19.69s, prompts: 16, total tokens: 10144, avg length: 634.0, speed: 515.3 tok/s
+ 34%|███▍      | 79/233 [1:03:58<1:49:11, 42.54s/it]vLLM generation done - elapsed time: 19.37s, prompts: 16, total tokens: 9633, avg length: 602.1, speed: 497.3 tok/s
+vLLM generation done - elapsed time: 60.18s, prompts: 16, total tokens: 13650, avg length: 853.1, speed: 226.8 tok/s
+ 34%|███▍      | 80/233 [1:05:17<2:16:23, 53.49s/it]                                                    {'loss': -0.0671, 'grad_norm': 0.07939360290765762, 'learning_rate': 3.304721030042919e-06, 'on_policy_loss': -0.0671, 'epoch': 0.34}
+ 34%|███▍      | 80/233 [1:05:17<2:16:23, 53.49s/it]vLLM generation done - elapsed time: 13.23s, prompts: 16, total tokens: 8074, avg length: 504.6, speed: 610.1 tok/s
+vLLM generation done - elapsed time: 27.30s, prompts: 16, total tokens: 12455, avg length: 778.4, speed: 456.3 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_80.json
+================================================================================
+
+ 35%|███▍      | 81/233 [1:06:02<2:09:13, 51.01s/it]vLLM generation done - elapsed time: 22.51s, prompts: 16, total tokens: 11745, avg length: 734.1, speed: 521.9 tok/s
+vLLM generation done - elapsed time: 59.86s, prompts: 16, total tokens: 13668, avg length: 854.2, speed: 228.3 tok/s
+ 35%|███▌      | 82/233 [1:07:21<2:29:18, 59.33s/it]                                                    {'loss': -0.0648, 'grad_norm': 0.07342728227376938, 'learning_rate': 3.261802575107296e-06, 'on_policy_loss': -0.0648, 'epoch': 0.35}
+ 35%|███▌      | 82/233 [1:07:21<2:29:18, 59.33s/it]vLLM generation done - elapsed time: 15.20s, prompts: 16, total tokens: 8507, avg length: 531.7, speed: 559.7 tok/s
+vLLM generation done - elapsed time: 17.84s, prompts: 16, total tokens: 9478, avg length: 592.4, speed: 531.3 tok/s
+ 36%|███▌      | 83/233 [1:07:56<2:10:09, 52.06s/it]vLLM generation done - elapsed time: 13.21s, prompts: 16, total tokens: 7410, avg length: 463.1, speed: 560.9 tok/s
+vLLM generation done - elapsed time: 60.53s, prompts: 16, total tokens: 14955, avg length: 934.7, speed: 247.1 tok/s
+ 36%|███▌      | 84/233 [1:09:15<2:29:31, 60.21s/it]                                                    {'loss': -0.0693, 'grad_norm': 0.08087114989757538, 'learning_rate': 3.2188841201716743e-06, 'on_policy_loss': -0.0693, 'epoch': 0.36}
+ 36%|███▌      | 84/233 [1:09:15<2:29:31, 60.21s/it]vLLM generation done - elapsed time: 20.06s, prompts: 16, total tokens: 9642, avg length: 602.6, speed: 480.8 tok/s
+vLLM generation done - elapsed time: 61.44s, prompts: 16, total tokens: 12900, avg length: 806.2, speed: 210.0 tok/s
+ 36%|███▋      | 85/233 [1:10:40<2:46:28, 67.49s/it]vLLM generation done - elapsed time: 17.47s, prompts: 16, total tokens: 9064, avg length: 566.5, speed: 518.9 tok/s
+vLLM generation done - elapsed time: 38.74s, prompts: 16, total tokens: 10773, avg length: 673.3, speed: 278.1 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_85.json
+================================================================================
+
+ 37%|███▋      | 86/233 [1:11:36<2:37:33, 64.31s/it]                                                    {'loss': -0.0675, 'grad_norm': 0.08907242119312286, 'learning_rate': 3.1759656652360516e-06, 'on_policy_loss': -0.0675, 'epoch': 0.37}
+ 37%|███▋      | 86/233 [1:11:37<2:37:33, 64.31s/it]vLLM generation done - elapsed time: 20.18s, prompts: 16, total tokens: 9692, avg length: 605.8, speed: 480.2 tok/s
+vLLM generation done - elapsed time: 24.74s, prompts: 16, total tokens: 10892, avg length: 680.8, speed: 440.2 tok/s
+ 37%|███▋      | 87/233 [1:12:19<2:20:19, 57.67s/it]vLLM generation done - elapsed time: 14.29s, prompts: 16, total tokens: 8460, avg length: 528.8, speed: 592.2 tok/s
+vLLM generation done - elapsed time: 59.56s, prompts: 16, total tokens: 12258, avg length: 766.1, speed: 205.8 tok/s
+ 38%|███▊      | 88/233 [1:13:37<2:34:04, 63.75s/it]                                                    {'loss': -0.0686, 'grad_norm': 0.08613664656877518, 'learning_rate': 3.1330472103004293e-06, 'on_policy_loss': -0.0686, 'epoch': 0.38}
+ 38%|███▊      | 88/233 [1:13:37<2:34:04, 63.75s/it]vLLM generation done - elapsed time: 18.54s, prompts: 16, total tokens: 9969, avg length: 623.1, speed: 537.7 tok/s
+vLLM generation done - elapsed time: 18.82s, prompts: 16, total tokens: 9373, avg length: 585.8, speed: 498.0 tok/s
+ 38%|███▊      | 89/233 [1:14:13<2:13:13, 55.51s/it]vLLM generation done - elapsed time: 11.82s, prompts: 16, total tokens: 6744, avg length: 421.5, speed: 570.5 tok/s
+vLLM generation done - elapsed time: 15.62s, prompts: 16, total tokens: 9230, avg length: 576.9, speed: 590.7 tok/s
+ 39%|███▊      | 90/233 [1:14:45<1:55:49, 48.60s/it]                                                    {'loss': -0.0676, 'grad_norm': 0.0898243710398674, 'learning_rate': 3.0901287553648074e-06, 'on_policy_loss': -0.0676, 'epoch': 0.39}
+ 39%|███▊      | 90/233 [1:14:45<1:55:49, 48.60s/it]vLLM generation done - elapsed time: 13.65s, prompts: 16, total tokens: 6888, avg length: 430.5, speed: 504.6 tok/s
+vLLM generation done - elapsed time: 15.92s, prompts: 16, total tokens: 10136, avg length: 633.5, speed: 636.8 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_90.json
+================================================================================
+
+ 39%|███▉      | 91/233 [1:15:18<1:44:00, 43.95s/it]vLLM generation done - elapsed time: 17.54s, prompts: 16, total tokens: 9101, avg length: 568.8, speed: 518.8 tok/s
+vLLM generation done - elapsed time: 26.48s, prompts: 16, total tokens: 7782, avg length: 486.4, speed: 293.9 tok/s
+ 39%|███▉      | 92/233 [1:16:02<1:43:10, 43.91s/it]                                                    {'loss': -0.072, 'grad_norm': 0.10552386939525604, 'learning_rate': 3.0472103004291847e-06, 'on_policy_loss': -0.072, 'epoch': 0.39}
+ 39%|███▉      | 92/233 [1:16:02<1:43:10, 43.91s/it]vLLM generation done - elapsed time: 11.30s, prompts: 16, total tokens: 6167, avg length: 385.4, speed: 545.8 tok/s
+vLLM generation done - elapsed time: 27.06s, prompts: 16, total tokens: 9263, avg length: 578.9, speed: 342.3 tok/s
+ 40%|███▉      | 93/233 [1:16:46<1:42:25, 43.90s/it]vLLM generation done - elapsed time: 16.26s, prompts: 16, total tokens: 8662, avg length: 541.4, speed: 532.8 tok/s
+vLLM generation done - elapsed time: 37.57s, prompts: 16, total tokens: 11083, avg length: 692.7, speed: 295.0 tok/s
+ 40%|████      | 94/233 [1:17:41<1:49:36, 47.32s/it]                                                    {'loss': -0.0724, 'grad_norm': 0.082708939909935, 'learning_rate': 3.004291845493563e-06, 'on_policy_loss': -0.0724, 'epoch': 0.4}
+ 40%|████      | 94/233 [1:17:42<1:49:36, 47.32s/it]vLLM generation done - elapsed time: 20.87s, prompts: 16, total tokens: 9927, avg length: 620.4, speed: 475.6 tok/s
+vLLM generation done - elapsed time: 60.85s, prompts: 16, total tokens: 14655, avg length: 915.9, speed: 240.8 tok/s
+ 41%|████      | 95/233 [1:19:01<2:11:19, 57.10s/it]vLLM generation done - elapsed time: 16.74s, prompts: 16, total tokens: 8968, avg length: 560.5, speed: 535.6 tok/s
+vLLM generation done - elapsed time: 22.35s, prompts: 16, total tokens: 9850, avg length: 615.6, speed: 440.7 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_95.json
+================================================================================
+
+ 41%|████      | 96/233 [1:19:41<1:58:44, 52.01s/it]                                                    {'loss': -0.0684, 'grad_norm': 0.0966576635837555, 'learning_rate': 2.96137339055794e-06, 'on_policy_loss': -0.0684, 'epoch': 0.41}
+ 41%|████      | 96/233 [1:19:42<1:58:44, 52.01s/it]vLLM generation done - elapsed time: 14.81s, prompts: 16, total tokens: 9627, avg length: 601.7, speed: 650.2 tok/s
+vLLM generation done - elapsed time: 16.18s, prompts: 16, total tokens: 8464, avg length: 529.0, speed: 523.1 tok/s
+ 42%|████▏     | 97/233 [1:20:15<1:45:11, 46.41s/it]vLLM generation done - elapsed time: 19.18s, prompts: 16, total tokens: 10279, avg length: 642.4, speed: 535.8 tok/s
+vLLM generation done - elapsed time: 22.80s, prompts: 16, total tokens: 10489, avg length: 655.6, speed: 460.0 tok/s
+ 42%|████▏     | 98/233 [1:20:55<1:40:24, 44.62s/it]                                                    {'loss': -0.073, 'grad_norm': 0.0882636308670044, 'learning_rate': 2.918454935622318e-06, 'on_policy_loss': -0.073, 'epoch': 0.42}
+ 42%|████▏     | 98/233 [1:20:55<1:40:24, 44.62s/it]vLLM generation done - elapsed time: 18.84s, prompts: 16, total tokens: 9318, avg length: 582.4, speed: 494.7 tok/s
+vLLM generation done - elapsed time: 60.36s, prompts: 16, total tokens: 13023, avg length: 813.9, speed: 215.7 tok/s
+ 42%|████▏     | 99/233 [1:22:14<2:02:49, 55.00s/it]vLLM generation done - elapsed time: 15.55s, prompts: 16, total tokens: 7911, avg length: 494.4, speed: 508.9 tok/s
+vLLM generation done - elapsed time: 16.15s, prompts: 16, total tokens: 8988, avg length: 561.8, speed: 556.6 tok/s
+ 43%|████▎     | 100/233 [1:22:48<1:47:30, 48.50s/it]                                                     {'loss': -0.0728, 'grad_norm': 0.11345376074314117, 'learning_rate': 2.875536480686695e-06, 'on_policy_loss': -0.0728, 'epoch': 0.43}
+ 43%|████▎     | 100/233 [1:22:48<1:47:30, 48.50s/it]wandb: WARNING URL not available in offline run
+/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in meta-llama/Llama-3.2-3B-Instruct - will assume that the vocabulary was not modified.
+  warnings.warn(
+vLLM generation done - elapsed time: 17.53s, prompts: 16, total tokens: 8716, avg length: 544.8, speed: 497.1 tok/s
+vLLM generation done - elapsed time: 32.67s, prompts: 16, total tokens: 10753, avg length: 672.1, speed: 329.1 tok/s
+/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/utils/checkpoint.py:85: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_100.json
+================================================================================
+
+ 43%|████▎     | 101/233 [1:23:45<1:52:18, 51.05s/it]vLLM generation done - elapsed time: 17.11s, prompts: 16, total tokens: 8276, avg length: 517.2, speed: 483.7 tok/s
+vLLM generation done - elapsed time: 36.05s, prompts: 16, total tokens: 11943, avg length: 746.4, speed: 331.3 tok/s
+ 44%|████▍     | 102/233 [1:24:39<1:53:23, 51.94s/it]                                                     {'loss': -0.0694, 'grad_norm': 0.07875265181064606, 'learning_rate': 2.8326180257510733e-06, 'on_policy_loss': -0.0694, 'epoch': 0.44}
+ 44%|████▍     | 102/233 [1:24:39<1:53:23, 51.94s/it]vLLM generation done - elapsed time: 15.53s, prompts: 16, total tokens: 8785, avg length: 549.1, speed: 565.7 tok/s
+vLLM generation done - elapsed time: 19.04s, prompts: 16, total tokens: 8522, avg length: 532.6, speed: 447.6 tok/s
+ 44%|████▍     | 103/233 [1:25:15<1:42:14, 47.19s/it]vLLM generation done - elapsed time: 15.22s, prompts: 16, total tokens: 8895, avg length: 555.9, speed: 584.5 tok/s
+vLLM generation done - elapsed time: 20.10s, prompts: 16, total tokens: 9820, avg length: 613.8, speed: 488.6 tok/s
+ 45%|████▍     | 104/233 [1:25:52<1:35:01, 44.19s/it]                                                     {'loss': -0.0739, 'grad_norm': 0.09035515040159225, 'learning_rate': 2.7896995708154506e-06, 'on_policy_loss': -0.0739, 'epoch': 0.45}
+ 45%|████▍     | 104/233 [1:25:52<1:35:01, 44.19s/it]vLLM generation done - elapsed time: 16.74s, prompts: 16, total tokens: 9732, avg length: 608.2, speed: 581.4 tok/s
+vLLM generation done - elapsed time: 60.06s, prompts: 16, total tokens: 12969, avg length: 810.6, speed: 215.9 tok/s
+ 45%|████▌     | 105/233 [1:27:11<1:56:28, 54.60s/it]vLLM generation done - elapsed time: 20.07s, prompts: 16, total tokens: 9642, avg length: 602.6, speed: 480.5 tok/s
+vLLM generation done - elapsed time: 20.37s, prompts: 16, total tokens: 11492, avg length: 718.2, speed: 564.1 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_105.json
+================================================================================
+
+ 45%|████▌     | 106/233 [1:27:49<1:45:17, 49.74s/it]                                                     {'loss': -0.0675, 'grad_norm': 0.08403743803501129, 'learning_rate': 2.7467811158798287e-06, 'on_policy_loss': -0.0675, 'epoch': 0.45}
+ 45%|████▌     | 106/233 [1:27:50<1:45:17, 49.74s/it]vLLM generation done - elapsed time: 15.37s, prompts: 16, total tokens: 9336, avg length: 583.5, speed: 607.3 tok/s
+vLLM generation done - elapsed time: 48.53s, prompts: 16, total tokens: 11228, avg length: 701.8, speed: 231.4 tok/s
+
+================================================================================
+STUDENT GENERATION SAMPLE (Step 106):
+================================================================================
+
+Prompt:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+Today Date: 17 Nov 2026
+
+<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Problem: Sally, Sam, and Steve went to play with their marbles. In the beginning, Sam has twice as many marbles as Steve while Sally has 5 less than Sam. After Sam has given Sally and Steve 3 marbles each, Sam has 8 marbles left. How many marbles does Steve have now?
+
+Solve the problem step by step, writing your entire reasoning in Bengali. Put your final numerical answer within \boxed{}.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|>
+
+Completion:
+Step 1: Sam-ine Sam-ke protton করে, তার 8 মার্বল অবশিষ্ট আছে। আমাদের খুঁজে বের করতে হবে কয়েক মার্বল সে প্রারম্বিকে দিয়েছিল।
+
+Step 2: Sam-ine 3 মার্বল দেয় সালি এবং 3 মার্বল দেয় স্টিভ, তার মানে সে 3 + 3 = 6 মার্বল দেয়।
+
+Step 3: Sam-ine 6 মার্বল দেয়, তার মানে সে 8 + 6 = 14 মার্বল ছিল প্রারম্বিক।
+
+Step 4: Sam-ine প্রারম্বিকে দেওয়া মার্বলের সংখ্যা 6, তার মানে সে স্টিভে 3 মার্বল দেয়।
+
+Step 5: স্টিভ-ine 3 মার্বল প্রারম্বিক থেকে পেয়েছে, তার মানে সে এখন 3 + 3 = 6 মার্বল আছে।
+
+Step 6: Sam-ine এবং স্টিভ-ine মার্বলের সংখ্যা জানি, তার মানে আমাদের সালি-ine মার্বলের সংখ্যা খুঁজে বের করতে হবে।
+
+Step 7: Sam-ine 14 মার্বল ছিল প্রারম্বিক, এবং সে 5 মার্বল কম সালি-ine আছে, তার মানে সালি-ine 14 - 5 = 9 মার্বল আছে।
+
+Step 8: এখন আমাদের স্টিভ-ine মার্বলের সংখ্যা খুঁজে বের করতে হবে।
+
+Step 9: আমাদের আলোচনা থেকে, আমরা জানি স্টিভ-ine 3 মার্বল প্রারম্বিক থেকে পেয়েছে, তার মানে সে এখন 3 + 3 = 6 মার্বল আছে।
+
+Step 10: সুতরাং, স্টিভ-ine এখন 6 মার্বল আছে।
+
+উত্তর:
+বাওক্সেড{6}<|eot_id|>
+================================================================================
+
+ 46%|████▌     | 107/233 [1:28:56<1:55:01, 54.78s/it]vLLM generation done - elapsed time: 19.62s, prompts: 16, total tokens: 8597, avg length: 537.3, speed: 438.1 tok/s
+vLLM generation done - elapsed time: 22.41s, prompts: 16, total tokens: 9971, avg length: 623.2, speed: 444.8 tok/s
+ 46%|████▋     | 108/233 [1:29:36<1:44:41, 50.25s/it]                                                     {'loss': -0.0696, 'grad_norm': 0.07559426873922348, 'learning_rate': 2.7038626609442064e-06, 'on_policy_loss': -0.0696, 'epoch': 0.46}
+ 46%|████▋     | 108/233 [1:29:36<1:44:41, 50.25s/it]vLLM generation done - elapsed time: 17.60s, prompts: 16, total tokens: 9622, avg length: 601.4, speed: 546.9 tok/s
+vLLM generation done - elapsed time: 18.66s, prompts: 16, total tokens: 10416, avg length: 651.0, speed: 558.2 tok/s
+ 47%|████▋     | 109/233 [1:30:12<1:35:10, 46.05s/it]vLLM generation done - elapsed time: 30.47s, prompts: 16, total tokens: 9379, avg length: 586.2, speed: 307.8 tok/s
+vLLM generation done - elapsed time: 55.04s, prompts: 16, total tokens: 11924, avg length: 745.2, speed: 216.6 tok/s
+ 47%|████▋     | 110/233 [1:31:26<1:51:25, 54.35s/it]                                                     {'loss': -0.0688, 'grad_norm': 0.08386022597551346, 'learning_rate': 2.6609442060085837e-06, 'on_policy_loss': -0.0688, 'epoch': 0.47}
+ 47%|████▋     | 110/233 [1:31:26<1:51:25, 54.35s/it]vLLM generation done - elapsed time: 18.08s, prompts: 16, total tokens: 10716, avg length: 669.8, speed: 592.7 tok/s
+vLLM generation done - elapsed time: 59.34s, prompts: 16, total tokens: 14815, avg length: 925.9, speed: 249.7 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_110.json
+================================================================================
+
+ 48%|████▊     | 111/233 [1:32:44<2:05:22, 61.66s/it]vLLM generation done - elapsed time: 13.04s, prompts: 16, total tokens: 7138, avg length: 446.1, speed: 547.5 tok/s
+vLLM generation done - elapsed time: 48.63s, prompts: 16, total tokens: 12722, avg length: 795.1, speed: 261.6 tok/s
+ 48%|████▊     | 112/233 [1:33:51<2:07:21, 63.16s/it]                                                     {'loss': -0.0699, 'grad_norm': 0.09527333825826645, 'learning_rate': 2.618025751072962e-06, 'on_policy_loss': -0.0699, 'epoch': 0.48}
+ 48%|████▊     | 112/233 [1:33:51<2:07:21, 63.16s/it]vLLM generation done - elapsed time: 15.43s, prompts: 16, total tokens: 7903, avg length: 493.9, speed: 512.0 tok/s
+vLLM generation done - elapsed time: 60.00s, prompts: 16, total tokens: 11891, avg length: 743.2, speed: 198.2 tok/s
+ 48%|████▊     | 113/233 [1:35:09<2:15:23, 67.69s/it]vLLM generation done - elapsed time: 13.12s, prompts: 16, total tokens: 8899, avg length: 556.2, speed: 678.0 tok/s
+vLLM generation done - elapsed time: 43.29s, prompts: 16, total tokens: 13105, avg length: 819.1, speed: 302.7 tok/s
+ 49%|████▉     | 114/233 [1:36:11<2:10:36, 65.85s/it]                                                     {'loss': -0.0717, 'grad_norm': 0.07837164402008057, 'learning_rate': 2.575107296137339e-06, 'on_policy_loss': -0.0717, 'epoch': 0.49}
+ 49%|████▉     | 114/233 [1:36:11<2:10:36, 65.85s/it]vLLM generation done - elapsed time: 15.99s, prompts: 16, total tokens: 8502, avg length: 531.4, speed: 531.8 tok/s
+vLLM generation done - elapsed time: 19.86s, prompts: 16, total tokens: 9784, avg length: 611.5, speed: 492.6 tok/s
+ 49%|████▉     | 115/233 [1:36:48<1:52:37, 57.26s/it]vLLM generation done - elapsed time: 14.95s, prompts: 16, total tokens: 8455, avg length: 528.4, speed: 565.7 tok/s
+vLLM generation done - elapsed time: 26.53s, prompts: 16, total tokens: 9975, avg length: 623.4, speed: 376.0 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_115.json
+================================================================================
+
+ 50%|████▉     | 116/233 [1:37:32<1:43:51, 53.26s/it]                                                     {'loss': -0.0752, 'grad_norm': 0.09729945659637451, 'learning_rate': 2.5321888412017172e-06, 'on_policy_loss': -0.0752, 'epoch': 0.5}
+ 50%|████▉     | 116/233 [1:37:32<1:43:51, 53.26s/it]vLLM generation done - elapsed time: 31.46s, prompts: 16, total tokens: 10634, avg length: 664.6, speed: 338.0 tok/s
+vLLM generation done - elapsed time: 35.66s, prompts: 16, total tokens: 11237, avg length: 702.3, speed: 315.1 tok/s
+ 50%|█████     | 117/233 [1:38:25<1:43:10, 53.36s/it]vLLM generation done - elapsed time: 20.00s, prompts: 16, total tokens: 11219, avg length: 701.2, speed: 560.9 tok/s
+vLLM generation done - elapsed time: 49.68s, prompts: 16, total tokens: 11879, avg length: 742.4, speed: 239.1 tok/s
+ 51%|█████     | 118/233 [1:39:33<1:50:42, 57.76s/it]                                                     {'loss': -0.0719, 'grad_norm': 0.08393535017967224, 'learning_rate': 2.4892703862660945e-06, 'on_policy_loss': -0.0719, 'epoch': 0.51}
+ 51%|█████     | 118/233 [1:39:34<1:50:42, 57.76s/it]vLLM generation done - elapsed time: 20.01s, prompts: 16, total tokens: 9556, avg length: 597.2, speed: 477.5 tok/s
+vLLM generation done - elapsed time: 59.77s, prompts: 16, total tokens: 12201, avg length: 762.6, speed: 204.1 tok/s
+ 51%|█████     | 119/233 [1:40:52<2:01:19, 63.85s/it]vLLM generation done - elapsed time: 13.71s, prompts: 16, total tokens: 8700, avg length: 543.8, speed: 634.4 tok/s
+vLLM generation done - elapsed time: 18.15s, prompts: 16, total tokens: 9462, avg length: 591.4, speed: 521.3 tok/s
+ 52%|█████▏    | 120/233 [1:41:27<1:44:09, 55.30s/it]                                                     {'loss': -0.0734, 'grad_norm': 0.09650076925754547, 'learning_rate': 2.4463519313304722e-06, 'on_policy_loss': -0.0734, 'epoch': 0.52}
+ 52%|█████▏    | 120/233 [1:41:27<1:44:09, 55.30s/it]vLLM generation done - elapsed time: 15.82s, prompts: 16, total tokens: 8021, avg length: 501.3, speed: 507.1 tok/s
+vLLM generation done - elapsed time: 27.11s, prompts: 16, total tokens: 11999, avg length: 749.9, speed: 442.7 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_120.json
+================================================================================
+
+ 52%|█████▏    | 121/233 [1:42:12<1:37:14, 52.09s/it]vLLM generation done - elapsed time: 17.11s, prompts: 16, total tokens: 10379, avg length: 648.7, speed: 606.5 tok/s
+vLLM generation done - elapsed time: 23.93s, prompts: 16, total tokens: 11091, avg length: 693.2, speed: 463.5 tok/s
+ 52%|█████▏    | 122/233 [1:42:53<1:30:39, 49.01s/it]                                                     {'loss': -0.0675, 'grad_norm': 0.08038245141506195, 'learning_rate': 2.40343347639485e-06, 'on_policy_loss': -0.0675, 'epoch': 0.52}
+ 52%|█████▏    | 122/233 [1:42:54<1:30:39, 49.01s/it]vLLM generation done - elapsed time: 21.13s, prompts: 16, total tokens: 10794, avg length: 674.6, speed: 510.9 tok/s
+vLLM generation done - elapsed time: 26.98s, prompts: 16, total tokens: 10524, avg length: 657.8, speed: 390.0 tok/s
+ 53%|█████▎    | 123/233 [1:43:38<1:27:38, 47.80s/it]vLLM generation done - elapsed time: 17.78s, prompts: 16, total tokens: 9321, avg length: 582.6, speed: 524.2 tok/s
+vLLM generation done - elapsed time: 60.40s, prompts: 16, total tokens: 13427, avg length: 839.2, speed: 222.3 tok/s
+ 53%|█████▎    | 124/233 [1:44:57<1:43:45, 57.12s/it]                                                     {'loss': -0.0725, 'grad_norm': 0.1069432869553566, 'learning_rate': 2.3605150214592277e-06, 'on_policy_loss': -0.0725, 'epoch': 0.53}
+ 53%|█████▎    | 124/233 [1:44:57<1:43:45, 57.12s/it]vLLM generation done - elapsed time: 16.87s, prompts: 16, total tokens: 9526, avg length: 595.4, speed: 564.7 tok/s
+vLLM generation done - elapsed time: 27.42s, prompts: 16, total tokens: 12352, avg length: 772.0, speed: 450.6 tok/s
+ 54%|█████▎    | 125/233 [1:45:42<1:36:25, 53.57s/it]wandb: WARNING URL not available in offline run
+/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in meta-llama/Llama-3.2-3B-Instruct - will assume that the vocabulary was not modified.
+  warnings.warn(
+vLLM generation done - elapsed time: 20.03s, prompts: 16, total tokens: 10259, avg length: 641.2, speed: 512.3 tok/s
+vLLM generation done - elapsed time: 39.80s, prompts: 16, total tokens: 11518, avg length: 719.9, speed: 289.4 tok/s
+/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/utils/checkpoint.py:85: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_125.json
+================================================================================
+
+ 54%|█████▍    | 126/233 [1:46:46<1:41:06, 56.70s/it]                                                     {'loss': -0.071, 'grad_norm': 0.08241793513298035, 'learning_rate': 2.3175965665236054e-06, 'on_policy_loss': -0.071, 'epoch': 0.54}
+ 54%|█████▍    | 126/233 [1:46:47<1:41:06, 56.70s/it]vLLM generation done - elapsed time: 36.65s, prompts: 16, total tokens: 10020, avg length: 626.2, speed: 273.4 tok/s
+vLLM generation done - elapsed time: 38.01s, prompts: 16, total tokens: 10441, avg length: 652.6, speed: 274.7 tok/s
+ 55%|█████▍    | 127/233 [1:47:43<1:39:53, 56.55s/it]vLLM generation done - elapsed time: 14.57s, prompts: 16, total tokens: 9198, avg length: 574.9, speed: 631.1 tok/s
+vLLM generation done - elapsed time: 22.38s, prompts: 16, total tokens: 9662, avg length: 603.9, speed: 431.7 tok/s
+ 55%|█████▍    | 128/233 [1:48:22<1:30:06, 51.49s/it]                                                     {'loss': -0.0738, 'grad_norm': 0.08778411149978638, 'learning_rate': 2.274678111587983e-06, 'on_policy_loss': -0.0738, 'epoch': 0.55}
+ 55%|█████▍    | 128/233 [1:48:23<1:30:06, 51.49s/it]vLLM generation done - elapsed time: 29.77s, prompts: 16, total tokens: 10940, avg length: 683.8, speed: 367.5 tok/s
+vLLM generation done - elapsed time: 61.39s, prompts: 16, total tokens: 15969, avg length: 998.1, speed: 260.1 tok/s
+ 55%|█████▌    | 129/233 [1:49:44<1:44:46, 60.45s/it]vLLM generation done - elapsed time: 20.95s, prompts: 16, total tokens: 9694, avg length: 605.9, speed: 462.7 tok/s
+vLLM generation done - elapsed time: 48.38s, prompts: 16, total tokens: 10895, avg length: 680.9, speed: 225.2 tok/s
+ 56%|█████▌    | 130/233 [1:50:50<1:46:54, 62.28s/it]                                                     {'loss': -0.0703, 'grad_norm': 0.08579801768064499, 'learning_rate': 2.2317596566523608e-06, 'on_policy_loss': -0.0703, 'epoch': 0.56}
+ 56%|█████▌    | 130/233 [1:50:50<1:46:54, 62.28s/it]vLLM generation done - elapsed time: 16.83s, prompts: 16, total tokens: 8113, avg length: 507.1, speed: 482.0 tok/s
+vLLM generation done - elapsed time: 16.86s, prompts: 16, total tokens: 10263, avg length: 641.4, speed: 608.7 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_130.json
+================================================================================
+
+ 56%|█████▌    | 131/233 [1:51:25<1:31:35, 53.88s/it]vLLM generation done - elapsed time: 16.80s, prompts: 16, total tokens: 9963, avg length: 622.7, speed: 592.9 tok/s
+vLLM generation done - elapsed time: 18.40s, prompts: 16, total tokens: 11060, avg length: 691.2, speed: 601.1 tok/s
+ 57%|█████▋    | 132/233 [1:52:01<1:21:41, 48.53s/it]                                                     {'loss': -0.0724, 'grad_norm': 0.07743144035339355, 'learning_rate': 2.1888412017167385e-06, 'on_policy_loss': -0.0724, 'epoch': 0.57}
+ 57%|█████▋    | 132/233 [1:52:01<1:21:41, 48.53s/it]vLLM generation done - elapsed time: 56.37s, prompts: 16, total tokens: 13398, avg length: 837.4, speed: 237.7 tok/s
+vLLM generation done - elapsed time: 60.46s, prompts: 16, total tokens: 13938, avg length: 871.1, speed: 230.5 tok/s
+ 57%|█████▋    | 133/233 [1:53:21<1:36:51, 58.11s/it]vLLM generation done - elapsed time: 19.16s, prompts: 16, total tokens: 10920, avg length: 682.5, speed: 570.1 tok/s
+vLLM generation done - elapsed time: 37.50s, prompts: 16, total tokens: 14430, avg length: 901.9, speed: 384.8 tok/s
+ 58%|█████▊    | 134/233 [1:54:17<1:34:55, 57.53s/it]                                                     {'loss': -0.0662, 'grad_norm': 0.07104029506444931, 'learning_rate': 2.145922746781116e-06, 'on_policy_loss': -0.0662, 'epoch': 0.58}
+ 58%|█████▊    | 134/233 [1:54:17<1:34:55, 57.53s/it]vLLM generation done - elapsed time: 13.48s, prompts: 16, total tokens: 8217, avg length: 513.6, speed: 609.5 tok/s
+vLLM generation done - elapsed time: 35.11s, prompts: 16, total tokens: 8644, avg length: 540.2, speed: 246.2 tok/s
+ 58%|█████▊    | 135/233 [1:55:10<1:31:24, 55.96s/it]vLLM generation done - elapsed time: 64.58s, prompts: 16, total tokens: 18439, avg length: 1152.4, speed: 285.5 tok/s
+vLLM generation done - elapsed time: 64.86s, prompts: 16, total tokens: 17822, avg length: 1113.9, speed: 274.8 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_135.json
+================================================================================
+
+ 58%|█████▊    | 136/233 [1:56:38<1:46:12, 65.70s/it]                                                     {'loss': -0.0684, 'grad_norm': 0.08497188985347748, 'learning_rate': 2.103004291845494e-06, 'on_policy_loss': -0.0684, 'epoch': 0.58}
+ 58%|█████▊    | 136/233 [1:56:38<1:46:12, 65.70s/it]vLLM generation done - elapsed time: 16.95s, prompts: 16, total tokens: 8944, avg length: 559.0, speed: 527.8 tok/s
+vLLM generation done - elapsed time: 18.52s, prompts: 16, total tokens: 9359, avg length: 584.9, speed: 505.4 tok/s
+ 59%|█████▉    | 137/233 [1:57:14<1:30:39, 56.66s/it]vLLM generation done - elapsed time: 16.86s, prompts: 16, total tokens: 9225, avg length: 576.6, speed: 547.1 tok/s
+vLLM generation done - elapsed time: 59.85s, prompts: 16, total tokens: 12456, avg length: 778.5, speed: 208.1 tok/s
+ 59%|█████▉    | 138/233 [1:58:32<1:40:00, 63.16s/it]                                                     {'loss': -0.0725, 'grad_norm': 0.08615560084581375, 'learning_rate': 2.060085836909871e-06, 'on_policy_loss': -0.0725, 'epoch': 0.59}
+ 59%|█████▉    | 138/233 [1:58:32<1:40:00, 63.16s/it]vLLM generation done - elapsed time: 59.82s, prompts: 16, total tokens: 12660, avg length: 791.2, speed: 211.6 tok/s
+vLLM generation done - elapsed time: 60.94s, prompts: 16, total tokens: 13958, avg length: 872.4, speed: 229.0 tok/s
+ 60%|█████▉    | 139/233 [1:59:53<1:47:23, 68.54s/it]vLLM generation done - elapsed time: 43.95s, prompts: 16, total tokens: 13228, avg length: 826.8, speed: 301.0 tok/s
+vLLM generation done - elapsed time: 59.58s, prompts: 16, total tokens: 11974, avg length: 748.4, speed: 201.0 tok/s
+ 60%|██████    | 140/233 [2:01:12<1:51:11, 71.73s/it]                                                     {'loss': -0.0684, 'grad_norm': 0.08129259943962097, 'learning_rate': 2.017167381974249e-06, 'on_policy_loss': -0.0684, 'epoch': 0.6}
+ 60%|██████    | 140/233 [2:01:12<1:51:11, 71.73s/it]vLLM generation done - elapsed time: 20.45s, prompts: 16, total tokens: 11384, avg length: 711.5, speed: 556.6 tok/s
+vLLM generation done - elapsed time: 60.72s, prompts: 16, total tokens: 14729, avg length: 920.6, speed: 242.6 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_140.json
+================================================================================
+
+ 61%|██████    | 141/233 [2:02:32<1:53:44, 74.18s/it]vLLM generation done - elapsed time: 18.05s, prompts: 16, total tokens: 10296, avg length: 643.5, speed: 570.4 tok/s
+vLLM generation done - elapsed time: 20.79s, prompts: 16, total tokens: 10369, avg length: 648.1, speed: 498.6 tok/s
+ 61%|██████    | 142/233 [2:03:10<1:36:13, 63.44s/it]                                                     {'loss': -0.072, 'grad_norm': 0.07583293318748474, 'learning_rate': 1.9742489270386266e-06, 'on_policy_loss': -0.072, 'epoch': 0.61}
+ 61%|██████    | 142/233 [2:03:11<1:36:13, 63.44s/it]vLLM generation done - elapsed time: 21.15s, prompts: 16, total tokens: 10134, avg length: 633.4, speed: 479.1 tok/s
+vLLM generation done - elapsed time: 59.44s, prompts: 16, total tokens: 11241, avg length: 702.6, speed: 189.1 tok/s
+ 61%|██████▏   | 143/233 [2:04:28<1:41:44, 67.83s/it]vLLM generation done - elapsed time: 20.68s, prompts: 16, total tokens: 10408, avg length: 650.5, speed: 503.4 tok/s
+vLLM generation done - elapsed time: 43.43s, prompts: 16, total tokens: 13013, avg length: 813.3, speed: 299.6 tok/s
+ 62%|██████▏   | 144/233 [2:05:30<1:37:55, 66.02s/it]                                                     {'loss': -0.0734, 'grad_norm': 0.09609776735305786, 'learning_rate': 1.9313304721030043e-06, 'on_policy_loss': -0.0734, 'epoch': 0.62}
+ 62%|██████▏   | 144/233 [2:05:30<1:37:55, 66.02s/it]vLLM generation done - elapsed time: 18.88s, prompts: 16, total tokens: 9054, avg length: 565.9, speed: 479.5 tok/s
+vLLM generation done - elapsed time: 23.68s, prompts: 16, total tokens: 10063, avg length: 628.9, speed: 424.9 tok/s
+ 62%|██████▏   | 145/233 [2:06:11<1:25:52, 58.55s/it]vLLM generation done - elapsed time: 18.63s, prompts: 16, total tokens: 10767, avg length: 672.9, speed: 577.9 tok/s
+vLLM generation done - elapsed time: 62.23s, prompts: 16, total tokens: 15015, avg length: 938.4, speed: 241.3 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_145.json
+================================================================================
+
+ 63%|██████▎   | 146/233 [2:07:33<1:35:02, 65.54s/it]                                                     {'loss': -0.0726, 'grad_norm': 0.06802927702665329, 'learning_rate': 1.8884120171673823e-06, 'on_policy_loss': -0.0726, 'epoch': 0.63}
+ 63%|██████▎   | 146/233 [2:07:33<1:35:02, 65.54s/it]vLLM generation done - elapsed time: 27.25s, prompts: 16, total tokens: 13234, avg length: 827.1, speed: 485.7 tok/s
+vLLM generation done - elapsed time: 60.10s, prompts: 16, total tokens: 13014, avg length: 813.4, speed: 216.6 tok/s
+ 63%|██████▎   | 147/233 [2:08:53<1:39:57, 69.73s/it]vLLM generation done - elapsed time: 61.55s, prompts: 16, total tokens: 13681, avg length: 855.1, speed: 222.3 tok/s
+vLLM generation done - elapsed time: 61.87s, prompts: 16, total tokens: 14884, avg length: 930.2, speed: 240.6 tok/s
+ 64%|██████▎   | 148/233 [2:10:16<1:44:19, 73.65s/it]                                                     {'loss': -0.0698, 'grad_norm': 0.09436485916376114, 'learning_rate': 1.84549356223176e-06, 'on_policy_loss': -0.0698, 'epoch': 0.64}
+ 64%|██████▎   | 148/233 [2:10:16<1:44:19, 73.65s/it]vLLM generation done - elapsed time: 21.24s, prompts: 16, total tokens: 8981, avg length: 561.3, speed: 422.7 tok/s
+vLLM generation done - elapsed time: 57.59s, prompts: 16, total tokens: 13612, avg length: 850.8, speed: 236.4 tok/s
+ 64%|██████▍   | 149/233 [2:11:32<1:44:15, 74.47s/it]vLLM generation done - elapsed time: 27.14s, prompts: 16, total tokens: 10466, avg length: 654.1, speed: 385.7 tok/s
+vLLM generation done - elapsed time: 63.62s, prompts: 16, total tokens: 16044, avg length: 1002.8, speed: 252.2 tok/s
+ 64%|██████▍   | 150/233 [2:12:56<1:46:54, 77.28s/it]                                                     {'loss': -0.0726, 'grad_norm': 0.08555352687835693, 'learning_rate': 1.8025751072961375e-06, 'on_policy_loss': -0.0726, 'epoch': 0.64}
+ 64%|██████▍   | 150/233 [2:12:56<1:46:54, 77.28s/it]wandb: WARNING URL not available in offline run
+/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in meta-llama/Llama-3.2-3B-Instruct - will assume that the vocabulary was not modified.
+  warnings.warn(
+vLLM generation done - elapsed time: 17.58s, prompts: 16, total tokens: 10854, avg length: 678.4, speed: 617.4 tok/s
+vLLM generation done - elapsed time: 24.88s, prompts: 16, total tokens: 12230, avg length: 764.4, speed: 491.6 tok/s
+/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/utils/checkpoint.py:85: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_150.json
+================================================================================
+
+ 65%|██████▍   | 151/233 [2:13:43<1:33:20, 68.30s/it]vLLM generation done - elapsed time: 59.83s, prompts: 16, total tokens: 11896, avg length: 743.5, speed: 198.8 tok/s
+vLLM generation done - elapsed time: 60.04s, prompts: 16, total tokens: 13634, avg length: 852.1, speed: 227.1 tok/s
+ 65%|██████▌   | 152/233 [2:15:03<1:37:00, 71.86s/it]                                                     {'loss': -0.0713, 'grad_norm': 0.09584067016839981, 'learning_rate': 1.7596566523605152e-06, 'on_policy_loss': -0.0713, 'epoch': 0.65}
+ 65%|██████▌   | 152/233 [2:15:03<1:37:00, 71.86s/it]vLLM generation done - elapsed time: 19.54s, prompts: 16, total tokens: 8645, avg length: 540.3, speed: 442.3 tok/s
+vLLM generation done - elapsed time: 21.89s, prompts: 16, total tokens: 9706, avg length: 606.6, speed: 443.5 tok/s
+ 66%|██████▌   | 153/233 [2:15:43<1:22:50, 62.13s/it]vLLM generation done - elapsed time: 37.10s, prompts: 16, total tokens: 11661, avg length: 728.8, speed: 314.3 tok/s
+vLLM generation done - elapsed time: 60.95s, prompts: 16, total tokens: 15499, avg length: 968.7, speed: 254.3 tok/s
+ 66%|██████▌   | 154/233 [2:17:04<1:29:19, 67.85s/it]                                                     {'loss': -0.0728, 'grad_norm': 0.09127367287874222, 'learning_rate': 1.7167381974248929e-06, 'on_policy_loss': -0.0728, 'epoch': 0.66}
+ 66%|██████▌   | 154/233 [2:17:04<1:29:19, 67.85s/it]vLLM generation done - elapsed time: 32.20s, prompts: 16, total tokens: 10799, avg length: 674.9, speed: 335.4 tok/s
+vLLM generation done - elapsed time: 65.51s, prompts: 16, total tokens: 18915, avg length: 1182.2, speed: 288.7 tok/s
+ 67%|██████▋   | 155/233 [2:18:31<1:35:38, 73.57s/it]vLLM generation done - elapsed time: 15.47s, prompts: 16, total tokens: 7936, avg length: 496.0, speed: 513.0 tok/s
+vLLM generation done - elapsed time: 24.42s, prompts: 16, total tokens: 10419, avg length: 651.2, speed: 426.7 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_155.json
+================================================================================
+
+ 67%|██████▋   | 156/233 [2:19:13<1:22:13, 64.07s/it]                                                     {'loss': -0.0712, 'grad_norm': 0.0876217931509018, 'learning_rate': 1.6738197424892704e-06, 'on_policy_loss': -0.0712, 'epoch': 0.67}
+ 67%|██████▋   | 156/233 [2:19:13<1:22:13, 64.07s/it]vLLM generation done - elapsed time: 15.28s, prompts: 16, total tokens: 6348, avg length: 396.8, speed: 415.4 tok/s
+vLLM generation done - elapsed time: 33.20s, prompts: 16, total tokens: 12230, avg length: 764.4, speed: 368.4 tok/s
+ 67%|██████▋   | 157/233 [2:20:04<1:16:08, 60.11s/it]vLLM generation done - elapsed time: 32.44s, prompts: 16, total tokens: 11044, avg length: 690.2, speed: 340.4 tok/s
+vLLM generation done - elapsed time: 62.95s, prompts: 16, total tokens: 16655, avg length: 1040.9, speed: 264.6 tok/s
+ 68%|██████▊   | 158/233 [2:21:27<1:23:46, 67.02s/it]                                                     {'loss': -0.0741, 'grad_norm': 0.07440097630023956, 'learning_rate': 1.630901287553648e-06, 'on_policy_loss': -0.0741, 'epoch': 0.68}
+ 68%|██████▊   | 158/233 [2:21:27<1:23:46, 67.02s/it]vLLM generation done - elapsed time: 61.76s, prompts: 16, total tokens: 16341, avg length: 1021.3, speed: 264.6 tok/s
+vLLM generation done - elapsed time: 65.55s, prompts: 16, total tokens: 19955, avg length: 1247.2, speed: 304.4 tok/s
+ 68%|██████▊   | 159/233 [2:22:54<1:30:15, 73.18s/it]vLLM generation done - elapsed time: 60.11s, prompts: 16, total tokens: 13143, avg length: 821.4, speed: 218.6 tok/s
+vLLM generation done - elapsed time: 63.72s, prompts: 16, total tokens: 16049, avg length: 1003.1, speed: 251.9 tok/s
+ 69%|██████▊   | 160/233 [2:24:20<1:33:29, 76.84s/it]                                                     {'loss': -0.069, 'grad_norm': 0.08862236887216568, 'learning_rate': 1.5879828326180258e-06, 'on_policy_loss': -0.069, 'epoch': 0.69}
+ 69%|██████▊   | 160/233 [2:24:20<1:33:29, 76.84s/it]vLLM generation done - elapsed time: 63.87s, prompts: 16, total tokens: 17055, avg length: 1065.9, speed: 267.0 tok/s
+vLLM generation done - elapsed time: 65.58s, prompts: 16, total tokens: 21927, avg length: 1370.4, speed: 334.3 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_160.json
+================================================================================
+
+ 69%|██████▉   | 161/233 [2:25:49<1:36:47, 80.66s/it]vLLM generation done - elapsed time: 16.85s, prompts: 16, total tokens: 9110, avg length: 569.4, speed: 540.8 tok/s
+vLLM generation done - elapsed time: 61.10s, prompts: 16, total tokens: 14226, avg length: 889.1, speed: 232.8 tok/s
+ 70%|██████▉   | 162/233 [2:27:09<1:35:18, 80.54s/it]                                                     {'loss': -0.0695, 'grad_norm': 0.09500101953744888, 'learning_rate': 1.5450643776824037e-06, 'on_policy_loss': -0.0695, 'epoch': 0.7}
+ 70%|██████▉   | 162/233 [2:27:10<1:35:18, 80.54s/it]vLLM generation done - elapsed time: 42.83s, prompts: 16, total tokens: 15041, avg length: 940.1, speed: 351.2 tok/s
+vLLM generation done - elapsed time: 65.77s, prompts: 16, total tokens: 19951, avg length: 1246.9, speed: 303.4 tok/s
+ 70%|██████▉   | 163/233 [2:28:39<1:37:14, 83.35s/it]vLLM generation done - elapsed time: 58.16s, prompts: 16, total tokens: 16242, avg length: 1015.1, speed: 279.3 tok/s
+vLLM generation done - elapsed time: 60.03s, prompts: 16, total tokens: 12657, avg length: 791.1, speed: 210.9 tok/s
+ 70%|███████   | 164/233 [2:29:59<1:34:37, 82.28s/it]                                                     {'loss': -0.0675, 'grad_norm': 0.08274344354867935, 'learning_rate': 1.5021459227467814e-06, 'on_policy_loss': -0.0675, 'epoch': 0.7}
+ 70%|███████   | 164/233 [2:29:59<1:34:37, 82.28s/it]vLLM generation done - elapsed time: 56.40s, prompts: 16, total tokens: 15303, avg length: 956.4, speed: 271.3 tok/s
+vLLM generation done - elapsed time: 61.99s, prompts: 16, total tokens: 14274, avg length: 892.1, speed: 230.2 tok/s
+ 71%|███████   | 165/233 [2:31:22<1:33:28, 82.48s/it]vLLM generation done - elapsed time: 46.47s, prompts: 16, total tokens: 11801, avg length: 737.6, speed: 254.0 tok/s
+vLLM generation done - elapsed time: 63.21s, prompts: 16, total tokens: 15634, avg length: 977.1, speed: 247.3 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_165.json
+================================================================================
+
+ 71%|███████   | 166/233 [2:32:46<1:32:32, 82.87s/it]                                                     {'loss': -0.0748, 'grad_norm': 0.09502927958965302, 'learning_rate': 1.459227467811159e-06, 'on_policy_loss': -0.0748, 'epoch': 0.71}
+ 71%|███████   | 166/233 [2:32:46<1:32:32, 82.87s/it]vLLM generation done - elapsed time: 18.32s, prompts: 16, total tokens: 9750, avg length: 609.4, speed: 532.3 tok/s
+vLLM generation done - elapsed time: 59.99s, prompts: 16, total tokens: 12321, avg length: 770.1, speed: 205.4 tok/s
+ 72%|███████▏  | 167/233 [2:34:04<1:29:42, 81.55s/it]vLLM generation done - elapsed time: 65.04s, prompts: 16, total tokens: 18991, avg length: 1186.9, speed: 292.0 tok/s
+vLLM generation done - elapsed time: 65.65s, prompts: 16, total tokens: 20071, avg length: 1254.4, speed: 305.7 tok/s
+ 72%|███████▏  | 168/233 [2:35:35<1:31:16, 84.25s/it]                                                     {'loss': -0.0689, 'grad_norm': 0.08750048279762268, 'learning_rate': 1.4163090128755366e-06, 'on_policy_loss': -0.0689, 'epoch': 0.72}
+ 72%|███████▏  | 168/233 [2:35:35<1:31:16, 84.25s/it]vLLM generation done - elapsed time: 27.69s, prompts: 16, total tokens: 11811, avg length: 738.2, speed: 426.5 tok/s
+vLLM generation done - elapsed time: 64.50s, prompts: 16, total tokens: 18563, avg length: 1160.2, speed: 287.8 tok/s
+ 73%|███████▎  | 169/233 [2:37:00<1:30:14, 84.60s/it]vLLM generation done - elapsed time: 64.26s, prompts: 16, total tokens: 18169, avg length: 1135.6, speed: 282.7 tok/s
+vLLM generation done - elapsed time: 65.16s, prompts: 16, total tokens: 20682, avg length: 1292.6, speed: 317.4 tok/s
+ 73%|███████▎  | 170/233 [2:38:29<1:30:05, 85.80s/it]                                                     {'loss': -0.0649, 'grad_norm': 0.06766544282436371, 'learning_rate': 1.3733905579399143e-06, 'on_policy_loss': -0.0649, 'epoch': 0.73}
+ 73%|███████▎  | 170/233 [2:38:29<1:30:05, 85.80s/it]vLLM generation done - elapsed time: 54.97s, prompts: 16, total tokens: 12934, avg length: 808.4, speed: 235.3 tok/s
+vLLM generation done - elapsed time: 63.03s, prompts: 16, total tokens: 19203, avg length: 1200.2, speed: 304.7 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_170.json
+================================================================================
+
+ 73%|███████▎  | 171/233 [2:39:54<1:28:22, 85.52s/it]vLLM generation done - elapsed time: 25.44s, prompts: 16, total tokens: 10215, avg length: 638.4, speed: 401.6 tok/s
+vLLM generation done - elapsed time: 54.97s, prompts: 16, total tokens: 11421, avg length: 713.8, speed: 207.8 tok/s
+ 74%|███████▍  | 172/233 [2:41:07<1:23:15, 81.89s/it]                                                     {'loss': -0.0736, 'grad_norm': 0.1281745433807373, 'learning_rate': 1.3304721030042918e-06, 'on_policy_loss': -0.0736, 'epoch': 0.74}
+ 74%|███████▍  | 172/233 [2:41:07<1:23:15, 81.89s/it]vLLM generation done - elapsed time: 15.20s, prompts: 16, total tokens: 8934, avg length: 558.4, speed: 587.6 tok/s
+vLLM generation done - elapsed time: 16.90s, prompts: 16, total tokens: 8627, avg length: 539.2, speed: 510.6 tok/s
+ 74%|███████▍  | 173/233 [2:41:41<1:07:31, 67.52s/it]vLLM generation done - elapsed time: 50.03s, prompts: 16, total tokens: 15781, avg length: 986.3, speed: 315.4 tok/s
+vLLM generation done - elapsed time: 60.27s, prompts: 16, total tokens: 12887, avg length: 805.4, speed: 213.8 tok/s
+ 75%|███████▍  | 174/233 [2:43:02<1:10:11, 71.38s/it]                                                     {'loss': -0.0756, 'grad_norm': 0.10065849125385284, 'learning_rate': 1.2875536480686696e-06, 'on_policy_loss': -0.0756, 'epoch': 0.75}
+ 75%|███████▍  | 174/233 [2:43:02<1:10:11, 71.38s/it]vLLM generation done - elapsed time: 61.02s, prompts: 16, total tokens: 13356, avg length: 834.8, speed: 218.9 tok/s
+vLLM generation done - elapsed time: 65.77s, prompts: 16, total tokens: 19730, avg length: 1233.1, speed: 300.0 tok/s
+ 75%|███████▌  | 175/233 [2:44:29<1:13:33, 76.09s/it]wandb: WARNING URL not available in offline run
+/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in meta-llama/Llama-3.2-3B-Instruct - will assume that the vocabulary was not modified.
+  warnings.warn(
+vLLM generation done - elapsed time: 45.06s, prompts: 16, total tokens: 12560, avg length: 785.0, speed: 278.7 tok/s
+vLLM generation done - elapsed time: 61.13s, prompts: 16, total tokens: 14661, avg length: 916.3, speed: 239.8 tok/s
+
+================================================================================
+STUDENT GENERATION SAMPLE (Step 175):
+================================================================================
+
+Prompt:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+Today Date: 17 Nov 2026
+
+<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Problem: Jackson's mother made little pizza rolls for Jackson's birthday party.  Jackson ate 10 pizza rolls and his friend Jerome ate twice that amount.  Tyler at one and half times more than Jerome.  How many more pizza rolls did Tyler eat than Jackson?
+
+Solve the problem step by step, writing your entire reasoning in Bengali. Put your final numerical answer within \boxed{}.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|>
+
+Completion:
+Jackson এর মা তার জন্মদিন পার্টি প্রেরণ করেন কড়া পিজ্জা রোল। Jackson 10 পিজ্জা রোল খায় এর দোষী Jerome দ্বারা দ্বিগুণ পরিমাণ খায়। Tyler এর এক এর থেকে বেশি বেশি খায় Jerome।
+
+Step 1: Jackson এর 10 পিজ্জা রোল খায়।
+
+Step 2: Jerome 2 গুণ বেশি খায়, যা 10 x 2 = 20 পিজ্জা রোল।
+
+Step 3: Tyler 1.5 গুণ বেশি খায়, যা 20 x 1.5 = 30 পিজ্জা রোল।
+
+Step 4: Tyler এর 30 পিজ্জা রোল খায় এর দ্বারা জ্যাকসন এর 10 পিজ্জা রোল খায়।
+
+Step 5: Tyler এর 30 পিজ্জা রোল - Jackson এর 10 পিজ্জা রোল = 20 পিজ্জা রোল।
+
+উত্তর:
+বাওল্ড்{}<|eot_id|>
+================================================================================
+
+/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/utils/checkpoint.py:85: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_175.json
+================================================================================
+
+ 76%|███████▌  | 176/233 [2:45:54<1:14:55, 78.86s/it]                                                     {'loss': -0.0709, 'grad_norm': 0.07579681277275085, 'learning_rate': 1.2446351931330473e-06, 'on_policy_loss': -0.0709, 'epoch': 0.76}
+ 76%|███████▌  | 176/233 [2:45:54<1:14:55, 78.86s/it]vLLM generation done - elapsed time: 59.52s, prompts: 16, total tokens: 11745, avg length: 734.1, speed: 197.3 tok/s
+vLLM generation done - elapsed time: 59.63s, prompts: 16, total tokens: 11452, avg length: 715.8, speed: 192.1 tok/s
+ 76%|███████▌  | 177/233 [2:47:13<1:13:41, 78.96s/it]vLLM generation done - elapsed time: 59.93s, prompts: 16, total tokens: 12379, avg length: 773.7, speed: 206.6 tok/s
+vLLM generation done - elapsed time: 60.62s, prompts: 16, total tokens: 14062, avg length: 878.9, speed: 232.0 tok/s
+ 76%|███████▋  | 178/233 [2:48:34<1:12:49, 79.44s/it]                                                     {'loss': -0.0803, 'grad_norm': 0.09568919986486435, 'learning_rate': 1.201716738197425e-06, 'on_policy_loss': -0.0803, 'epoch': 0.76}
+ 76%|███████▋  | 178/233 [2:48:34<1:12:49, 79.44s/it]vLLM generation done - elapsed time: 22.89s, prompts: 16, total tokens: 9476, avg length: 592.2, speed: 413.9 tok/s
+vLLM generation done - elapsed time: 35.10s, prompts: 16, total tokens: 9210, avg length: 575.6, speed: 262.4 tok/s
+ 77%|███████▋  | 179/233 [2:49:26<1:04:17, 71.43s/it]vLLM generation done - elapsed time: 57.39s, prompts: 16, total tokens: 15754, avg length: 984.6, speed: 274.5 tok/s
+vLLM generation done - elapsed time: 63.85s, prompts: 16, total tokens: 15749, avg length: 984.3, speed: 246.7 tok/s
+ 77%|███████▋  | 180/233 [2:50:54<1:07:25, 76.33s/it]                                                     {'loss': -0.0702, 'grad_norm': 0.09530129283666611, 'learning_rate': 1.1587982832618027e-06, 'on_policy_loss': -0.0702, 'epoch': 0.77}
+ 77%|███████▋  | 180/233 [2:50:54<1:07:25, 76.33s/it]vLLM generation done - elapsed time: 63.60s, prompts: 16, total tokens: 14966, avg length: 935.4, speed: 235.3 tok/s
+vLLM generation done - elapsed time: 66.29s, prompts: 16, total tokens: 20686, avg length: 1292.9, speed: 312.1 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_180.json
+================================================================================
+
+ 78%|███████▊  | 181/233 [2:52:24<1:09:42, 80.44s/it]vLLM generation done - elapsed time: 61.06s, prompts: 16, total tokens: 13892, avg length: 868.2, speed: 227.5 tok/s
+vLLM generation done - elapsed time: 61.67s, prompts: 16, total tokens: 17175, avg length: 1073.4, speed: 278.5 tok/s
+ 78%|███████▊  | 182/233 [2:53:47<1:08:57, 81.13s/it]                                                     {'loss': -0.0699, 'grad_norm': 0.08572874963283539, 'learning_rate': 1.1158798283261804e-06, 'on_policy_loss': -0.0699, 'epoch': 0.78}
+ 78%|███████▊  | 182/233 [2:53:47<1:08:57, 81.13s/it]vLLM generation done - elapsed time: 64.06s, prompts: 16, total tokens: 19590, avg length: 1224.4, speed: 305.8 tok/s
+vLLM generation done - elapsed time: 66.33s, prompts: 16, total tokens: 21559, avg length: 1347.4, speed: 325.0 tok/s
+ 79%|███████▊  | 183/233 [2:55:17<1:09:46, 83.72s/it]vLLM generation done - elapsed time: 59.98s, prompts: 16, total tokens: 11984, avg length: 749.0, speed: 199.8 tok/s
+vLLM generation done - elapsed time: 64.19s, prompts: 16, total tokens: 18235, avg length: 1139.7, speed: 284.1 tok/s
+ 79%|███████▉  | 184/233 [2:56:44<1:09:16, 84.82s/it]                                                     {'loss': -0.0645, 'grad_norm': 0.08708258718252182, 'learning_rate': 1.072961373390558e-06, 'on_policy_loss': -0.0645, 'epoch': 0.79}
+ 79%|███████▉  | 184/233 [2:56:44<1:09:16, 84.82s/it]vLLM generation done - elapsed time: 62.03s, prompts: 16, total tokens: 16742, avg length: 1046.4, speed: 269.9 tok/s
+vLLM generation done - elapsed time: 66.20s, prompts: 16, total tokens: 21445, avg length: 1340.3, speed: 323.9 tok/s
+ 79%|███████▉  | 185/233 [2:58:13<1:08:52, 86.10s/it]vLLM generation done - elapsed time: 57.00s, prompts: 16, total tokens: 15682, avg length: 980.1, speed: 275.1 tok/s
+vLLM generation done - elapsed time: 61.38s, prompts: 16, total tokens: 14846, avg length: 927.9, speed: 241.9 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_185.json
+================================================================================
+
+ 80%|███████▉  | 186/233 [2:59:36<1:06:36, 85.02s/it]                                                     {'loss': -0.0686, 'grad_norm': 0.07481298595666885, 'learning_rate': 1.0300429184549356e-06, 'on_policy_loss': -0.0686, 'epoch': 0.8}
+ 80%|███████▉  | 186/233 [2:59:36<1:06:36, 85.02s/it]vLLM generation done - elapsed time: 23.00s, prompts: 16, total tokens: 10077, avg length: 629.8, speed: 438.1 tok/s
+vLLM generation done - elapsed time: 64.25s, prompts: 16, total tokens: 19156, avg length: 1197.2, speed: 298.2 tok/s
+ 80%|████████  | 187/233 [3:01:01<1:05:13, 85.09s/it]vLLM generation done - elapsed time: 20.77s, prompts: 16, total tokens: 11545, avg length: 721.6, speed: 555.9 tok/s
+vLLM generation done - elapsed time: 50.59s, prompts: 16, total tokens: 15118, avg length: 944.9, speed: 298.8 tok/s
+ 81%|████████  | 188/233 [3:02:11<1:00:24, 80.55s/it]                                                     {'loss': -0.0725, 'grad_norm': 0.0780540481209755, 'learning_rate': 9.871244635193133e-07, 'on_policy_loss': -0.0725, 'epoch': 0.81}
+ 81%|████████  | 188/233 [3:02:11<1:00:24, 80.55s/it]vLLM generation done - elapsed time: 32.70s, prompts: 16, total tokens: 12539, avg length: 783.7, speed: 383.4 tok/s
+vLLM generation done - elapsed time: 67.22s, prompts: 16, total tokens: 22717, avg length: 1419.8, speed: 338.0 tok/s
+ 81%|████████  | 189/233 [3:03:41<1:01:08, 83.38s/it]vLLM generation done - elapsed time: 60.50s, prompts: 16, total tokens: 13660, avg length: 853.8, speed: 225.8 tok/s
+vLLM generation done - elapsed time: 65.40s, prompts: 16, total tokens: 19239, avg length: 1202.4, speed: 294.2 tok/s
+ 82%|████████▏ | 190/233 [3:05:09<1:00:42, 84.71s/it]                                                     {'loss': -0.0721, 'grad_norm': 0.11852582544088364, 'learning_rate': 9.442060085836911e-07, 'on_policy_loss': -0.0721, 'epoch': 0.82}
+ 82%|████████▏ | 190/233 [3:05:09<1:00:42, 84.71s/it]vLLM generation done - elapsed time: 60.46s, prompts: 16, total tokens: 11955, avg length: 747.2, speed: 197.7 tok/s
+vLLM generation done - elapsed time: 62.29s, prompts: 16, total tokens: 16743, avg length: 1046.4, speed: 268.8 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_190.json
+================================================================================
+
+ 82%|████████▏ | 191/233 [3:06:32<59:03, 84.36s/it]  vLLM generation done - elapsed time: 61.62s, prompts: 16, total tokens: 14386, avg length: 899.1, speed: 233.5 tok/s
+vLLM generation done - elapsed time: 67.25s, prompts: 16, total tokens: 23321, avg length: 1457.6, speed: 346.8 tok/s
+ 82%|████████▏ | 192/233 [3:08:04<59:04, 86.45s/it]                                                   {'loss': -0.0737, 'grad_norm': 0.09259726107120514, 'learning_rate': 9.012875536480687e-07, 'on_policy_loss': -0.0737, 'epoch': 0.82}
+ 82%|████████▏ | 192/233 [3:08:04<59:04, 86.45s/it]vLLM generation done - elapsed time: 42.11s, prompts: 16, total tokens: 13664, avg length: 854.0, speed: 324.5 tok/s
+vLLM generation done - elapsed time: 63.51s, prompts: 16, total tokens: 18704, avg length: 1169.0, speed: 294.5 tok/s
+ 83%|████████▎ | 193/233 [3:09:29<57:25, 86.13s/it]vLLM generation done - elapsed time: 59.60s, prompts: 16, total tokens: 11583, avg length: 723.9, speed: 194.4 tok/s
+vLLM generation done - elapsed time: 66.22s, prompts: 16, total tokens: 22299, avg length: 1393.7, speed: 336.7 tok/s
+ 83%|████████▎ | 194/233 [3:10:58<56:31, 86.97s/it]                                                   {'loss': -0.0712, 'grad_norm': 0.08716347813606262, 'learning_rate': 8.583690987124464e-07, 'on_policy_loss': -0.0712, 'epoch': 0.83}
+ 83%|████████▎ | 194/233 [3:10:58<56:31, 86.97s/it]vLLM generation done - elapsed time: 61.39s, prompts: 16, total tokens: 15354, avg length: 959.6, speed: 250.1 tok/s
+vLLM generation done - elapsed time: 61.80s, prompts: 16, total tokens: 14621, avg length: 913.8, speed: 236.6 tok/s
+ 84%|████████▎ | 195/233 [3:12:22<54:27, 85.98s/it]vLLM generation done - elapsed time: 37.15s, prompts: 16, total tokens: 11924, avg length: 745.2, speed: 321.0 tok/s
+vLLM generation done - elapsed time: 64.21s, prompts: 16, total tokens: 18153, avg length: 1134.6, speed: 282.7 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_195.json
+================================================================================
+
+ 84%|████████▍ | 196/233 [3:13:46<52:48, 85.65s/it]                                                   {'loss': -0.067, 'grad_norm': 0.08148548752069473, 'learning_rate': 8.15450643776824e-07, 'on_policy_loss': -0.067, 'epoch': 0.84}
+ 84%|████████▍ | 196/233 [3:13:47<52:48, 85.65s/it]vLLM generation done - elapsed time: 60.29s, prompts: 16, total tokens: 13464, avg length: 841.5, speed: 223.3 tok/s
+vLLM generation done - elapsed time: 63.54s, prompts: 16, total tokens: 16032, avg length: 1002.0, speed: 252.3 tok/s
+ 85%|████████▍ | 197/233 [3:15:11<51:14, 85.39s/it]vLLM generation done - elapsed time: 65.71s, prompts: 16, total tokens: 19669, avg length: 1229.3, speed: 299.3 tok/s
+vLLM generation done - elapsed time: 67.37s, prompts: 16, total tokens: 22960, avg length: 1435.0, speed: 340.8 tok/s
+ 85%|████████▍ | 198/233 [3:16:43<50:58, 87.38s/it]                                                   {'loss': -0.0707, 'grad_norm': 0.0776275023818016, 'learning_rate': 7.725321888412019e-07, 'on_policy_loss': -0.0707, 'epoch': 0.85}
+ 85%|████████▍ | 198/233 [3:16:43<50:58, 87.38s/it]vLLM generation done - elapsed time: 31.25s, prompts: 16, total tokens: 11073, avg length: 692.1, speed: 354.4 tok/s
+vLLM generation done - elapsed time: 64.10s, prompts: 16, total tokens: 18516, avg length: 1157.2, speed: 288.8 tok/s
+ 85%|████████▌ | 199/233 [3:18:08<49:05, 86.64s/it]vLLM generation done - elapsed time: 60.45s, prompts: 16, total tokens: 13792, avg length: 862.0, speed: 228.2 tok/s
+vLLM generation done - elapsed time: 65.27s, prompts: 16, total tokens: 22670, avg length: 1416.9, speed: 347.3 tok/s
+ 86%|████████▌ | 200/233 [3:19:36<47:50, 87.00s/it]                                                   {'loss': -0.0681, 'grad_norm': 0.06748180091381073, 'learning_rate': 7.296137339055795e-07, 'on_policy_loss': -0.0681, 'epoch': 0.86}
+ 86%|████████▌ | 200/233 [3:19:36<47:50, 87.00s/it]wandb: WARNING URL not available in offline run
+/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in meta-llama/Llama-3.2-3B-Instruct - will assume that the vocabulary was not modified.
+  warnings.warn(
+vLLM generation done - elapsed time: 17.87s, prompts: 16, total tokens: 10758, avg length: 672.4, speed: 602.2 tok/s
+vLLM generation done - elapsed time: 62.58s, prompts: 16, total tokens: 16044, avg length: 1002.8, speed: 256.4 tok/s
+/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/utils/checkpoint.py:85: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_200.json
+================================================================================
+
+ 86%|████████▋ | 201/233 [3:21:03<46:20, 86.89s/it]vLLM generation done - elapsed time: 16.74s, prompts: 16, total tokens: 9595, avg length: 599.7, speed: 573.1 tok/s
+vLLM generation done - elapsed time: 59.74s, prompts: 16, total tokens: 11979, avg length: 748.7, speed: 200.5 tok/s
+ 87%|████████▋ | 202/233 [3:22:23<43:49, 84.82s/it]                                                   {'loss': -0.0782, 'grad_norm': 0.10453003644943237, 'learning_rate': 6.866952789699572e-07, 'on_policy_loss': -0.0782, 'epoch': 0.87}
+ 87%|████████▋ | 202/233 [3:22:23<43:49, 84.82s/it]vLLM generation done - elapsed time: 20.37s, prompts: 16, total tokens: 9925, avg length: 620.3, speed: 487.2 tok/s
+vLLM generation done - elapsed time: 65.14s, prompts: 16, total tokens: 19575, avg length: 1223.4, speed: 300.5 tok/s
+ 87%|████████▋ | 203/233 [3:23:49<42:37, 85.24s/it]vLLM generation done - elapsed time: 62.37s, prompts: 16, total tokens: 15654, avg length: 978.4, speed: 251.0 tok/s
+vLLM generation done - elapsed time: 66.84s, prompts: 16, total tokens: 21620, avg length: 1351.2, speed: 323.5 tok/s
+ 88%|████████▊ | 204/233 [3:25:20<42:02, 86.99s/it]                                                   {'loss': -0.0679, 'grad_norm': 0.06872613728046417, 'learning_rate': 6.437768240343348e-07, 'on_policy_loss': -0.0679, 'epoch': 0.88}
+ 88%|████████▊ | 204/233 [3:25:20<42:02, 86.99s/it]vLLM generation done - elapsed time: 65.87s, prompts: 16, total tokens: 20022, avg length: 1251.4, speed: 304.0 tok/s
+vLLM generation done - elapsed time: 66.46s, prompts: 16, total tokens: 22188, avg length: 1386.8, speed: 333.9 tok/s
+ 88%|████████▊ | 205/233 [3:26:52<41:15, 88.39s/it]vLLM generation done - elapsed time: 60.54s, prompts: 16, total tokens: 13917, avg length: 869.8, speed: 229.9 tok/s
+vLLM generation done - elapsed time: 62.24s, prompts: 16, total tokens: 16925, avg length: 1057.8, speed: 271.9 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_205.json
+================================================================================
+
+ 88%|████████▊ | 206/233 [3:28:15<39:03, 86.81s/it]                                                   {'loss': -0.0721, 'grad_norm': 0.07635942101478577, 'learning_rate': 6.008583690987125e-07, 'on_policy_loss': -0.0721, 'epoch': 0.88}
+ 88%|████████▊ | 206/233 [3:28:15<39:03, 86.81s/it]vLLM generation done - elapsed time: 64.78s, prompts: 16, total tokens: 19428, avg length: 1214.2, speed: 299.9 tok/s
+vLLM generation done - elapsed time: 64.90s, prompts: 16, total tokens: 19675, avg length: 1229.7, speed: 303.2 tok/s
+
+================================================================================
+STUDENT GENERATION SAMPLE (Step 206):
+================================================================================
+
+Prompt:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+Today Date: 17 Nov 2026
+
+<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Problem: Haley is getting ready to watch a comet fly over her house. She spends two hours shopping for a telescope, half an hour getting everything set up in the backyard, three times the setup time making snacks, and 20 minutes watching the comet. What percentage of the total time she spent on all those activities was spent watching the comet, rounded to the nearest percent?
+
+Solve the problem step by step, writing your entire reasoning in Bengali. Put your final numerical answer within \boxed{}.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|>
+
+Completion:
+Halēy એ તার ગૃਹে ઓ� vert કમેટ fly કરવા માટે તૈયાર થાય છે. તે 2 માઓ શોપિંગ કરે છે ટેલિસ્કોપ, હાલ એક મિનિટ બેક અપ કરે છે ટેલિસ્કોપ સેટ અપ કરે છે, 3 સેટ અપ કરતા સેટાપ ટાઇમ માક સ્નાક્સ બનાવે છે, અને 20 મિનિટ કમેટ જોઇ છે।
+
+ પ્રથમ પડકાર હોય છે 2 માઓ શોપિંગ કરવા માટે પડતું સમય, જે 2 માઓ છે।
+
+ બીજા પડકાર હોય છે 30 મિનિટ સેટ અપ કરવા માટે, જે 30 મિનિટ છે।
+
+ ત્રીજા પડકાર હોય છે 3 માર્ગ સેટ અપ કરતા સમય માક સ્નાક્સ બનાવવા માટે, જે 3 x 30 મિનિટ = 90 મિનિટ છે।
+
+ ચોથા પડકાર હોય છે 20 મિનિટ કમેટ જોવા માટે, જે 20 મિનિટ છે।
+
+ સમસ્ત સમય એક સાથ છે 2 મા + 30 મિનિટ + 90 મિનિટ + 20 મિનિટ = 142 મિનિટ છે।
+
+ કમેટ જોવા માટે ભાગ છે 20 મિનિટ / 142 મિનિટ = 0.14 છે।
+
+ પ્રતિ મિનિટ પડકાર છે 0.14 / 1 મિનિટ = 0.14 છે।
+
+ 100% છે 0.14 x 100% = 14% છે।
+
+ અંદાજિત સંખ્યા છે 14%।
+
+અહা, હોય! 14% છે.<|eot_id|>
+================================================================================
+
+ 89%|████████▉ | 207/233 [3:29:44<37:52, 87.41s/it]vLLM generation done - elapsed time: 61.32s, prompts: 16, total tokens: 15492, avg length: 968.2, speed: 252.7 tok/s
+vLLM generation done - elapsed time: 61.46s, prompts: 16, total tokens: 15417, avg length: 963.6, speed: 250.8 tok/s
+ 89%|████████▉ | 208/233 [3:31:06<35:46, 85.86s/it]                                                   {'loss': -0.0671, 'grad_norm': 0.09779628366231918, 'learning_rate': 5.579399141630902e-07, 'on_policy_loss': -0.0671, 'epoch': 0.89}
+ 89%|████████▉ | 208/233 [3:31:06<35:46, 85.86s/it]vLLM generation done - elapsed time: 63.40s, prompts: 16, total tokens: 17903, avg length: 1118.9, speed: 282.4 tok/s
+vLLM generation done - elapsed time: 64.64s, prompts: 16, total tokens: 19263, avg length: 1203.9, speed: 298.0 tok/s
+ 90%|████████▉ | 209/233 [3:32:34<34:34, 86.45s/it]vLLM generation done - elapsed time: 63.12s, prompts: 16, total tokens: 18462, avg length: 1153.9, speed: 292.5 tok/s
+vLLM generation done - elapsed time: 66.61s, prompts: 16, total tokens: 23483, avg length: 1467.7, speed: 352.6 tok/s
+ 90%|█████████ | 210/233 [3:34:04<33:33, 87.53s/it]                                                   {'loss': -0.0638, 'grad_norm': 0.07187198102474213, 'learning_rate': 5.150214592274678e-07, 'on_policy_loss': -0.0638, 'epoch': 0.9}
+ 90%|█████████ | 210/233 [3:34:04<33:33, 87.53s/it]vLLM generation done - elapsed time: 64.34s, prompts: 16, total tokens: 18610, avg length: 1163.1, speed: 289.2 tok/s
+vLLM generation done - elapsed time: 65.28s, prompts: 16, total tokens: 21203, avg length: 1325.2, speed: 324.8 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_210.json
+================================================================================
+
+ 91%|█████████ | 211/233 [3:35:33<32:16, 88.04s/it]vLLM generation done - elapsed time: 61.20s, prompts: 16, total tokens: 14592, avg length: 912.0, speed: 238.4 tok/s
+vLLM generation done - elapsed time: 68.10s, prompts: 16, total tokens: 25466, avg length: 1591.6, speed: 374.0 tok/s
+ 91%|█████████ | 212/233 [3:37:04<31:09, 89.02s/it]                                                   {'loss': -0.0647, 'grad_norm': 0.07859109342098236, 'learning_rate': 4.7210300429184556e-07, 'on_policy_loss': -0.0647, 'epoch': 0.91}
+ 91%|█████████ | 212/233 [3:37:04<31:09, 89.02s/it]vLLM generation done - elapsed time: 59.81s, prompts: 16, total tokens: 12717, avg length: 794.8, speed: 212.6 tok/s
+vLLM generation done - elapsed time: 71.35s, prompts: 16, total tokens: 30200, avg length: 1887.5, speed: 423.3 tok/s
+ 91%|█████████▏| 213/233 [3:38:40<30:23, 91.17s/it]vLLM generation done - elapsed time: 57.10s, prompts: 16, total tokens: 16093, avg length: 1005.8, speed: 281.8 tok/s
+vLLM generation done - elapsed time: 65.17s, prompts: 16, total tokens: 20713, avg length: 1294.6, speed: 317.8 tok/s
+ 92%|█████████▏| 214/233 [3:40:09<28:35, 90.29s/it]                                                   {'loss': -0.0675, 'grad_norm': 0.06712653487920761, 'learning_rate': 4.291845493562232e-07, 'on_policy_loss': -0.0675, 'epoch': 0.92}
+ 92%|█████████▏| 214/233 [3:40:09<28:35, 90.29s/it]vLLM generation done - elapsed time: 68.76s, prompts: 16, total tokens: 26249, avg length: 1640.6, speed: 381.7 tok/s
+vLLM generation done - elapsed time: 73.33s, prompts: 16, total tokens: 33242, avg length: 2077.6, speed: 453.3 tok/s
+ 92%|█████████▏| 215/233 [3:41:50<28:06, 93.72s/it]vLLM generation done - elapsed time: 64.17s, prompts: 16, total tokens: 18412, avg length: 1150.8, speed: 286.9 tok/s
+vLLM generation done - elapsed time: 66.38s, prompts: 16, total tokens: 20461, avg length: 1278.8, speed: 308.2 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_215.json
+================================================================================
+
+ 93%|█████████▎| 216/233 [3:43:20<26:10, 92.41s/it]                                                   {'loss': -0.0646, 'grad_norm': 0.07824961841106415, 'learning_rate': 3.8626609442060093e-07, 'on_policy_loss': -0.0646, 'epoch': 0.93}
+ 93%|█████████▎| 216/233 [3:43:20<26:10, 92.41s/it]vLLM generation done - elapsed time: 61.88s, prompts: 16, total tokens: 15479, avg length: 967.4, speed: 250.1 tok/s
+vLLM generation done - elapsed time: 66.60s, prompts: 16, total tokens: 22051, avg length: 1378.2, speed: 331.1 tok/s
+ 93%|█████████▎| 217/233 [3:44:50<24:27, 91.74s/it]vLLM generation done - elapsed time: 48.37s, prompts: 16, total tokens: 17222, avg length: 1076.4, speed: 356.1 tok/s
+vLLM generation done - elapsed time: 63.94s, prompts: 16, total tokens: 17386, avg length: 1086.6, speed: 271.9 tok/s
+ 94%|█████████▎| 218/233 [3:46:16<22:31, 90.08s/it]                                                   {'loss': -0.0702, 'grad_norm': 0.08594764769077301, 'learning_rate': 3.433476394849786e-07, 'on_policy_loss': -0.0702, 'epoch': 0.94}
+ 94%|█████████▎| 218/233 [3:46:16<22:31, 90.08s/it]vLLM generation done - elapsed time: 63.21s, prompts: 16, total tokens: 19040, avg length: 1190.0, speed: 301.2 tok/s
+vLLM generation done - elapsed time: 64.42s, prompts: 16, total tokens: 18341, avg length: 1146.3, speed: 284.7 tok/s
+ 94%|█████████▍| 219/233 [3:47:43<20:49, 89.27s/it]vLLM generation done - elapsed time: 65.32s, prompts: 16, total tokens: 20280, avg length: 1267.5, speed: 310.5 tok/s
+vLLM generation done - elapsed time: 65.87s, prompts: 16, total tokens: 19898, avg length: 1243.6, speed: 302.1 tok/s
+ 94%|█████████▍| 220/233 [3:49:15<19:27, 89.82s/it]                                                   {'loss': -0.0667, 'grad_norm': 0.08511276543140411, 'learning_rate': 3.0042918454935624e-07, 'on_policy_loss': -0.0667, 'epoch': 0.94}
+ 94%|█████████▍| 220/233 [3:49:15<19:27, 89.82s/it]vLLM generation done - elapsed time: 60.30s, prompts: 16, total tokens: 12824, avg length: 801.5, speed: 212.7 tok/s
+vLLM generation done - elapsed time: 62.33s, prompts: 16, total tokens: 13942, avg length: 871.4, speed: 223.7 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_220.json
+================================================================================
+
+ 95%|█████████▍| 221/233 [3:50:37<17:32, 87.73s/it]vLLM generation done - elapsed time: 67.91s, prompts: 16, total tokens: 24243, avg length: 1515.2, speed: 357.0 tok/s
+vLLM generation done - elapsed time: 69.79s, prompts: 16, total tokens: 28240, avg length: 1765.0, speed: 404.6 tok/s
+ 95%|█████████▌| 222/233 [3:52:16<16:40, 90.92s/it]                                                   {'loss': -0.0714, 'grad_norm': 0.07505788654088974, 'learning_rate': 2.575107296137339e-07, 'on_policy_loss': -0.0714, 'epoch': 0.95}
+ 95%|█████████▌| 222/233 [3:52:16<16:40, 90.92s/it]vLLM generation done - elapsed time: 63.52s, prompts: 16, total tokens: 18133, avg length: 1133.3, speed: 285.5 tok/s
+vLLM generation done - elapsed time: 70.66s, prompts: 16, total tokens: 30587, avg length: 1911.7, speed: 432.9 tok/s
+ 96%|█████████▌| 223/233 [3:53:53<15:29, 92.94s/it]vLLM generation done - elapsed time: 62.24s, prompts: 16, total tokens: 14534, avg length: 908.4, speed: 233.5 tok/s
+vLLM generation done - elapsed time: 67.56s, prompts: 16, total tokens: 22278, avg length: 1392.4, speed: 329.8 tok/s
+ 96%|█████████▌| 224/233 [3:55:25<13:53, 92.62s/it]                                                   {'loss': -0.0636, 'grad_norm': 0.07578742504119873, 'learning_rate': 2.145922746781116e-07, 'on_policy_loss': -0.0636, 'epoch': 0.96}
+ 96%|█████████▌| 224/233 [3:55:26<13:53, 92.62s/it]vLLM generation done - elapsed time: 63.98s, prompts: 16, total tokens: 16327, avg length: 1020.4, speed: 255.2 tok/s
+vLLM generation done - elapsed time: 65.05s, prompts: 16, total tokens: 20188, avg length: 1261.8, speed: 310.3 tok/s
+
+================================================================================
+STUDENT GENERATION SAMPLE (Step 224):
+================================================================================
+
+Prompt:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+Today Date: 17 Nov 2026
+
+<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Problem: A band's members each earn $20 per gig. If there are 4 members and they've earned $400, how many gigs have they played?
+
+Solve the problem step by step, writing your entire reasoning in Bengali. Put your final numerical answer within \boxed{}.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|><|finetune_right_pad_id|>
+
+Completion:
+ এই সমস্যা সমাধান করা যাক প্রতি গিগে $20 অর্জিত হয় এ সম্পর্কে আমাদের জান্তা আড়িয়ে দেয়া হয় যে প্রতি গিগে মোট অর্জিত পরিমাণ $20 হয়।
+
+ আমাদের কোড়ে আছে যে সম্পূর্ণ হয় মোট অর্জিত পরিমাণ $400।
+
+ এখন, আমাদের খুঁজে বের করা হয় কোন গিগ কোন দ্বারা অর্জিত হয় এ সম্পর্কে। আমাদের 4 মেম্বার আড়িয়ে দেয়া হয় যে প্রতি গিগে মোট অর্জিত পরিমাণ $20 হয়।
+
+ সুতরাং, 4 মেম্বার দ্বারা অর্জিত মোট পরিমাণ $20 x 4 = $80 হয়।
+
+ এখন, আমাদের খুঁজে বের করা হয় কোন সংখ্যা গিগ কোন দ্বারা অর্জিত হয় এ সম্পর্কে। আমাদের দেয়া হয় যে মোট অর্জিত পরিমাণ $400 হয়।
+
+ সুতরাং, আমাদের খুঁজে বের করা হয় যে $400/$80 = 5 গিগ অর্জিত হয়।
+
+ সুতরাং, 5 গিগ অর্জিত হয়।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয় যে ব্যান্ড 5 গিগ প্লে করে।
+
+ এর মানে হয়
+================================================================================
+
+ 97%|█████████▋| 225/233 [3:56:53<12:08, 91.12s/it]wandb: WARNING URL not available in offline run
+/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in meta-llama/Llama-3.2-3B-Instruct - will assume that the vocabulary was not modified.
+  warnings.warn(
+vLLM generation done - elapsed time: 61.55s, prompts: 16, total tokens: 14851, avg length: 928.2, speed: 241.3 tok/s
+vLLM generation done - elapsed time: 66.82s, prompts: 16, total tokens: 23831, avg length: 1489.4, speed: 356.7 tok/s
+/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/torch/utils/checkpoint.py:85: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_225.json
+================================================================================
+
+ 97%|█████████▋| 226/233 [3:58:28<10:46, 92.39s/it]                                                   {'loss': -0.0696, 'grad_norm': 0.08004610985517502, 'learning_rate': 1.716738197424893e-07, 'on_policy_loss': -0.0696, 'epoch': 0.97}
+ 97%|█████████▋| 226/233 [3:58:28<10:46, 92.39s/it]vLLM generation done - elapsed time: 61.60s, prompts: 16, total tokens: 15512, avg length: 969.5, speed: 251.8 tok/s
+vLLM generation done - elapsed time: 70.32s, prompts: 16, total tokens: 28162, avg length: 1760.1, speed: 400.5 tok/s
+ 97%|█████████▋| 227/233 [4:00:04<09:20, 93.49s/it]vLLM generation done - elapsed time: 68.25s, prompts: 16, total tokens: 25839, avg length: 1614.9, speed: 378.6 tok/s
+vLLM generation done - elapsed time: 69.04s, prompts: 16, total tokens: 27559, avg length: 1722.4, speed: 399.2 tok/s
+ 98%|█████████▊| 228/233 [4:01:39<07:49, 93.96s/it]                                                   {'loss': -0.0609, 'grad_norm': 0.058177076280117035, 'learning_rate': 1.2875536480686695e-07, 'on_policy_loss': -0.0609, 'epoch': 0.98}
+ 98%|█████████▊| 228/233 [4:01:40<07:49, 93.96s/it]vLLM generation done - elapsed time: 61.42s, prompts: 16, total tokens: 14317, avg length: 894.8, speed: 233.1 tok/s
+vLLM generation done - elapsed time: 66.85s, prompts: 16, total tokens: 23155, avg length: 1447.2, speed: 346.4 tok/s
+ 98%|█████████▊| 229/233 [4:03:10<06:11, 92.83s/it]vLLM generation done - elapsed time: 62.19s, prompts: 16, total tokens: 16125, avg length: 1007.8, speed: 259.3 tok/s
+vLLM generation done - elapsed time: 69.25s, prompts: 16, total tokens: 27201, avg length: 1700.1, speed: 392.8 tok/s
+ 99%|█████████▊| 230/233 [4:04:45<04:40, 93.51s/it]                                                   {'loss': -0.065, 'grad_norm': 0.0699697881937027, 'learning_rate': 8.583690987124465e-08, 'on_policy_loss': -0.065, 'epoch': 0.99}
+ 99%|█████████▊| 230/233 [4:04:45<04:40, 93.51s/it]vLLM generation done - elapsed time: 20.72s, prompts: 16, total tokens: 8782, avg length: 548.9, speed: 423.8 tok/s
+vLLM generation done - elapsed time: 67.08s, prompts: 16, total tokens: 23576, avg length: 1473.5, speed: 351.5 tok/s
+
+================================================================================
+Saved 80 generation outputs to:
+  /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/llama32_3b_gsm8k_bn_nonthink_fixteacher_temp11_forwardbeta0_clip1e-6_gen4k_genbatch16/generations/generations_step_230.json
+================================================================================
+
+ 99%|█████████▉| 231/233 [4:06:14<03:04, 92.30s/it]vLLM generation done - elapsed time: 23.16s, prompts: 16, total tokens: 10416, avg length: 651.0, speed: 449.7 tok/s
+vLLM generation done - elapsed time: 49.26s, prompts: 16, total tokens: 15736, avg length: 983.5, speed: 319.5 tok/s
+100%|█████████▉| 232/233 [4:07:23<01:25, 85.22s/it]                                                   {'loss': -0.0741, 'grad_norm': 0.0726456269621849, 'learning_rate': 4.291845493562232e-08, 'on_policy_loss': -0.0741, 'epoch': 1.0}
+100%|█████████▉| 232/233 [4:07:23<01:25, 85.22s/it]vLLM generation done - elapsed time: 68.43s, prompts: 16, total tokens: 26718, avg length: 1669.9, speed: 390.5 tok/s
+vLLM generation done - elapsed time: 69.59s, prompts: 16, total tokens: 25648, avg length: 1603.0, speed: 368.6 tok/s
+100%|██████████| 233/233 [4:09:00<00:00, 88.90s/it]wandb: WARNING URL not available in offline run
+/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in meta-llama/Llama-3.2-3B-Instruct - will assume that the vocabulary was not modified.
+  warnings.warn(
+                                                   {'train_runtime': 14944.8495, 'train_samples_per_second': 0.5, 'train_steps_per_second': 0.016, 'train_loss': -0.06490107360315937, 'on_policy_loss': -0.0631, 'epoch': 1.0}
+100%|██████████| 233/233 [4:09:04<00:00, 88.90s/it]100%|██████████| 233/233 [4:09:04<00:00, 64.14s/it]
+/home/speech-nlp-cse/24m0756/anaconda3/envs/slm/lib/python3.10/site-packages/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in meta-llama/Llama-3.2-3B-Instruct - will assume that the vocabulary was not modified.
+  warnings.warn(
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/speech-nlp-cse/24m0756/abhishek/indic/OPSD/ckpts/opsd/wandb/offline-run-20261117_025657-ii31jqjo[0m
+[1;34mwandb[0m: Find logs at: [1;35mckpts/opsd/wandb/offline-run-20261117_025657-ii31jqjo/logs[0m
+[rank0]:[W1117 07:06:55.088768728 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[rank1]:[W1117 07:06:55.831678141 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[rank0]:[W1117 07:07:13.235595902 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
+[rank1]:[W1117 07:07:13.235626072 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
+[W1117 07:07:50.937433043 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
